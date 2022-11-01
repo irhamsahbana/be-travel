@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "a28a6d77-6bc0-418d-be8d-f7daf0169873",
+    "name": "local",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-10-02T01:43:59.996Z",
+    "modified": "2022-10-03T16:38:55.624Z",
+    "data": [
+      {
+        "name": "protocol",
+        "value": "http"
+      },
+      {
+        "name": "domain",
+        "value": "127.0.0.1:8000/api"
+      },
+      {
+        "name": "base_url",
+        "value": "{{protocol}}://{{domain}}"
+      },
+      {
+        "name": "token_admin",
+        "value": "9769ff64-1ebc-47ef-9924-b513c0ee043e|hocsmKyJb7rIXSQquiF636JxLbNsTGDg7TIB9Ydx"
+      }
+    ]
+  },
+  {
+    "_id": "e4c9240d-3b85-41ef-8c4e-b9127458b6e9",
+    "name": "staging",
+    "default": false,
+    "sortNum": 20000,
+    "created": "2022-10-02T15:25:01.546Z",
+    "modified": "2022-10-03T14:44:36.051Z",
+    "data": [
+      {
+        "name": "protocol",
+        "value": "https"
+      },
+      {
+        "name": "domain",
+        "value": "moguru.api-dc-tracker.my.id/api"
+      },
+      {
+        "name": "base_url",
+        "value": "{{protocol}}://{{domain}}"
+      },
+      {
+        "name": "token_admin",
+        "value": "9769d606-896c-44ed-a958-1dacf0d61540|5Zd4LHM0gnHa0BKq3BCpWmzdarkIcCxQj37pXcdE"
+      }
+    ]
+  }
+]

@@ -1,0 +1,549 @@
+ID,CATEGORY_ID,NAME,LABEL,NOTES,GROUP_BY
+209d6736-af7d-4941-9945-2f87a6259761,,aceh,Aceh,11,provinces
+d7f343e7-7e01-4bd5-8994-b5608fdbc27b,,sumatera-utara,Sumatera Utara,12,provinces
+40f9e05e-dd5b-49b4-be02-833ee5f224e2,,sumatera-barat,Sumatera Barat,13,provinces
+98e613d6-6c59-42fc-b60e-88a3799aa6e4,,riau,Riau,14,provinces
+83fc9a14-2179-4f49-affb-bffe3bdea8cc,,jambi,Jambi,15,provinces
+fb8f2f0f-c97b-4261-8301-92b02fae8539,,sumatera-selatan,Sumatera Selatan,16,provinces
+970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,,bengkulu,Bengkulu,17,provinces
+770dfaef-40ad-4090-ba22-8187bf607d12,,lampung,Lampung,18,provinces
+9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,,kepulauan-bangka-belitung,Kepulauan Bangka Belitung,19,provinces
+5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,,kepulauan-riau,Kepulauan Riau,21,provinces
+f2d8d468-2f14-4373-9b6a-fc247dd7dceb,,dki-jakarta,Dki Jakarta,31,provinces
+a166cc1c-02f9-41e1-9444-2018791b9a26,,jawa-barat,Jawa Barat,32,provinces
+e59cabe4-88c0-463a-91cf-1da33cd04391,,jawa-tengah,Jawa Tengah,33,provinces
+3c0256a1-d673-4118-aea6-7462d931a96b,,di-yogyakarta,Di Yogyakarta,34,provinces
+59ac3659-446c-485b-9048-ee0906658c2e,,jawa-timur,Jawa Timur,35,provinces
+e001552f-5cf0-4258-8ebd-82afacf33b01,,banten,Banten,36,provinces
+184bbba6-f509-4d33-a41f-c687221b2c99,,bali,Bali,51,provinces
+f1a79e00-cd6f-4ec0-90cd-243cf461ffce,,nusa-tenggara-barat,Nusa Tenggara Barat,52,provinces
+37e83578-66f9-4416-9b04-70e167e29153,,nusa-tenggara-timur,Nusa Tenggara Timur,53,provinces
+6ac5be24-a9cd-42ed-90f7-247576b4a511,,kalimantan-barat,Kalimantan Barat,61,provinces
+03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,,kalimantan-tengah,Kalimantan Tengah,62,provinces
+2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,,kalimantan-selatan,Kalimantan Selatan,63,provinces
+b9fefc64-f9b0-4220-ab19-a5c982f38d23,,kalimantan-timur,Kalimantan Timur,64,provinces
+7280f010-0677-4c2e-a63d-f022dec664f4,,kalimantan-utara,Kalimantan Utara,65,provinces
+8e3e1cec-b0ff-476c-be34-10c9e9b04086,,sulawesi-utara,Sulawesi Utara,71,provinces
+a7e342f1-89b1-46cd-a1eb-b877739692fe,,sulawesi-tengah,Sulawesi Tengah,72,provinces
+7e76b4ac-a5bd-40fd-9135-bcb462b565fa,,sulawesi-selatan,Sulawesi Selatan,73,provinces
+a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,,sulawesi-tenggara,Sulawesi Tenggara,74,provinces
+05fe0dec-447c-477f-aa2b-5497cd0900fd,,gorontalo,Gorontalo,75,provinces
+705f952a-5833-4227-b61d-52c847872189,,sulawesi-barat,Sulawesi Barat,76,provinces
+38f4abe0-c146-4bb6-aa95-3203487d2599,,maluku,Maluku,81,provinces
+b5ae7e39-1081-48b2-8717-aa25fe73114d,,maluku-utara,Maluku Utara,82,provinces
+2288347c-dd7c-4102-a541-60c1aea8d936,,papua-barat,Papua Barat,91,provinces
+4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,,papua,Papua,94,provinces
+ed799a6d-6fa6-45b1-a8c5-648e6bef17de,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-simeulue,Kabupaten Simeulue,1101,cities
+a895bd3f-8c53-40b9-9815-6ff75f7ab0a0,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-singkil,Kabupaten Aceh Singkil,1102,cities
+ad8eb551-463d-4721-b6d0-2d978576b7f4,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-selatan,Kabupaten Aceh Selatan,1103,cities
+101021d4-6ce9-469e-bed6-287138b08c07,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-tenggara,Kabupaten Aceh Tenggara,1104,cities
+eb74baa3-9276-433a-85f4-2ef31a314969,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-timur,Kabupaten Aceh Timur,1105,cities
+f34f9430-83b0-45fa-b85c-29a7fe5949bb,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-tengah,Kabupaten Aceh Tengah,1106,cities
+2346c2b4-0d17-443a-be85-0ccf717cafca,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-barat,Kabupaten Aceh Barat,1107,cities
+47dcd87b-8d5b-45e9-a47d-b2757fa98ae4,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-besar,Kabupaten Aceh Besar,1108,cities
+336a3ef1-f7b7-4424-9739-9c0245912e3a,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-pidie,Kabupaten Pidie,1109,cities
+845d7a9b-ca87-494e-b0dc-5ccba4a9f6b9,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-bireuen,Kabupaten Bireuen,1110,cities
+743dc5cf-6ecd-4afa-8835-316e56c34311,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-utara,Kabupaten Aceh Utara,1111,cities
+20499a63-9fb1-43e6-9482-8d121d3372b5,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-barat-daya,Kabupaten Aceh Barat Daya,1112,cities
+04e8ed38-730c-4a92-9c37-da83c3b23813,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-gayo-lues,Kabupaten Gayo Lues,1113,cities
+6bbf22d3-ea0c-4805-b515-2dba4cfcadc4,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-tamiang,Kabupaten Aceh Tamiang,1114,cities
+453076c6-db1e-4697-b8c4-59a1c4dc8788,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-nagan-raya,Kabupaten Nagan Raya,1115,cities
+f84c5b7a-d1ec-4eeb-a50c-8facb04dc5f1,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-aceh-jaya,Kabupaten Aceh Jaya,1116,cities
+c00049f2-b231-44ae-982e-d77fc5169d09,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-bener-meriah,Kabupaten Bener Meriah,1117,cities
+e1c3b94a-efee-4c03-9c05-d32b04be89f8,209d6736-af7d-4941-9945-2f87a6259761,kabupaten-pidie-jaya,Kabupaten Pidie Jaya,1118,cities
+49af4bc3-f6de-4993-8e8a-db0250035270,209d6736-af7d-4941-9945-2f87a6259761,kota-banda-aceh,Kota Banda Aceh,1171,cities
+4d92f172-3d0d-47d0-9293-4ab169b7be82,209d6736-af7d-4941-9945-2f87a6259761,kota-sabang,Kota Sabang,1172,cities
+350c928c-70db-4fc7-b4c8-6778b8b0a49f,209d6736-af7d-4941-9945-2f87a6259761,kota-langsa,Kota Langsa,1173,cities
+cf49b26b-2ca4-4cfd-a697-8cc8b6beec19,209d6736-af7d-4941-9945-2f87a6259761,kota-lhokseumawe,Kota Lhokseumawe,1174,cities
+99ef4ce3-265f-40a2-9b34-4c2d94f4b68f,209d6736-af7d-4941-9945-2f87a6259761,kota-subulussalam,Kota Subulussalam,1175,cities
+3b8581d5-14e5-4797-b62f-9dcf00288d4f,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-nias,Kabupaten Nias,1201,cities
+a291c911-355d-4267-97c8-c1b5ca4056fd,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-mandailing-natal,Kabupaten Mandailing Natal,1202,cities
+9c670ee8-74d0-4b82-8393-68ef94c01288,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-tapanuli-selatan,Kabupaten Tapanuli Selatan,1203,cities
+e904ca0c-015b-4ed6-85c3-f763657d8f68,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-tapanuli-tengah,Kabupaten Tapanuli Tengah,1204,cities
+3d9c1cf8-43ea-41a9-9574-4ff9c99d4638,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-tapanuli-utara,Kabupaten Tapanuli Utara,1205,cities
+bf375092-7c87-45b5-819c-ebad43553deb,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-toba-samosir,Kabupaten Toba Samosir,1206,cities
+3610bd1c-f67a-4f2e-ba76-bb025c93bde8,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-labuhan-batu,Kabupaten Labuhan Batu,1207,cities
+1ee81a10-5458-4f45-b059-d0b3d7a77091,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-asahan,Kabupaten Asahan,1208,cities
+605b63a6-500d-449e-8c81-1612ea9d6d10,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-simalungun,Kabupaten Simalungun,1209,cities
+be1533fa-6ab0-4160-9f39-e979fcfcf01d,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-dairi,Kabupaten Dairi,1210,cities
+4a62ca1e-40ca-4dc4-ad5b-ad925cbdcb64,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-karo,Kabupaten Karo,1211,cities
+35db943a-8202-4fe9-8de3-d6b6d0212421,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-deli-serdang,Kabupaten Deli Serdang,1212,cities
+ceae3ad0-74ef-4e48-b2ec-5a63331b3ad3,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-langkat,Kabupaten Langkat,1213,cities
+70417a95-0f65-4715-904e-46821ac39146,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-nias-selatan,Kabupaten Nias Selatan,1214,cities
+3bd63734-f6b2-406b-a840-cdc9ffdcb40b,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-humbang-hasundutan,Kabupaten Humbang Hasundutan,1215,cities
+97704ec4-299c-47c0-adf8-28c3aca1e2a1,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-pakpak-bharat,Kabupaten Pakpak Bharat,1216,cities
+f9ffe437-dec4-4c31-8c66-bdada6a68b8c,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-samosir,Kabupaten Samosir,1217,cities
+e3d2a031-f3d7-47ba-9d16-54300e571e5e,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-serdang-bedagai,Kabupaten Serdang Bedagai,1218,cities
+d0c755bf-eb88-404b-8ece-a49d50944ad7,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-batu-bara,Kabupaten Batu Bara,1219,cities
+3e08eb40-ef02-4a2a-a8aa-3aad81d9b8e0,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-padang-lawas-utara,Kabupaten Padang Lawas Utara,1220,cities
+ccc77490-64fb-41ed-9b70-beb4358c8853,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-padang-lawas,Kabupaten Padang Lawas,1221,cities
+aa378fda-12b5-4b6a-b1c1-9bab70e5f4f9,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-labuhan-batu-selatan,Kabupaten Labuhan Batu Selatan,1222,cities
+7220e6f9-8d7e-48ee-a0ff-650c263f8f44,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-labuhan-batu-utara,Kabupaten Labuhan Batu Utara,1223,cities
+f83c54da-ec39-4ae5-a67f-f94f2f358dbf,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-nias-utara,Kabupaten Nias Utara,1224,cities
+17965584-e9cf-4a26-b805-ebc87752e4f3,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kabupaten-nias-barat,Kabupaten Nias Barat,1225,cities
+185f8ba6-2641-43d1-9882-34c2f37984c1,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-sibolga,Kota Sibolga,1271,cities
+daf323a8-8605-4f90-afca-b8deb5375840,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-tanjung-balai,Kota Tanjung Balai,1272,cities
+e46004af-d8be-4e12-ad31-284c45b524fb,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-pematang-siantar,Kota Pematang Siantar,1273,cities
+a0965f24-791f-48ae-8beb-22352f196bc5,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-tebing-tinggi,Kota Tebing Tinggi,1274,cities
+98760d92-4d59-43a0-9108-6be2bbe0fd8b,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-medan,Kota Medan,1275,cities
+ea971c0a-3644-4082-9f2c-788f22c65291,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-binjai,Kota Binjai,1276,cities
+ac1d744e-cd72-4f64-82e6-6c5afe59b29b,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-padangsidimpuan,Kota Padangsidimpuan,1277,cities
+e136acfa-5eae-4aad-8a9a-528e5a46738f,d7f343e7-7e01-4bd5-8994-b5608fdbc27b,kota-gunungsitoli,Kota Gunungsitoli,1278,cities
+7144ca91-4343-49e3-b4a3-00ae0cf64f65,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-kepulauan-mentawai,Kabupaten Kepulauan Mentawai,1301,cities
+1fb63299-87de-401c-bc42-f3f0e5ab7a9c,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-pesisir-selatan,Kabupaten Pesisir Selatan,1302,cities
+5c165d96-3ce2-4c2e-beba-39bf2db337a2,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-solok,Kabupaten Solok,1303,cities
+06df8238-a4d7-42a1-8dae-dff7543a8b3c,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-sijunjung,Kabupaten Sijunjung,1304,cities
+dc860c9f-aeac-4783-a20e-61329377dba8,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-tanah-datar,Kabupaten Tanah Datar,1305,cities
+62e6bb26-f950-406e-a7f6-2f13a2db86ca,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-padang-pariaman,Kabupaten Padang Pariaman,1306,cities
+715b41be-30ac-4379-8c71-3c8d655dc033,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-agam,Kabupaten Agam,1307,cities
+b874304a-8340-4430-8f05-46b364874c50,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-lima-puluh-kota,Kabupaten Lima Puluh Kota,1308,cities
+130f4b52-b06b-41a4-a086-06c39c8e6d78,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-pasaman,Kabupaten Pasaman,1309,cities
+08d21c96-5782-41fe-8f64-445f4c30c34b,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-solok-selatan,Kabupaten Solok Selatan,1310,cities
+1b29ce45-ab40-4e19-9f7d-10be2a18cea1,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-dharmasraya,Kabupaten Dharmasraya,1311,cities
+04c50ae0-4d80-402f-aa6d-71c42fb1ebba,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kabupaten-pasaman-barat,Kabupaten Pasaman Barat,1312,cities
+bb4a465a-adea-4642-8a46-e56ab141e64a,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kota-padang,Kota Padang,1371,cities
+d7698914-60a1-4d06-83f5-968bb81870c1,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kota-solok,Kota Solok,1372,cities
+8d61e6e5-7433-484b-a173-6469fbf9da05,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kota-sawah-lunto,Kota Sawah Lunto,1373,cities
+f048b50e-2e48-4018-9e09-cd68a70bbd12,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kota-padang-panjang,Kota Padang Panjang,1374,cities
+2f519853-e349-44cd-9c5b-dff100a9a3f2,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kota-bukittinggi,Kota Bukittinggi,1375,cities
+ced75212-6592-4aa8-bf6c-9f7a6eec186f,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kota-payakumbuh,Kota Payakumbuh,1376,cities
+1174732a-ff3a-471e-bb79-9ad4f3e39d57,40f9e05e-dd5b-49b4-be02-833ee5f224e2,kota-pariaman,Kota Pariaman,1377,cities
+9a66dd38-d48d-42ee-a391-6d324863dc49,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-kuantan-singingi,Kabupaten Kuantan Singingi,1401,cities
+b91399fe-3626-4f29-b7c7-a8a53c63b3ab,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-indragiri-hulu,Kabupaten Indragiri Hulu,1402,cities
+442b94c8-f208-44c4-a5d2-6b029b111587,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-indragiri-hilir,Kabupaten Indragiri Hilir,1403,cities
+cbf83502-98b2-4c6c-b692-50ca6903bab4,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-pelalawan,Kabupaten Pelalawan,1404,cities
+aae0c26a-43af-4c18-9c03-5f0a9d996c24,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-s-i-a-k,Kabupaten S I A K,1405,cities
+195daff9-f93a-4f81-86a3-1a3d7df76eaa,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-kampar,Kabupaten Kampar,1406,cities
+54374ce1-54c4-4f04-a117-b3476a466969,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-rokan-hulu,Kabupaten Rokan Hulu,1407,cities
+80084a86-1273-418b-bc4b-43f962170c24,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-bengkalis,Kabupaten Bengkalis,1408,cities
+44a48a20-017a-471c-a0ae-220cc57bf3b5,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-rokan-hilir,Kabupaten Rokan Hilir,1409,cities
+00c4fe29-bf35-4d49-a9c7-ced9ae9add49,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kabupaten-kepulauan-meranti,Kabupaten Kepulauan Meranti,1410,cities
+b2a06594-dde5-4a26-b515-554ddb55a38c,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kota-pekanbaru,Kota Pekanbaru,1471,cities
+617e13d8-ccba-4e26-8c62-3306cc9c6ed6,98e613d6-6c59-42fc-b60e-88a3799aa6e4,kota-d-u-m-a-i,Kota D U M A I,1473,cities
+5a03046a-fad4-4101-a253-db96c6aa51ab,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-kerinci,Kabupaten Kerinci,1501,cities
+31a91f67-c7f3-4e80-9eb0-9f6beee3ff52,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-merangin,Kabupaten Merangin,1502,cities
+12586bba-e8f1-414f-b9c9-d74e7307e91a,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-sarolangun,Kabupaten Sarolangun,1503,cities
+8321e0ba-49aa-41e5-8b66-cd323bfd7ee7,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-batang-hari,Kabupaten Batang Hari,1504,cities
+21cef21c-a61e-423b-95e6-c18277f2f028,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-muaro-jambi,Kabupaten Muaro Jambi,1505,cities
+77250e1a-da13-46c4-ae10-2b5e37f25433,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-tanjung-jabung-timur,Kabupaten Tanjung Jabung Timur,1506,cities
+95c76c6c-c711-4757-a818-b04b93b47825,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-tanjung-jabung-barat,Kabupaten Tanjung Jabung Barat,1507,cities
+3395aee2-bffa-4a9a-85e6-d39e1f9ff95d,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-tebo,Kabupaten Tebo,1508,cities
+e8c39881-48ba-40d6-8d31-ba2c49c1f838,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kabupaten-bungo,Kabupaten Bungo,1509,cities
+46194994-0c49-42ba-b396-a6d18521aefb,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kota-jambi,Kota Jambi,1571,cities
+7fa7593f-7a6d-489a-830c-2520e6fa86f9,83fc9a14-2179-4f49-affb-bffe3bdea8cc,kota-sungai-penuh,Kota Sungai Penuh,1572,cities
+6401d580-d947-4eae-b3f3-b881c7456c59,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-ogan-komering-ulu,Kabupaten Ogan Komering Ulu,1601,cities
+062ecae4-b86a-446e-bb05-bfda744b1cf1,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-ogan-komering-ilir,Kabupaten Ogan Komering Ilir,1602,cities
+aefff016-f3af-46c5-83b7-8ef6a0bdce2c,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-muara-enim,Kabupaten Muara Enim,1603,cities
+4aa6cf95-a90e-4bd9-84ac-a4d322287774,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-lahat,Kabupaten Lahat,1604,cities
+c33412bc-1940-47f8-bc68-60e309f06fbd,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-musi-rawas,Kabupaten Musi Rawas,1605,cities
+7b0572b7-0950-43b1-a97e-fa8a876cb05c,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-musi-banyuasin,Kabupaten Musi Banyuasin,1606,cities
+23b116f6-479b-49fe-a18f-ae4dca0b58c7,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-banyu-asin,Kabupaten Banyu Asin,1607,cities
+12bc1bfe-4d98-4579-bebd-208344331588,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-ogan-komering-ulu-selatan,Kabupaten Ogan Komering Ulu Selatan,1608,cities
+3a9a2ad7-ee3a-4aba-a9df-3addcd327061,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-ogan-komering-ulu-timur,Kabupaten Ogan Komering Ulu Timur,1609,cities
+5b711e92-cbbc-45e8-badc-f3bc1910de07,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-ogan-ilir,Kabupaten Ogan Ilir,1610,cities
+6eb3bae8-314f-4917-ba33-11fc69b57f62,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-empat-lawang,Kabupaten Empat Lawang,1611,cities
+bd4b2530-62ee-4e0a-9cdd-82010ada2891,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-penukal-abab-lematang-ilir,Kabupaten Penukal Abab Lematang Ilir,1612,cities
+008de50b-58ac-4662-ab54-f5277e68d558,fb8f2f0f-c97b-4261-8301-92b02fae8539,kabupaten-musi-rawas-utara,Kabupaten Musi Rawas Utara,1613,cities
+4ec9f8e1-d4fc-41e3-8dfe-49ce33605213,fb8f2f0f-c97b-4261-8301-92b02fae8539,kota-palembang,Kota Palembang,1671,cities
+c3728bbf-f762-4ffe-976f-d616dd4bf3c7,fb8f2f0f-c97b-4261-8301-92b02fae8539,kota-prabumulih,Kota Prabumulih,1672,cities
+c2955591-f6dd-4120-b199-901702a795ff,fb8f2f0f-c97b-4261-8301-92b02fae8539,kota-pagar-alam,Kota Pagar Alam,1673,cities
+a8d3b7c1-a79a-4062-8cee-51d1e36c06c0,fb8f2f0f-c97b-4261-8301-92b02fae8539,kota-lubuklinggau,Kota Lubuklinggau,1674,cities
+15cb1fd9-9f4b-4fba-ae36-c3a8c5388536,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-bengkulu-selatan,Kabupaten Bengkulu Selatan,1701,cities
+240b6388-192b-4749-8389-e32df00bff9c,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-rejang-lebong,Kabupaten Rejang Lebong,1702,cities
+7959b985-524d-451e-9359-20d091c249eb,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-bengkulu-utara,Kabupaten Bengkulu Utara,1703,cities
+149fb539-c67e-4f5c-ab34-cedc116672c7,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-kaur,Kabupaten Kaur,1704,cities
+5265397d-a2ca-4a87-8a22-bb6359480ae5,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-seluma,Kabupaten Seluma,1705,cities
+2e9206b1-8814-43ae-8899-3bd2d22fd418,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-mukomuko,Kabupaten Mukomuko,1706,cities
+e3bb0c7d-e030-474a-85f2-d7c6296ee3d0,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-lebong,Kabupaten Lebong,1707,cities
+ac8fac98-1612-44cd-bac5-ae381f6f209d,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-kepahiang,Kabupaten Kepahiang,1708,cities
+5279d7a7-e01c-44fe-beec-c5b7403a7257,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kabupaten-bengkulu-tengah,Kabupaten Bengkulu Tengah,1709,cities
+0b11bc42-5fbf-4d0d-a357-fe097df73c37,970b8c9a-e1f6-4cb2-9a8d-a4d0439b3b99,kota-bengkulu,Kota Bengkulu,1771,cities
+2dc34721-705e-4b33-994a-85b34e41f340,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-lampung-barat,Kabupaten Lampung Barat,1801,cities
+dbe99659-ef4b-42d1-ab7b-7c8be17fd084,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-tanggamus,Kabupaten Tanggamus,1802,cities
+531db12d-b8a0-4229-9956-54d88fdc524e,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-lampung-selatan,Kabupaten Lampung Selatan,1803,cities
+ccd92431-34c2-4cb9-8a14-1fcb501efd71,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-lampung-timur,Kabupaten Lampung Timur,1804,cities
+5ec869d2-d982-4f9a-b8e2-ecff055eabb6,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-lampung-tengah,Kabupaten Lampung Tengah,1805,cities
+98760e3a-96b7-41eb-8764-bb4a279d041d,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-lampung-utara,Kabupaten Lampung Utara,1806,cities
+c3d95b01-817f-486c-b30f-b78d652a5e31,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-way-kanan,Kabupaten Way Kanan,1807,cities
+f0a615de-c49b-4917-b553-53fb65cd79c3,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-tulangbawang,Kabupaten Tulangbawang,1808,cities
+7a595bd6-8cea-4c8b-9ff2-adb0cda1a7c2,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-pesawaran,Kabupaten Pesawaran,1809,cities
+3df517db-cee5-4c99-a43e-e784abb28990,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-pringsewu,Kabupaten Pringsewu,1810,cities
+c427a8f8-fcfd-4dca-b687-12088edfffe7,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-mesuji,Kabupaten Mesuji,1811,cities
+c9068eda-02d5-4147-a9b7-c9639baa09b1,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-tulang-bawang-barat,Kabupaten Tulang Bawang Barat,1812,cities
+f89e7d36-a7c5-49b4-8b4a-41dcb7fb326f,770dfaef-40ad-4090-ba22-8187bf607d12,kabupaten-pesisir-barat,Kabupaten Pesisir Barat,1813,cities
+8a0b669c-795b-4b16-8eee-a62db6026744,770dfaef-40ad-4090-ba22-8187bf607d12,kota-bandar-lampung,Kota Bandar Lampung,1871,cities
+7cb5cbb8-34e6-42cd-bb29-605fd30cc18d,770dfaef-40ad-4090-ba22-8187bf607d12,kota-metro,Kota Metro,1872,cities
+39f1bf8d-0248-4b54-acd2-a2bb34a11718,9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,kabupaten-bangka,Kabupaten Bangka,1901,cities
+bc62c8a8-b1e4-40d0-bc14-6f6a5f82d230,9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,kabupaten-belitung,Kabupaten Belitung,1902,cities
+65a056d7-e34e-4ff2-aab2-a0a8c9ef58f7,9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,kabupaten-bangka-barat,Kabupaten Bangka Barat,1903,cities
+60ce8b7c-97a1-48fc-94d5-5659ea864435,9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,kabupaten-bangka-tengah,Kabupaten Bangka Tengah,1904,cities
+71e78adc-5d69-41d2-b55b-4d36105159a0,9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,kabupaten-bangka-selatan,Kabupaten Bangka Selatan,1905,cities
+95516ec0-c44e-4a1f-8dbe-eae1cdc8f9c6,9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,kabupaten-belitung-timur,Kabupaten Belitung Timur,1906,cities
+53c08805-8d68-4395-8300-fd1d39e0368a,9b6b3ef2-ccc1-4f1b-8e82-f44fd5fc495a,kota-pangkal-pinang,Kota Pangkal Pinang,1971,cities
+0f8fca2e-7c20-4642-94f6-946fbd86eef9,5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,kabupaten-karimun,Kabupaten Karimun,2101,cities
+99a74b4e-978d-4629-8998-c2b6585bbb1d,5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,kabupaten-bintan,Kabupaten Bintan,2102,cities
+dd919968-429e-47ce-85ec-3e834dcf87c7,5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,kabupaten-natuna,Kabupaten Natuna,2103,cities
+d23686a1-1691-4bbd-8b5e-846f18754304,5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,kabupaten-lingga,Kabupaten Lingga,2104,cities
+36c39474-bb50-4840-b4e4-f30b56f6486a,5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,kabupaten-kepulauan-anambas,Kabupaten Kepulauan Anambas,2105,cities
+d3b17827-1344-4eda-9bbd-84a5cfc83b49,5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,kota-b-a-t-a-m,Kota B A T A M,2171,cities
+0c4774a7-fc7b-4488-81ce-60ec8a33391d,5c33bc63-e8f7-45c0-a020-f361dd3e9ad5,kota-tanjung-pinang,Kota Tanjung Pinang,2172,cities
+afbb82a5-21a5-4291-bee6-7819031a148c,f2d8d468-2f14-4373-9b6a-fc247dd7dceb,kabupaten-kepulauan-seribu,Kabupaten Kepulauan Seribu,3101,cities
+a677e38d-f6cd-4ae9-99ef-0fe66f51b563,f2d8d468-2f14-4373-9b6a-fc247dd7dceb,kota-jakarta-selatan,Kota Jakarta Selatan,3171,cities
+f0d332fd-6310-4661-8b45-1fe4feac523c,f2d8d468-2f14-4373-9b6a-fc247dd7dceb,kota-jakarta-timur,Kota Jakarta Timur,3172,cities
+f74d51b9-6005-49bc-bbea-51a495b8f410,f2d8d468-2f14-4373-9b6a-fc247dd7dceb,kota-jakarta-pusat,Kota Jakarta Pusat,3173,cities
+137c6c66-a017-46bd-8f55-5a6e312e443a,f2d8d468-2f14-4373-9b6a-fc247dd7dceb,kota-jakarta-barat,Kota Jakarta Barat,3174,cities
+51bb492d-ce7c-480f-86c8-0657ccddd210,f2d8d468-2f14-4373-9b6a-fc247dd7dceb,kota-jakarta-utara,Kota Jakarta Utara,3175,cities
+5c98d353-57b8-4b50-a6df-b004ced128ca,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-bogor,Kabupaten Bogor,3201,cities
+ad7d9bd1-076d-4bad-bfb9-f20920ad1d39,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-sukabumi,Kabupaten Sukabumi,3202,cities
+da8c65c1-48fe-4ef5-9fac-929e4ef40db6,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-cianjur,Kabupaten Cianjur,3203,cities
+a6db1de7-c1f5-4080-99bb-bf949aaca68e,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-bandung,Kabupaten Bandung,3204,cities
+3c045439-5543-4b52-81e6-5a15bfe8ad6e,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-garut,Kabupaten Garut,3205,cities
+5ccc100e-0e8f-4dd3-8a2f-9007cf2395d4,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-tasikmalaya,Kabupaten Tasikmalaya,3206,cities
+db091cd5-4635-4451-8f92-6765a328830d,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-ciamis,Kabupaten Ciamis,3207,cities
+6c5ae1f9-ba64-4d1a-8e7c-7bf6448ac34c,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-kuningan,Kabupaten Kuningan,3208,cities
+de475251-c88a-49ae-861a-a096cd9313f1,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-cirebon,Kabupaten Cirebon,3209,cities
+ea07d156-72f9-4b6f-a06d-862e7d5290e1,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-majalengka,Kabupaten Majalengka,3210,cities
+b03b958f-7b25-4f76-b0f8-20d9d76cb6db,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-sumedang,Kabupaten Sumedang,3211,cities
+d0ac6faf-ea68-4573-b839-11fccccd8657,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-indramayu,Kabupaten Indramayu,3212,cities
+05111497-6e73-4909-b092-3e4e469d24a6,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-subang,Kabupaten Subang,3213,cities
+91cb7d2d-79eb-497b-afc1-7ac8fd5a41c2,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-purwakarta,Kabupaten Purwakarta,3214,cities
+a0776c1e-4c64-4f5c-b3c4-f5c20bebed32,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-karawang,Kabupaten Karawang,3215,cities
+97dc99a9-6a61-4b4b-994c-19ac328e6964,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-bekasi,Kabupaten Bekasi,3216,cities
+c749417d-5ed0-4c1b-bc60-20c2f54f3944,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-bandung-barat,Kabupaten Bandung Barat,3217,cities
+0305c819-00b0-458b-9b33-ae7e18c6198a,a166cc1c-02f9-41e1-9444-2018791b9a26,kabupaten-pangandaran,Kabupaten Pangandaran,3218,cities
+12113f25-8eea-4e0f-93ad-232adb2f66b1,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-bogor,Kota Bogor,3271,cities
+9d043cf5-a2a1-4a4f-9d4d-ca843bebda10,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-sukabumi,Kota Sukabumi,3272,cities
+a0de6e91-0c6b-49c9-8828-a44f34310861,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-bandung,Kota Bandung,3273,cities
+cf18f40d-c0a7-49d0-9189-7ff6150f2da5,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-cirebon,Kota Cirebon,3274,cities
+e6ba3cc2-950d-41aa-8da7-f7b9e1e0b1e6,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-bekasi,Kota Bekasi,3275,cities
+cf4f96c2-5641-4415-aa70-dc20c90a1cbd,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-depok,Kota Depok,3276,cities
+497260b8-dfc1-46f8-8bcb-f6a65af38b54,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-cimahi,Kota Cimahi,3277,cities
+42d2defa-d545-4819-9dfc-4b68ddbb7451,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-tasikmalaya,Kota Tasikmalaya,3278,cities
+f69b423b-64e5-4f80-be1a-e74ce6203520,a166cc1c-02f9-41e1-9444-2018791b9a26,kota-banjar,Kota Banjar,3279,cities
+6637cd83-65cf-484e-9b69-0d6a740e5438,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-cilacap,Kabupaten Cilacap,3301,cities
+3c533825-3230-48a0-973b-f327f705a78c,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-banyumas,Kabupaten Banyumas,3302,cities
+61073d1c-a6d4-4318-85fd-62adaa9a3625,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-purbalingga,Kabupaten Purbalingga,3303,cities
+d406d842-99f8-4034-aa1c-263978dae219,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-banjarnegara,Kabupaten Banjarnegara,3304,cities
+152fd58e-5995-4e2c-abda-8f88519bbb8c,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-kebumen,Kabupaten Kebumen,3305,cities
+181426c2-172c-48b2-ab08-c14a96747d3e,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-purworejo,Kabupaten Purworejo,3306,cities
+4980b448-da05-40af-bfca-ffa52448a472,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-wonosobo,Kabupaten Wonosobo,3307,cities
+b810f17e-5103-40cc-9832-2c5a27bec666,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-magelang,Kabupaten Magelang,3308,cities
+14b15c27-8922-45dd-8e48-41103f7b230d,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-boyolali,Kabupaten Boyolali,3309,cities
+610f0f94-f6a6-4360-a994-fde517af6e8b,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-klaten,Kabupaten Klaten,3310,cities
+0d24b8ab-ad7b-4a24-bc3b-8fd23b34c07f,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-sukoharjo,Kabupaten Sukoharjo,3311,cities
+5eef86c3-8901-4f4d-aec7-792eb3433a5e,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-wonogiri,Kabupaten Wonogiri,3312,cities
+d7709eee-7aea-4d7c-bd90-b3f540cc20e2,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-karanganyar,Kabupaten Karanganyar,3313,cities
+c46805f2-b891-4a1e-b5b5-274d7d74be9d,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-sragen,Kabupaten Sragen,3314,cities
+68dc0e49-867f-44fc-8dc8-259dc2e5a67c,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-grobogan,Kabupaten Grobogan,3315,cities
+f6809509-9b1b-4543-978e-bc2396b09260,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-blora,Kabupaten Blora,3316,cities
+9e50cd28-4bde-4498-b086-2e64b3667762,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-rembang,Kabupaten Rembang,3317,cities
+3157d7ba-7951-4a81-b906-13a299ed703e,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-pati,Kabupaten Pati,3318,cities
+6170253b-b9ea-4fa7-9e56-7856c061628d,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-kudus,Kabupaten Kudus,3319,cities
+19c1f9ba-6e89-485c-b9c7-315b866cd80a,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-jepara,Kabupaten Jepara,3320,cities
+b8630828-f9e9-4f69-8545-06268de475f9,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-demak,Kabupaten Demak,3321,cities
+481b1c66-0c6f-44f7-ba03-61d16a5fa74e,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-semarang,Kabupaten Semarang,3322,cities
+82c254ab-0e87-4d8f-ab3e-188b9d6d53ad,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-temanggung,Kabupaten Temanggung,3323,cities
+2c723101-7c0b-46d7-88ef-cf01ea2e377a,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-kendal,Kabupaten Kendal,3324,cities
+6bd2ca26-8820-490b-be18-03077af0fe98,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-batang,Kabupaten Batang,3325,cities
+71c9592e-495d-4afd-9ba4-ece833c97498,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-pekalongan,Kabupaten Pekalongan,3326,cities
+f2c2a9ed-e1aa-4ee7-bf59-82a9cc77a848,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-pemalang,Kabupaten Pemalang,3327,cities
+65a0363c-90ff-41c9-a643-06d02d2ac7eb,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-tegal,Kabupaten Tegal,3328,cities
+0d4e9635-64e2-4ddd-b180-247e7a321789,e59cabe4-88c0-463a-91cf-1da33cd04391,kabupaten-brebes,Kabupaten Brebes,3329,cities
+b738aa14-0bd7-4af5-9ee1-ad8ffbde3d8d,e59cabe4-88c0-463a-91cf-1da33cd04391,kota-magelang,Kota Magelang,3371,cities
+e3e1f372-8f78-4549-a3dc-5402e55faaa1,e59cabe4-88c0-463a-91cf-1da33cd04391,kota-surakarta,Kota Surakarta,3372,cities
+a357dcca-cb17-4c3e-841c-0e6b32adad99,e59cabe4-88c0-463a-91cf-1da33cd04391,kota-salatiga,Kota Salatiga,3373,cities
+b1ee1419-a4d7-406b-a02e-a2c42cd90252,e59cabe4-88c0-463a-91cf-1da33cd04391,kota-semarang,Kota Semarang,3374,cities
+811c743b-4570-4aac-8289-a6924fcf2b13,e59cabe4-88c0-463a-91cf-1da33cd04391,kota-pekalongan,Kota Pekalongan,3375,cities
+5a60c76e-0cbf-47d1-ac65-9212aea1dd3c,e59cabe4-88c0-463a-91cf-1da33cd04391,kota-tegal,Kota Tegal,3376,cities
+40ef5872-8df0-4937-9dd3-904837f5efbf,3c0256a1-d673-4118-aea6-7462d931a96b,kabupaten-kulon-progo,Kabupaten Kulon Progo,3401,cities
+ed9aa7c4-3ec6-4eeb-8f38-311e8f2d1b9f,3c0256a1-d673-4118-aea6-7462d931a96b,kabupaten-bantul,Kabupaten Bantul,3402,cities
+59274d45-932c-47d9-8442-12bb3e4559f1,3c0256a1-d673-4118-aea6-7462d931a96b,kabupaten-gunung-kidul,Kabupaten Gunung Kidul,3403,cities
+ac50679e-5574-400e-b942-75878ac3d478,3c0256a1-d673-4118-aea6-7462d931a96b,kabupaten-sleman,Kabupaten Sleman,3404,cities
+cd6b0d0f-dd42-4aef-a5d0-4b1e23fdf336,3c0256a1-d673-4118-aea6-7462d931a96b,kota-yogyakarta,Kota Yogyakarta,3471,cities
+85deafb7-e610-4c4c-b91a-c5c63fd4c9fa,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-pacitan,Kabupaten Pacitan,3501,cities
+e9aa1774-b6cd-4078-9bb3-93809d1b6231,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-ponorogo,Kabupaten Ponorogo,3502,cities
+48da6237-c5bc-4bc6-aa25-153070846c5a,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-trenggalek,Kabupaten Trenggalek,3503,cities
+6966bf0b-0587-450a-ab86-223c6ef3078f,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-tulungagung,Kabupaten Tulungagung,3504,cities
+2c3cfa5f-c2ea-44c4-af8d-619b9f78ecf8,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-blitar,Kabupaten Blitar,3505,cities
+b61de5a7-76d0-42a2-9c15-071e639d2ae5,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-kediri,Kabupaten Kediri,3506,cities
+2289c194-48af-4eae-87a2-90ca51929147,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-malang,Kabupaten Malang,3507,cities
+7927ef68-6b80-4db5-a2cd-430a1c716d22,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-lumajang,Kabupaten Lumajang,3508,cities
+e65acd11-2e85-4946-9784-aff00bb41520,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-jember,Kabupaten Jember,3509,cities
+5ff9fd38-e1c9-48ab-8374-075aa57c69b4,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-banyuwangi,Kabupaten Banyuwangi,3510,cities
+c5d70c26-6bc5-43b9-8189-5f8abad05af5,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-bondowoso,Kabupaten Bondowoso,3511,cities
+a0245ffa-897e-426a-bf0d-6d7286ac59d7,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-situbondo,Kabupaten Situbondo,3512,cities
+40928797-62b1-44f8-bded-f5171c8cd4a0,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-probolinggo,Kabupaten Probolinggo,3513,cities
+2f65584a-2e45-4574-a61b-5a6ab4be3e3c,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-pasuruan,Kabupaten Pasuruan,3514,cities
+495f1a26-79bc-467d-8dd2-017a77f8f7a0,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-sidoarjo,Kabupaten Sidoarjo,3515,cities
+bfe535a4-e561-4665-bc62-762011a72012,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-mojokerto,Kabupaten Mojokerto,3516,cities
+72baef78-74f3-4ca9-b555-97d1a4773c93,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-jombang,Kabupaten Jombang,3517,cities
+45dec389-e995-4714-a0a4-acdcbec0c051,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-nganjuk,Kabupaten Nganjuk,3518,cities
+28a429bd-b6f4-4787-8405-95dde0344d6b,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-madiun,Kabupaten Madiun,3519,cities
+06a3edb1-46e7-4536-91f8-7ad536c0128d,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-magetan,Kabupaten Magetan,3520,cities
+4e2e2605-3d70-482f-8f2a-e5815091f990,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-ngawi,Kabupaten Ngawi,3521,cities
+22dda84f-3bc5-48fb-94bd-77e34722d770,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-bojonegoro,Kabupaten Bojonegoro,3522,cities
+25d09395-8fa3-4f3e-b7f9-6c520f4f373c,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-tuban,Kabupaten Tuban,3523,cities
+b5d20b6c-ad36-4e56-b3ed-6fa3ee1ff793,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-lamongan,Kabupaten Lamongan,3524,cities
+10d2eabc-5e7d-4b6f-a27c-510ecea80203,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-gresik,Kabupaten Gresik,3525,cities
+6d9ef4f4-f1ba-470b-aa1a-9172005adea7,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-bangkalan,Kabupaten Bangkalan,3526,cities
+ec7c3ee1-2a32-4ac0-a56a-a820b86b6c25,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-sampang,Kabupaten Sampang,3527,cities
+9a9cb522-d694-4104-9bbe-cea20c6e7c81,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-pamekasan,Kabupaten Pamekasan,3528,cities
+15885aaa-858d-456a-80c3-34dd9ed0759a,59ac3659-446c-485b-9048-ee0906658c2e,kabupaten-sumenep,Kabupaten Sumenep,3529,cities
+1882e409-a1a0-4e19-adb2-dbc5805a17fe,59ac3659-446c-485b-9048-ee0906658c2e,kota-kediri,Kota Kediri,3571,cities
+ea8edfdd-93f4-4719-8f91-1f18d6b98f0a,59ac3659-446c-485b-9048-ee0906658c2e,kota-blitar,Kota Blitar,3572,cities
+26561a25-baf1-4a65-a063-5dbcaa562a0a,59ac3659-446c-485b-9048-ee0906658c2e,kota-malang,Kota Malang,3573,cities
+1f53e40b-b3e1-4516-8e2c-e999e055ef62,59ac3659-446c-485b-9048-ee0906658c2e,kota-probolinggo,Kota Probolinggo,3574,cities
+88bbbddd-2d78-475e-8406-6320975dd35e,59ac3659-446c-485b-9048-ee0906658c2e,kota-pasuruan,Kota Pasuruan,3575,cities
+771dbe61-b1e3-443c-a5f9-2c7cae59de28,59ac3659-446c-485b-9048-ee0906658c2e,kota-mojokerto,Kota Mojokerto,3576,cities
+a5e51a87-9755-42e0-9bdf-c1bbdca7a68e,59ac3659-446c-485b-9048-ee0906658c2e,kota-madiun,Kota Madiun,3577,cities
+45816cac-ff3d-460d-a347-ac23d37f1708,59ac3659-446c-485b-9048-ee0906658c2e,kota-surabaya,Kota Surabaya,3578,cities
+7c3b4f0f-c7d5-4dd4-99e0-2b8d140778d4,59ac3659-446c-485b-9048-ee0906658c2e,kota-batu,Kota Batu,3579,cities
+add3a4d6-2eea-4c36-be52-3bb1acb54f8e,e001552f-5cf0-4258-8ebd-82afacf33b01,kabupaten-pandeglang,Kabupaten Pandeglang,3601,cities
+8e85f525-fe27-4232-a99c-c6722940874a,e001552f-5cf0-4258-8ebd-82afacf33b01,kabupaten-lebak,Kabupaten Lebak,3602,cities
+71dce495-e991-4043-b06f-a7402150669e,e001552f-5cf0-4258-8ebd-82afacf33b01,kabupaten-tangerang,Kabupaten Tangerang,3603,cities
+85fe06d7-f7fd-4d33-a308-93d933dc839b,e001552f-5cf0-4258-8ebd-82afacf33b01,kabupaten-serang,Kabupaten Serang,3604,cities
+b32ae43b-64db-43dc-bacd-fc0cea928522,e001552f-5cf0-4258-8ebd-82afacf33b01,kota-tangerang,Kota Tangerang,3671,cities
+fad016ed-3e5f-40b6-9050-6c2ea445c5ce,e001552f-5cf0-4258-8ebd-82afacf33b01,kota-cilegon,Kota Cilegon,3672,cities
+e75e570c-ebce-44b4-9831-1f740e07ec71,e001552f-5cf0-4258-8ebd-82afacf33b01,kota-serang,Kota Serang,3673,cities
+76d2a91e-b5f2-4351-b8e9-16bf3e6173a2,e001552f-5cf0-4258-8ebd-82afacf33b01,kota-tangerang-selatan,Kota Tangerang Selatan,3674,cities
+53d9fcb4-4b97-45bc-af46-72e39abcfdd8,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-jembrana,Kabupaten Jembrana,5101,cities
+d53d58b1-3207-4694-bde1-40e2df19999e,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-tabanan,Kabupaten Tabanan,5102,cities
+cf4d5e89-1f2b-4bc8-9c2d-fb5825e2b8bf,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-badung,Kabupaten Badung,5103,cities
+b5119edc-aea1-4a2c-845b-32647b81a8ab,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-gianyar,Kabupaten Gianyar,5104,cities
+cf13aa47-8f0d-46f9-ba17-af5312ccbdec,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-klungkung,Kabupaten Klungkung,5105,cities
+d341cf9c-2dbd-41f8-b7ad-d84fbccec9d9,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-bangli,Kabupaten Bangli,5106,cities
+0264d060-e2b4-4544-818b-2aef2f494ef8,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-karang-asem,Kabupaten Karang Asem,5107,cities
+6552d705-5890-49e9-97a7-e0d70829677c,184bbba6-f509-4d33-a41f-c687221b2c99,kabupaten-buleleng,Kabupaten Buleleng,5108,cities
+1ee7fdb5-09b6-4b03-84ed-ad6370495e88,184bbba6-f509-4d33-a41f-c687221b2c99,kota-denpasar,Kota Denpasar,5171,cities
+b5839ceb-810e-4423-b35d-324d8fc9b78b,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-lombok-barat,Kabupaten Lombok Barat,5201,cities
+414a1923-e87b-44d2-b6fe-43a35b829e05,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-lombok-tengah,Kabupaten Lombok Tengah,5202,cities
+d1f64e7b-3a8a-4a4b-89c5-33bb0913a51a,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-lombok-timur,Kabupaten Lombok Timur,5203,cities
+28e84de8-9f97-4db5-8fb6-d32049ab1c34,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-sumbawa,Kabupaten Sumbawa,5204,cities
+d2b69ed2-0d63-4300-92f7-fb07816c54c8,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-dompu,Kabupaten Dompu,5205,cities
+7ac2b457-3fbd-4b18-b0f7-cc4bebec01b3,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-bima,Kabupaten Bima,5206,cities
+80b2418b-b831-4a7a-bcb7-281a0c3d84b7,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-sumbawa-barat,Kabupaten Sumbawa Barat,5207,cities
+8bfd75ce-4c3d-484e-b883-5c0351e7d874,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kabupaten-lombok-utara,Kabupaten Lombok Utara,5208,cities
+97f91693-3372-4c2a-ba2b-9fd99fe86b05,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kota-mataram,Kota Mataram,5271,cities
+7152040a-5623-48dc-bc79-d9aa11404ecd,f1a79e00-cd6f-4ec0-90cd-243cf461ffce,kota-bima,Kota Bima,5272,cities
+25f848cf-2782-42e0-8d5a-b633a1ca74c4,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-sumba-barat,Kabupaten Sumba Barat,5301,cities
+39130623-f530-4dbc-83b8-c790797fe6cb,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-sumba-timur,Kabupaten Sumba Timur,5302,cities
+31816c7f-07ad-4e71-8455-0493ee46707f,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-kupang,Kabupaten Kupang,5303,cities
+a8ecd5dd-d5b3-4fcf-8356-e38fbb73532f,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-timor-tengah-selatan,Kabupaten Timor Tengah Selatan,5304,cities
+5c08ac25-4662-4052-af0b-9d775e5bfc69,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-timor-tengah-utara,Kabupaten Timor Tengah Utara,5305,cities
+0c748991-fc4a-46aa-a7c1-83700a4e85d7,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-belu,Kabupaten Belu,5306,cities
+604151c5-f064-4043-93dc-ec9976275cb6,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-alor,Kabupaten Alor,5307,cities
+28d653f3-9a5a-4a34-9d9d-f01982ab6b51,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-lembata,Kabupaten Lembata,5308,cities
+be36eac1-0d41-4236-aa5e-eb092bf4cfdc,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-flores-timur,Kabupaten Flores Timur,5309,cities
+b0755b8a-f31d-4c9d-872f-c409eb86f1eb,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-sikka,Kabupaten Sikka,5310,cities
+b23d1317-d60e-4deb-901b-c6d1d2b0912b,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-ende,Kabupaten Ende,5311,cities
+477c441d-9d94-4fa3-abfd-189779ab6d00,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-ngada,Kabupaten Ngada,5312,cities
+50dad3b6-755d-47cd-8d6b-be857d93d5d4,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-manggarai,Kabupaten Manggarai,5313,cities
+28d46591-e63a-4237-b818-57ba80e02c08,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-rote-ndao,Kabupaten Rote Ndao,5314,cities
+49774a33-530a-4c54-b115-7bef87cbe94a,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-manggarai-barat,Kabupaten Manggarai Barat,5315,cities
+94d96651-384e-491d-ae18-1c1412220f13,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-sumba-tengah,Kabupaten Sumba Tengah,5316,cities
+faf91cae-8fea-4ad4-819b-f8e4a83c075d,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-sumba-barat-daya,Kabupaten Sumba Barat Daya,5317,cities
+177d8baa-436c-41d2-bd61-530c6d1c819d,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-nagekeo,Kabupaten Nagekeo,5318,cities
+ebd938b8-641a-4087-b853-c2f20b2f67a4,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-manggarai-timur,Kabupaten Manggarai Timur,5319,cities
+92eb1278-f9e5-4af8-a302-9960aa7e50cc,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-sabu-raijua,Kabupaten Sabu Raijua,5320,cities
+0cfe1897-70bf-4121-9a3b-e2ff21f3ba12,37e83578-66f9-4416-9b04-70e167e29153,kabupaten-malaka,Kabupaten Malaka,5321,cities
+9f113d45-e78b-4e51-a7a8-90c221603008,37e83578-66f9-4416-9b04-70e167e29153,kota-kupang,Kota Kupang,5371,cities
+782b3478-8370-495a-a512-c8f1677dfd5f,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-sambas,Kabupaten Sambas,6101,cities
+9378f5ae-8867-45c2-9aa5-ca16844c6063,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-bengkayang,Kabupaten Bengkayang,6102,cities
+3dde7ee4-3de4-4f67-b3ae-cc5709990b1c,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-landak,Kabupaten Landak,6103,cities
+f5b0fed7-8878-4312-9096-0a85fa72d755,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-mempawah,Kabupaten Mempawah,6104,cities
+4d6fab77-6a76-4884-8fb1-3265b6488058,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-sanggau,Kabupaten Sanggau,6105,cities
+73552a92-eaad-4761-ad1e-d16f4864da1f,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-ketapang,Kabupaten Ketapang,6106,cities
+e126621c-8564-4e8b-bd89-8fa659e304d1,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-sintang,Kabupaten Sintang,6107,cities
+0fe21ae3-718c-4b53-8772-283d23c0af63,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-kapuas-hulu,Kabupaten Kapuas Hulu,6108,cities
+37f05edc-0c60-4014-a750-390376cb051b,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-sekadau,Kabupaten Sekadau,6109,cities
+2b115763-15c6-4430-80f9-1e57e114681c,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-melawi,Kabupaten Melawi,6110,cities
+01c159d6-8fab-44a0-ac8f-9004d1bd1d81,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-kayong-utara,Kabupaten Kayong Utara,6111,cities
+05c52def-a247-4bdc-8707-8c8c9585edc0,6ac5be24-a9cd-42ed-90f7-247576b4a511,kabupaten-kubu-raya,Kabupaten Kubu Raya,6112,cities
+9cab6714-dde4-435b-9c42-e61c8801f164,6ac5be24-a9cd-42ed-90f7-247576b4a511,kota-pontianak,Kota Pontianak,6171,cities
+5af82dde-208f-468e-92c5-009ff5bf508d,6ac5be24-a9cd-42ed-90f7-247576b4a511,kota-singkawang,Kota Singkawang,6172,cities
+5726f52c-5df6-418a-a544-bb39f303975d,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-kotawaringin-barat,Kabupaten Kotawaringin Barat,6201,cities
+dba174d5-9aae-46dc-8dfd-4f3f3ab1354a,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-kotawaringin-timur,Kabupaten Kotawaringin Timur,6202,cities
+d8b55f60-8f9f-4383-acb4-2449e92d2550,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-kapuas,Kabupaten Kapuas,6203,cities
+243cac78-747c-4c6a-a442-53c1071d7d4c,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-barito-selatan,Kabupaten Barito Selatan,6204,cities
+c4005783-bcdb-4bee-8a33-e01b137d8d0d,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-barito-utara,Kabupaten Barito Utara,6205,cities
+9d0c66b0-3018-4902-bc8f-b9bc1a902a48,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-sukamara,Kabupaten Sukamara,6206,cities
+e658c4c1-9757-4fa1-bbd2-b375af73f0da,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-lamandau,Kabupaten Lamandau,6207,cities
+541f14c6-8e9b-4003-b10e-4df3c1a2af9e,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-seruyan,Kabupaten Seruyan,6208,cities
+ff51ce58-3602-4a8f-8efb-7bb59b90ae5f,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-katingan,Kabupaten Katingan,6209,cities
+e27fbc51-3853-4bd3-a588-653e2ed0f300,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-pulang-pisau,Kabupaten Pulang Pisau,6210,cities
+60a17648-cf7f-42cf-b4ad-e785c8e0297b,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-gunung-mas,Kabupaten Gunung Mas,6211,cities
+2d687fb8-210e-43ab-b463-244a02598665,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-barito-timur,Kabupaten Barito Timur,6212,cities
+52af5017-2d47-4082-9c3f-54f78d4c7ad5,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kabupaten-murung-raya,Kabupaten Murung Raya,6213,cities
+ca95fee1-e30e-44df-80cd-b542d196ba84,03d8cce7-58ba-42ae-b991-b50d9f8dcf9b,kota-palangka-raya,Kota Palangka Raya,6271,cities
+30e82918-9fab-405a-aa7e-685f1663a354,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-tanah-laut,Kabupaten Tanah Laut,6301,cities
+f8c1029e-87be-41c6-9819-8b6c8142be17,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-kota-baru,Kabupaten Kota Baru,6302,cities
+989f3b81-3489-4798-9797-9b0e19d7586d,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-banjar,Kabupaten Banjar,6303,cities
+72c347e9-cb86-4310-8ff8-c2316343055e,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-barito-kuala,Kabupaten Barito Kuala,6304,cities
+38a3b5ae-a155-4f69-83ff-a016dbaef8a1,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-tapin,Kabupaten Tapin,6305,cities
+1cf582ae-143e-43b0-896e-77bc4b0f65b1,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-hulu-sungai-selatan,Kabupaten Hulu Sungai Selatan,6306,cities
+b8c49134-1395-43a4-8ec1-d56a2c2662dc,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-hulu-sungai-tengah,Kabupaten Hulu Sungai Tengah,6307,cities
+bf6e529f-19dc-4b60-9433-a2110252e805,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-hulu-sungai-utara,Kabupaten Hulu Sungai Utara,6308,cities
+a1a9e2a1-7f21-43f1-8770-45b85a093bae,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-tabalong,Kabupaten Tabalong,6309,cities
+2a5a558a-589e-4090-8319-1339ce3dcb11,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-tanah-bumbu,Kabupaten Tanah Bumbu,6310,cities
+b5a6d49d-52f6-4f6d-bcd3-059dce0696cf,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kabupaten-balangan,Kabupaten Balangan,6311,cities
+4cfee6e7-8c40-4965-9043-9854b755766e,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kota-banjarmasin,Kota Banjarmasin,6371,cities
+f1de5a1c-411f-4518-8d3d-4a0963c1b2eb,2c21f9e6-74d9-487b-a90c-4245a1a7c3ba,kota-banjar-baru,Kota Banjar Baru,6372,cities
+63e2f0ff-e854-4ace-800a-1ebac6310d1f,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kabupaten-paser,Kabupaten Paser,6401,cities
+949d518c-d5d7-482a-8366-1a9ff1f34913,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kabupaten-kutai-barat,Kabupaten Kutai Barat,6402,cities
+813e4019-10b9-48d6-8424-e1dae1fd09d4,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kabupaten-kutai-kartanegara,Kabupaten Kutai Kartanegara,6403,cities
+5633e877-1666-460f-8bb2-be833ef0d07e,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kabupaten-kutai-timur,Kabupaten Kutai Timur,6404,cities
+47935862-dc32-4ef5-b93b-6bd87b08606f,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kabupaten-berau,Kabupaten Berau,6405,cities
+30e13e3b-e414-4b34-95f8-6acde7895a3c,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kabupaten-penajam-paser-utara,Kabupaten Penajam Paser Utara,6409,cities
+271b6b18-1bc4-4c5a-b2b0-6a35b54b577f,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kabupaten-mahakam-hulu,Kabupaten Mahakam Hulu,6411,cities
+2b93c149-9bc0-4bf2-b99a-8520d39c0971,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kota-balikpapan,Kota Balikpapan,6471,cities
+c8dc7706-14cc-40c7-8cca-14fd63dc35f2,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kota-samarinda,Kota Samarinda,6472,cities
+cb287e5d-91bb-49f9-ae95-a19245ac326d,b9fefc64-f9b0-4220-ab19-a5c982f38d23,kota-bontang,Kota Bontang,6474,cities
+c5d16b96-2215-459a-bba9-a5fbee632b73,7280f010-0677-4c2e-a63d-f022dec664f4,kabupaten-malinau,Kabupaten Malinau,6501,cities
+03d5e961-124b-412d-8230-e0002fdd05d5,7280f010-0677-4c2e-a63d-f022dec664f4,kabupaten-bulungan,Kabupaten Bulungan,6502,cities
+310ee86e-4d4d-4d77-a4c2-cb4179db642a,7280f010-0677-4c2e-a63d-f022dec664f4,kabupaten-tana-tidung,Kabupaten Tana Tidung,6503,cities
+16b8450a-feda-4b94-816e-3f45497f0dcb,7280f010-0677-4c2e-a63d-f022dec664f4,kabupaten-nunukan,Kabupaten Nunukan,6504,cities
+cd9485f2-93e7-44f9-ad78-beddabfad9a5,7280f010-0677-4c2e-a63d-f022dec664f4,kota-tarakan,Kota Tarakan,6571,cities
+526fed31-af23-4395-9307-28dd36d95ccf,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-bolaang-mongondow,Kabupaten Bolaang Mongondow,7101,cities
+e5c67ede-1cdf-4df3-8c7d-da238d01cfed,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-minahasa,Kabupaten Minahasa,7102,cities
+be1806ad-25d8-46c2-ac1a-4bdb9de642b9,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-kepulauan-sangihe,Kabupaten Kepulauan Sangihe,7103,cities
+a0e510e1-d20a-4838-b7f6-2332142231ff,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-kepulauan-talaud,Kabupaten Kepulauan Talaud,7104,cities
+f8a2bd27-0101-4916-b7ed-09f88eddf9ad,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-minahasa-selatan,Kabupaten Minahasa Selatan,7105,cities
+94483fbf-76c1-4aec-ba86-a224562a5476,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-minahasa-utara,Kabupaten Minahasa Utara,7106,cities
+a2cf3c05-3af6-462c-b43a-2c90c3162a6d,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-bolaang-mongondow-utara,Kabupaten Bolaang Mongondow Utara,7107,cities
+94c8e04a-55fe-4837-8e83-14c7a237e0ae,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-siau-tagulandang-biaro,Kabupaten Siau Tagulandang Biaro,7108,cities
+02a43dc2-b0de-4925-8bcf-6174ae1fdbad,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-minahasa-tenggara,Kabupaten Minahasa Tenggara,7109,cities
+2bab8ee8-3239-41b4-8c06-01df5fa4f821,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-bolaang-mongondow-selatan,Kabupaten Bolaang Mongondow Selatan,7110,cities
+e5993d5a-62ba-4c04-9beb-1f86b07d1853,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kabupaten-bolaang-mongondow-timur,Kabupaten Bolaang Mongondow Timur,7111,cities
+e27d2d17-f212-4114-9beb-3ff48cf8de43,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kota-manado,Kota Manado,7171,cities
+cf26dc57-f0a7-42b8-884c-622814aea520,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kota-bitung,Kota Bitung,7172,cities
+59b45fbc-0965-456b-8814-781ea163a090,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kota-tomohon,Kota Tomohon,7173,cities
+960e2c39-d705-4784-873c-f25c8ef47abb,8e3e1cec-b0ff-476c-be34-10c9e9b04086,kota-kotamobagu,Kota Kotamobagu,7174,cities
+9659fb63-3be9-4750-b69e-49e27e7959ac,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-banggai-kepulauan,Kabupaten Banggai Kepulauan,7201,cities
+ec0dc7d1-38b0-4ce1-bfd7-cfa976f3a6f6,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-banggai,Kabupaten Banggai,7202,cities
+d1d6d4c1-76ba-46dc-ac01-49748b998b6b,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-morowali,Kabupaten Morowali,7203,cities
+2834532b-ad81-4722-8afa-71d3482bc48f,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-poso,Kabupaten Poso,7204,cities
+cc6c1598-59cb-40d4-becf-b9544a6b7c36,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-donggala,Kabupaten Donggala,7205,cities
+a802dfeb-37c9-446c-b11f-8f44d5b2ffd2,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-toli-toli,Kabupaten Toli-toli,7206,cities
+c3ff3dbb-07aa-4e5b-9a8f-73c911d18a47,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-buol,Kabupaten Buol,7207,cities
+b96ec177-934b-4ce6-bfa9-6030b274431e,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-parigi-moutong,Kabupaten Parigi Moutong,7208,cities
+b97ec863-0175-4741-934a-0fdbf8234705,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-tojo-una-una,Kabupaten Tojo Una-una,7209,cities
+35a0f40e-519d-4778-9975-909ee1ccbdfb,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-sigi,Kabupaten Sigi,7210,cities
+03e03e21-beb9-4f34-8759-5fc93e5473cb,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-banggai-laut,Kabupaten Banggai Laut,7211,cities
+b9e2d66f-7d0f-41dc-9c17-7b0ff290354e,a7e342f1-89b1-46cd-a1eb-b877739692fe,kabupaten-morowali-utara,Kabupaten Morowali Utara,7212,cities
+594b8617-d3ab-4f2c-95b3-9582776e939f,a7e342f1-89b1-46cd-a1eb-b877739692fe,kota-palu,Kota Palu,7271,cities
+5257794d-f6c8-40e4-a994-d0f6a524f3f1,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-kepulauan-selayar,Kabupaten Kepulauan Selayar,7301,cities
+e80efeac-08ab-493f-b442-fee1843e37f0,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-bulukumba,Kabupaten Bulukumba,7302,cities
+e2df38dc-fa03-4dad-9603-bbe793ac6bb7,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-bantaeng,Kabupaten Bantaeng,7303,cities
+5dbddfb3-d815-438c-b03e-93d4cdcfe148,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-jeneponto,Kabupaten Jeneponto,7304,cities
+f294a09e-69d3-4486-8ef1-fde66d0139c0,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-takalar,Kabupaten Takalar,7305,cities
+f5142db6-5907-4617-a875-77d65ef998f1,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-gowa,Kabupaten Gowa,7306,cities
+697ddb48-24af-4e74-a107-00bfee692ce3,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-sinjai,Kabupaten Sinjai,7307,cities
+d0744ca2-55db-42ba-8e72-fa4deae49a3d,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-maros,Kabupaten Maros,7308,cities
+2950edbe-9186-44ac-bf6c-79f7f9b0264a,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-pangkajene-dan-kepulauan,Kabupaten Pangkajene Dan Kepulauan,7309,cities
+632f027d-6690-47b8-9068-e78670de518f,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-barru,Kabupaten Barru,7310,cities
+08931c9f-15ec-4bff-b5e4-3e0945514cc6,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-bone,Kabupaten Bone,7311,cities
+23c3f31d-451f-4429-a78d-c75e43154a3d,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-soppeng,Kabupaten Soppeng,7312,cities
+20afb7a1-3510-4912-a49a-85c70f03b857,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-wajo,Kabupaten Wajo,7313,cities
+87082a62-9202-4966-8cb0-b0dc093c0ab7,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-sidenreng-rappang,Kabupaten Sidenreng Rappang,7314,cities
+afab3b33-3f09-4f4d-a686-72a37445e65e,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-pinrang,Kabupaten Pinrang,7315,cities
+79ad27c4-35f3-46a7-8487-3118ddee8f30,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-enrekang,Kabupaten Enrekang,7316,cities
+591376d2-cda4-4138-8a23-a69f97ff394f,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-luwu,Kabupaten Luwu,7317,cities
+b1fa2195-2495-4d3d-9f8b-729d1d9e91fe,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-tana-toraja,Kabupaten Tana Toraja,7318,cities
+dfc0a838-7749-4ecf-9628-7bbf3c7baa59,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-luwu-utara,Kabupaten Luwu Utara,7322,cities
+f1bfaac0-37db-4af3-9196-34cd5478e395,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-luwu-timur,Kabupaten Luwu Timur,7325,cities
+694a86cd-dc11-4420-8249-eb8b08bf7977,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kabupaten-toraja-utara,Kabupaten Toraja Utara,7326,cities
+58894825-bb12-48ae-a0e2-1be833a8a1c6,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kota-makassar,Kota Makassar,7371,cities
+fa57828d-e436-4939-b64a-bba4dff4e05d,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kota-parepare,Kota Parepare,7372,cities
+a1162d3f-4725-4ad4-90c9-c0deccfb3467,7e76b4ac-a5bd-40fd-9135-bcb462b565fa,kota-palopo,Kota Palopo,7373,cities
+60621a5e-0a06-4f5c-8358-dbb22f31b6cd,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-buton,Kabupaten Buton,7401,cities
+a0be0d7c-2a33-41e2-8394-a5249a46250a,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-muna,Kabupaten Muna,7402,cities
+d5e039c8-effb-434d-bf73-32b6aa0b0357,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-konawe,Kabupaten Konawe,7403,cities
+99fe7ee2-f25f-40f2-8067-728c5cf81262,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-kolaka,Kabupaten Kolaka,7404,cities
+24a89c87-9a15-4d4e-b21e-85be602383d2,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-konawe-selatan,Kabupaten Konawe Selatan,7405,cities
+0260220c-2e0d-4e6f-96fe-4d8b25431f61,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-bombana,Kabupaten Bombana,7406,cities
+cd69790e-c6a7-4dad-b728-312938f2ebb6,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-wakatobi,Kabupaten Wakatobi,7407,cities
+121845e9-9536-494d-9521-b482b7c03542,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-kolaka-utara,Kabupaten Kolaka Utara,7408,cities
+3d5bf726-0f9a-4109-b89d-451bab4fc031,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-buton-utara,Kabupaten Buton Utara,7409,cities
+e11ca9f3-c059-4938-86b7-663eca2125f6,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-konawe-utara,Kabupaten Konawe Utara,7410,cities
+adba3624-7190-48db-90dc-995adb0477f5,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-kolaka-timur,Kabupaten Kolaka Timur,7411,cities
+115f40f4-babd-4132-8ed4-cd63396f87d3,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-konawe-kepulauan,Kabupaten Konawe Kepulauan,7412,cities
+74601a69-0aab-4d14-a12d-3c8078372318,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-muna-barat,Kabupaten Muna Barat,7413,cities
+bca5c003-8830-4e36-96ca-13443e24fb63,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-buton-tengah,Kabupaten Buton Tengah,7414,cities
+ab508867-8b1d-4eb9-8bae-89e352c244a0,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kabupaten-buton-selatan,Kabupaten Buton Selatan,7415,cities
+8c4e7f63-2242-4fdb-992b-fd36c33e2396,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kota-kendari,Kota Kendari,7471,cities
+1d3245fd-b872-46c1-8680-23ed62e4fc8a,a31f1ec1-c3e7-4ec0-8d52-29ae42100cca,kota-baubau,Kota Baubau,7472,cities
+379e8c37-bbe9-429e-949f-2378eff956e6,05fe0dec-447c-477f-aa2b-5497cd0900fd,kabupaten-boalemo,Kabupaten Boalemo,7501,cities
+4c04650b-4b1b-4be5-bd9a-99264036b130,05fe0dec-447c-477f-aa2b-5497cd0900fd,kabupaten-gorontalo,Kabupaten Gorontalo,7502,cities
+71352ac9-cf13-4372-9f95-35819eb33101,05fe0dec-447c-477f-aa2b-5497cd0900fd,kabupaten-pohuwato,Kabupaten Pohuwato,7503,cities
+8f7732b7-44c8-44a4-ac25-150489fc4c9a,05fe0dec-447c-477f-aa2b-5497cd0900fd,kabupaten-bone-bolango,Kabupaten Bone Bolango,7504,cities
+826a7a0a-d803-46cf-b1b6-0f7532039778,05fe0dec-447c-477f-aa2b-5497cd0900fd,kabupaten-gorontalo-utara,Kabupaten Gorontalo Utara,7505,cities
+0a47ffcb-d9cf-4d52-bc1c-8c1bb10fd393,05fe0dec-447c-477f-aa2b-5497cd0900fd,kota-gorontalo,Kota Gorontalo,7571,cities
+ea674619-6769-40b8-90a5-f25191057936,705f952a-5833-4227-b61d-52c847872189,kabupaten-majene,Kabupaten Majene,7601,cities
+2371a537-02d6-45f4-bd6e-88d2d2819059,705f952a-5833-4227-b61d-52c847872189,kabupaten-polewali-mandar,Kabupaten Polewali Mandar,7602,cities
+97a02583-c88a-4d6c-aa71-7691328e9abf,705f952a-5833-4227-b61d-52c847872189,kabupaten-mamasa,Kabupaten Mamasa,7603,cities
+db9c75d4-90f3-41ff-a5ba-9c81fbc61baa,705f952a-5833-4227-b61d-52c847872189,kabupaten-mamuju,Kabupaten Mamuju,7604,cities
+2adb9fa9-acaf-4705-9c08-a9ab9218c8f2,705f952a-5833-4227-b61d-52c847872189,kabupaten-mamuju-utara,Kabupaten Mamuju Utara,7605,cities
+c0eaa619-72b8-4b5e-9b7e-4446bc23a074,705f952a-5833-4227-b61d-52c847872189,kabupaten-mamuju-tengah,Kabupaten Mamuju Tengah,7606,cities
+65bc081f-9acb-420e-a701-fec9d58cb04b,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-maluku-tenggara-barat,Kabupaten Maluku Tenggara Barat,8101,cities
+eadb94f6-f4c0-49c0-898d-b9dd97c888dd,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-maluku-tenggara,Kabupaten Maluku Tenggara,8102,cities
+e6c36f82-dacb-43af-a799-5ea136a0dd1e,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-maluku-tengah,Kabupaten Maluku Tengah,8103,cities
+e66d8dad-3764-460f-ae23-92acb7b93bed,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-buru,Kabupaten Buru,8104,cities
+0c220173-8163-4084-be5c-e73363713475,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-kepulauan-aru,Kabupaten Kepulauan Aru,8105,cities
+b1f1eb89-c8bf-4f7c-a0e3-8ffafd76a8d8,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-seram-bagian-barat,Kabupaten Seram Bagian Barat,8106,cities
+a50e1ee6-6fe8-4f1e-80b0-fc6800fae29b,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-seram-bagian-timur,Kabupaten Seram Bagian Timur,8107,cities
+c4d2cc54-be2a-49b5-bedf-73cd0901377a,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-maluku-barat-daya,Kabupaten Maluku Barat Daya,8108,cities
+a4d338fc-f0f0-4e45-ab4d-781c46b9487d,38f4abe0-c146-4bb6-aa95-3203487d2599,kabupaten-buru-selatan,Kabupaten Buru Selatan,8109,cities
+a420b6ea-80e8-4030-bc83-08390ca5e42f,38f4abe0-c146-4bb6-aa95-3203487d2599,kota-ambon,Kota Ambon,8171,cities
+b46cdffe-cff6-4a04-96a7-ce740b58357a,38f4abe0-c146-4bb6-aa95-3203487d2599,kota-tual,Kota Tual,8172,cities
+b548c2c8-dead-4bec-966a-4d4c31b42f61,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-halmahera-barat,Kabupaten Halmahera Barat,8201,cities
+29deb217-57ff-47a5-b0a8-4cc4527d75a9,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-halmahera-tengah,Kabupaten Halmahera Tengah,8202,cities
+1cdb4231-2f72-478a-b204-16de87e9de5f,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-kepulauan-sula,Kabupaten Kepulauan Sula,8203,cities
+1e6a3c71-fe1e-4c4f-86c2-a92eb15f867e,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-halmahera-selatan,Kabupaten Halmahera Selatan,8204,cities
+1b79cccf-1c50-4d08-91c1-a3a3eba1d470,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-halmahera-utara,Kabupaten Halmahera Utara,8205,cities
+2e3b43bc-1063-4d98-bd0f-49b31b16a8ca,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-halmahera-timur,Kabupaten Halmahera Timur,8206,cities
+cb1b1559-95e9-405a-8c23-214cc945c193,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-pulau-morotai,Kabupaten Pulau Morotai,8207,cities
+9a2fa3b9-e394-4e09-9490-506f1186a06d,b5ae7e39-1081-48b2-8717-aa25fe73114d,kabupaten-pulau-taliabu,Kabupaten Pulau Taliabu,8208,cities
+285512cd-a397-4d14-af6a-fd7a2f1ba737,b5ae7e39-1081-48b2-8717-aa25fe73114d,kota-ternate,Kota Ternate,8271,cities
+e3b280c3-a4f6-476f-b48a-c679ae2bc993,b5ae7e39-1081-48b2-8717-aa25fe73114d,kota-tidore-kepulauan,Kota Tidore Kepulauan,8272,cities
+79faa71e-d7dc-4b25-9097-ff0de0ff49ea,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-fakfak,Kabupaten Fakfak,9101,cities
+2e54cd76-dc6e-4da9-b50d-63d5447391df,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-kaimana,Kabupaten Kaimana,9102,cities
+b3846ed2-a2d9-42e6-a2b6-1d321b4cb11c,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-teluk-wondama,Kabupaten Teluk Wondama,9103,cities
+c10823a6-a0c2-4bcb-b0f6-3c31740b693f,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-teluk-bintuni,Kabupaten Teluk Bintuni,9104,cities
+aa46dacb-0691-41c6-bf5d-021849761c2c,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-manokwari,Kabupaten Manokwari,9105,cities
+49f30db2-aefd-4ba8-adf7-ae0d625ba186,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-sorong-selatan,Kabupaten Sorong Selatan,9106,cities
+51839621-9ccf-4b95-b217-7b0ac2baae9d,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-sorong,Kabupaten Sorong,9107,cities
+1d5659ba-dc66-450f-bf47-3c5e206b9063,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-raja-ampat,Kabupaten Raja Ampat,9108,cities
+4950c366-742d-48d1-8393-9c3e9143af5f,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-tambrauw,Kabupaten Tambrauw,9109,cities
+6a4624a2-e955-4d09-90df-574e889d244d,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-maybrat,Kabupaten Maybrat,9110,cities
+bcdac2a1-4680-4ac8-936f-d617acef3694,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-manokwari-selatan,Kabupaten Manokwari Selatan,9111,cities
+b230110b-915e-41af-97e8-6e8356931400,2288347c-dd7c-4102-a541-60c1aea8d936,kabupaten-pegunungan-arfak,Kabupaten Pegunungan Arfak,9112,cities
+3cb03473-eb09-4fbc-ba70-bbc5bf418af4,2288347c-dd7c-4102-a541-60c1aea8d936,kota-sorong,Kota Sorong,9171,cities
+cea82976-4953-4ece-9cb0-b9254952b92f,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-merauke,Kabupaten Merauke,9401,cities
+6900c364-95d2-43dd-bcb0-ac1e56e2e95b,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-jayawijaya,Kabupaten Jayawijaya,9402,cities
+ce36a250-2a10-4821-9380-03e70b2e6258,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-jayapura,Kabupaten Jayapura,9403,cities
+c3e7a839-4e10-4680-97db-82637afb6806,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-nabire,Kabupaten Nabire,9404,cities
+9af3fc4d-1f14-47c6-862a-07f32bf6f543,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-kepulauan-yapen,Kabupaten Kepulauan Yapen,9408,cities
+251d6aa4-7d5c-40b5-a287-e754178cdea2,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-biak-numfor,Kabupaten Biak Numfor,9409,cities
+3c747e96-5e4d-492b-afcd-07f4485a530a,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-paniai,Kabupaten Paniai,9410,cities
+a6091b34-49de-46a9-8b09-e262b685744b,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-puncak-jaya,Kabupaten Puncak Jaya,9411,cities
+e9524a60-3a6c-4a66-9dfc-f049debf26b1,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-mimika,Kabupaten Mimika,9412,cities
+10fc8e07-6ec2-4371-8a0b-f66d5878a78e,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-boven-digoel,Kabupaten Boven Digoel,9413,cities
+9eaca16c-66ed-4fb2-9e30-07514e2e2378,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-mappi,Kabupaten Mappi,9414,cities
+041f9b79-08c0-4e8d-b589-5eb96fbd4cb1,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-asmat,Kabupaten Asmat,9415,cities
+ef91458f-85e7-4761-bad7-caae52ec390f,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-yahukimo,Kabupaten Yahukimo,9416,cities
+aecc21ce-dc05-40ec-9c7d-1d65d25b65ed,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-pegunungan-bintang,Kabupaten Pegunungan Bintang,9417,cities
+2d34c3da-75e3-4d30-8a6b-8ff138805eaa,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-tolikara,Kabupaten Tolikara,9418,cities
+424e4827-d27a-425f-8da0-78e1d7a3add6,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-sarmi,Kabupaten Sarmi,9419,cities
+f33cfbe6-ef1d-4460-9dda-5de5a1d78e5f,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-keerom,Kabupaten Keerom,9420,cities
+efe44149-c3be-421a-9eb1-9e25b38da4dd,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-waropen,Kabupaten Waropen,9426,cities
+765271c3-11ea-46c2-b68c-bd9c8f420b96,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-supiori,Kabupaten Supiori,9427,cities
+85916168-c4eb-465b-ba32-b10030e241f1,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-mamberamo-raya,Kabupaten Mamberamo Raya,9428,cities
+cc923650-1caa-4162-9c28-a167e4332332,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-nduga,Kabupaten Nduga,9429,cities
+55654e99-defc-4fea-87db-addb110f0086,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-lanny-jaya,Kabupaten Lanny Jaya,9430,cities
+8833eced-c9c0-4745-950d-6aaddd870158,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-mamberamo-tengah,Kabupaten Mamberamo Tengah,9431,cities
+05740fb7-0a13-47b7-846e-d5a8609c16ae,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-yalimo,Kabupaten Yalimo,9432,cities
+fcdeb9c2-6ce2-48d9-ae84-a5e8314f5e5e,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-puncak,Kabupaten Puncak,9433,cities
+b8bc418d-0fcc-433d-b364-1f307bdf39d6,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-dogiyai,Kabupaten Dogiyai,9434,cities
+c003f8f1-db86-4406-87db-fe7820208f55,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-intan-jaya,Kabupaten Intan Jaya,9435,cities
+2c6c445c-a2e8-4500-9567-27b7a524fe09,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kabupaten-deiyai,Kabupaten Deiyai,9436,cities
+18109bb3-15cc-439b-b7bf-9145bd4b8868,4b61c0e3-83ab-4fb3-8599-5c5214fdbfc4,kota-jayapura,Kota Jayapura,9471,cities

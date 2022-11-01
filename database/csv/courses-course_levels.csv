@@ -1,0 +1,16 @@
+ID,CATEGORY_ID,NAME,LABEL,NOTES,GROUP_BY
+160074ad-737e-4876-8a72-c3042db72e49,,agama,Agama,,courses
+0b1cca8f-42c3-4d63-9ee5-729a26ce2616,,matematika,Matematika,,courses
+d93ee01e-d559-48c2-bb18-8b115f627716,,bahasa-inggris,Bahasa Inggris,,courses
+7ffa2925-e70a-4490-a642-3eed1af62eb9,,ipa,IPA,,courses
+ac92eb91-fcbc-4428-8a50-ce7f6ca03d75,,biologi,Biologi,,courses
+431b49a7-7939-4977-a841-16ea1afe42e1,,kimia,Kimia,,courses
+21821138-8943-4b0c-980c-f551ce0c9c24,,fisika,Fisika,,courses
+d7e16cae-d364-45b5-8028-04c8856c15f1,,ips,IPS,,courses
+3fd144c9-f66d-453d-b46e-f75e859da861,,sosiologi,Sosiologi,,courses
+8b22ef2f-bf70-48df-8cd8-2bccdd1bfc64,,ekonomi,Ekonomi,,courses
+b67908ad-50d3-424b-846b-ddf74ea4b9a9,,sejarah,Sejarah,,courses
+7fe686b3-29b4-4dd8-83d8-a19e9ba0b799,,sd,SD,,course_levels
+fccacace-6a99-41a5-9a1e-6aed36668668,,smp,SMP,,course_levels
+183ccb6a-646f-428c-8a80-8d51aa8d1be4,,sma,SMA,,course_levels
+be1e3671-0b95-4c0f-aec9-3aa7543e4c5b,,s1,S1,,course_levels

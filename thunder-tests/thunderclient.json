@@ -1,0 +1,157 @@
+[
+  {
+    "_id": "bbc329d1-40bc-478f-883e-556e44c098c6",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "8ea250d3-b88a-45c2-a74e-70e5974ad8b0",
+    "name": "Login",
+    "url": "{{base_url}}/auth/login",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-10-02T01:46:46.058Z",
+    "modified": "2022-10-02T05:21:51.138Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "86787066-fa7b-4805-b8f1-e96a8b8abf09",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "8ea250d3-b88a-45c2-a74e-70e5974ad8b0",
+    "name": "logout all devices",
+    "url": "{{base_url}}/auth/logout-all-devices",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-10-02T03:53:25.429Z",
+    "modified": "2022-10-03T06:04:54.231Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "97691ca3-c3c1-4c85-b3e8-ac55c6a3c3fd|GhRO3NEv16SuCd84CYKMrCpOUPwtU9C2ksIwPfg2"
+    },
+    "tests": []
+  },
+  {
+    "_id": "58003cb8-ee96-43a9-8747-0e0906a9f3b5",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "8ea250d3-b88a-45c2-a74e-70e5974ad8b0",
+    "name": "logout current device only",
+    "url": "{{base_url}}/auth/logout",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-10-02T06:50:37.949Z",
+    "modified": "2022-10-02T06:52:49.865Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "97672aaa-8cc3-456b-bb61-093b5acd6efb|6qXpF6iuJRBzwE0g2IzN3smhXFZl9E5FUxl3c6xC"
+    },
+    "tests": []
+  },
+  {
+    "_id": "93f75f5b-9827-468a-a447-36a95098859e",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "",
+    "name": "seed provinces and cities",
+    "url": "{{base_url}}/seed-provinces-cities",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-10-02T08:42:16.915Z",
+    "modified": "2022-10-03T14:27:22.454Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "da8d10c5-0712-48df-ad5f-059e8a0720f2",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "78508cb3-85ae-468b-94f9-b7f4040eb86c",
+    "name": "get provinces",
+    "url": "{{base_url}}/categories?group_by=provinces",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-10-03T13:14:25.274Z",
+    "modified": "2022-10-03T14:44:46.989Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [
+      {
+        "name": "group_by",
+        "value": "provinces",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "0a26d66e-a418-480f-b637-cd65352a1fff",
+    "colId": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "containerId": "78508cb3-85ae-468b-94f9-b7f4040eb86c",
+    "name": "get cities",
+    "url": "{{base_url}}/categories?group_by=cities&paginate=1&per_page=15",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2022-10-03T14:33:14.597Z",
+    "modified": "2022-10-03T16:48:50.880Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "*/*",
+        "isDisabled": true
+      }
+    ],
+    "params": [
+      {
+        "name": "group_by",
+        "value": "cities",
+        "isPath": false
+      },
+      {
+        "name": "paginate",
+        "value": "1",
+        "isPath": false
+      },
+      {
+        "name": "per_page",
+        "value": "15",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "32ff7434-8c1d-48b8-bb71-cf846c651163",
+    "colName": "Moguru",
+    "created": "2022-10-02T01:43:45.001Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "8ea250d3-b88a-45c2-a74e-70e5974ad8b0",
+        "name": "Authentication",
+        "containerId": "",
+        "created": "2022-10-02T01:46:41.238Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "78508cb3-85ae-468b-94f9-b7f4040eb86c",
+        "name": "Category",
+        "containerId": "",
+        "created": "2022-10-03T13:13:55.084Z",
+        "sortNum": 20000
+      }
+    ],
+    "settings": {
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": "{{token_admin}}"
+      },
+      "tests": [],
+      "envId": "a28a6d77-6bc0-418d-be8d-f7daf0169873"
+    }
+  }
+]
