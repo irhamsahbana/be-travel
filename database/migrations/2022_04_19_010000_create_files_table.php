@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('imageable_id');
-            $table->string('imageable_type');
+            $table->uuid('fileable_id');
+            $table->string('fileable_type');
             $table->string('path');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('files');
     }
 };
