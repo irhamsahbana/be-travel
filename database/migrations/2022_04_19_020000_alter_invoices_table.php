@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('invoices', function (Blueprint $table) {
-            $table->index('main_travel_id');
-            $table->foreign('main_travel_id')
+            $table->index('company_id');
+            $table->foreign('company_id')
             ->references('id')->on('people')->onDelete('cascade');
 
             $table->index('congregation_id');
@@ -32,8 +32,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('invoices', function (Blueprint $table) {
-            $table->dropForeign(['main_travel_id']);
-            $table->dropIndex(['main_travel_id']);
+            $table->dropForeign(['company_id']);
+            $table->dropIndex(['company_id']);
 
             $table->dropForeign(['congregation_id']);
             $table->dropIndex(['congregation_id']);

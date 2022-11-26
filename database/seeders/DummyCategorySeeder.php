@@ -16,7 +16,7 @@ class DummyCategorySeeder extends Seeder
      */
     public function run()
     {
-        $this->semesters();
+        // $this->semesters();
     }
 
     private function semesters()

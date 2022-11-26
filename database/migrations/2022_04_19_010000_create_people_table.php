@@ -15,6 +15,8 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('company_id');
+            $table->uuid('branch_id')->nullable();
             $table->uuid('category_id');
             $table->uuid('city_id')->nullable();
             $table->uuid('marital_status_id')->nullable();

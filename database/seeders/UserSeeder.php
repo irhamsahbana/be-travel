@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\{
     Category,
+    Company,
     User,
     Meta,
+    Person,
 };
 
 class UserSeeder extends Seeder
@@ -20,23 +22,27 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $csvFilePath = Storage::disk('database')->path('csv/categories.csv');
+        $permissions = Category::where('group_by', 'permissions')->get();
 
-        $csv = new \ParseCsv\Csv();
-        $csv->auto($csvFilePath);
+        $company = new Company();
+        $company->name = 'PT. Testing Travel';
+        $company->save();
 
-        $categories =  $csv->data;
-        $permissions = (collect($categories))->where('GROUP_BY', 'permissions');
+        $person = new Person();
+        $person->company_id = $company->id;
+        $person->category_id = Category::where('group_by', 'people')->where('name', 'director')->first()->id;
+        $person->name = 'Testing Director';
+        $person->save();
 
         $user = new User();
-        $user->name = 'Admin';
-        $user->email = 'admin@admin';
-        $user->username = 'admin';
-        $user->password = bcrypt('admin');
+        $user->person_id = $person->id;
+        $user->email = 'director@director';
+        $user->username = 'director';
+        $user->password = bcrypt('director');
         $user->save();
 
         $adminPermissionGroup = Category::where([
-            'name' => 'administrator',
+            'name' => 'director',
             'group_by' => 'permission_groups',
         ])->first();
 
@@ -46,7 +52,7 @@ class UserSeeder extends Seeder
             $meta->fk_id = $adminPermissionGroup->id;
             $meta->table_name = $adminPermissionGroup->getTable();
             $meta->key = 'permission_id';
-            $meta->value = $permission['ID'];
+            $meta->value = $permission->id;
             $meta->save();
         }
 

@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(DummyCourseSeeder::class);
         // $this->call(DummyClassroomSeeder::class);
         // $this->call(DummyPersonSeeder::class);
-        $this->call(DummyUserSeeder::class);
+        // $this->call(DummyUserSeeder::class);
 
         // $this->call(DummyClassroomParticipantSeeder::class);
     }

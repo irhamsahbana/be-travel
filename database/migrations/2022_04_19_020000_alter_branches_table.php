@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invoices', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('company_id');
-            $table->uuid('congregation_id');
-            $table->decimal('amount', 15, 2);
-            $table->decimal('paid', 15, 2);
-            $table->timestamps();
+        Schema::table('branches', function (Blueprint $table) {
+            $table->index('company_id');
+            $table->foreign('company_id')
+            ->references('id')->on('companies')
+            ->onDelete('cascade');
         });
     }
 
@@ -30,6 +28,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoices');
+        Schema::table('branches', function (Blueprint $table) {
+            $table->dropForeign(['company_id']);
+            $table->dropIndex(['company_id']);
+        });
     }
 };

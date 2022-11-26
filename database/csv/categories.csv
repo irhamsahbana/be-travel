@@ -1,30 +1,61 @@
 ID,CATEGORY_ID,NAME,LABEL,NOTES,GROUP_BY
-38337391-d08b-4c61-99cb-8f23398c88cd,,administrator,Administrator,Administrator,people
-88aafa46-9489-4495-90e5-ac2e3798440c,,tutor,Tutor,Tutor,people
-7ffc57e8-6c73-4838-96de-ddb684203cc1,,customer,Customer,Pelanggan,people
-142c3290-d082-467b-8250-9adafc301e39,,category-provinces-create,category-provinces-create,Kategori Provinsi - Buat,permissions
-682c5a9e-aa0d-44b7-92c1-902257cee670,,category-provinces-read,category-provinces-read,Kategori Provinsi - Baca,permissions
-a65e6e26-4e91-45cb-829b-27305b4881ad,,category-provinces-update,category-provinces-update,Kategori Provinsi - Ubah,permissions
-a2868edc-c852-45cb-b186-8c1cd8f735e4,,category-provinces-delete,category-provinces-delete,Kategori Provinsi - Hapus,permissions
-7d6178ab-4a36-4c60-a8db-e252350847d8,,category-cities-create,category-cities-create,Kategori Kota - Buat,permissions
-9d0cbc68-75fd-4478-b5f2-2d821eaa5e96,,category-cities-read,category-cities-read,Kategori Kota - Baca,permissions
-427662b1-3f58-4b92-9f29-30234cd3d06b,,category-cities-update,category-cities-update,Kategori Kota - Ubah,permissions
-a47ed331-9692-490a-b88d-9eed9bd0dba3,,category-cities-delete,category-cities-delete,Kategori Kota - Hapus,permissions
-804e311a-ac39-4680-be7a-a6a468b7f52a,,category-courses-create,category-course-create,kursus - Buat,permissions
-b59c89bd-6257-4612-a569-6fe3c4d062d4,,category-courses-read,category-course-read,kursus - Baca,permissions
-2a506287-bc09-444f-864d-c65c9c340222,,category-courses-update,category-course-update,kursus - Ubah,permissions
-e349773d-d05a-4b4a-88db-de5d2ffdb768,,category-courses-delete,category-course-delete,kursus - Hapus,permissions
-db8a4ac8-64c8-433d-859d-3693d0e3e826,,category-course_levels-create,category-course-level-create,Kategori Level Kursus - Buat,permissions
-650913d5-1e3c-4592-b453-d48438b0e5c2,,category-course_levels-read,category-course-level-read,Kategori Level Kursus - Baca,permissions
-ec0e7acd-a8d8-442f-b0ea-22b8ff9a603d,,category-course_levels-update,category-course-level-update,Kategori Level Kursus - Ubah,permissions
-cb26c463-24c3-4331-a88d-b9d83652a024,,category-course_levels-delete,category-course-level-delete,Kategori Level Kursus - Hapus,permissions
-c4a960c6-89d4-4cbe-83b8-70c8bfc92765,,access-right-create,access-right-create,Hak Akses - Buat,permissions
 8acf9ed9-82cd-4c65-900c-75d5e2465cf7,,access-right-read,access-right-read,Hak Akses - Baca,permissions
-68911eb2-7cfb-47ee-8869-589c1509a4f8,,access-right-update,access-right-update,Hak Akses - Ubah,permissions
+c4a960c6-89d4-4cbe-83b8-70c8bfc92765,,access-right-create,access-right-create,Hak Akses - Buat,permissions
 d03d3ddd-b399-453d-b817-a03d05c0e53a,,access-right-delete,access-right-delete,Hak Akses - Hapus,permissions
-2b82f9b5-e803-484a-8d26-cc5bdb9c4c63,,tutor-create,tutor-create,Tutor - Buat,permissions
+68911eb2-7cfb-47ee-8869-589c1509a4f8,,access-right-update,access-right-update,Hak Akses - Ubah,permissions
+161709ac-020a-48c1-82eb-593ee54f3130,,category-nationality-read,category-nationality-read,Kategori Kewarganegaraan - Baca,permissions
+ee5c7eb5-d0d6-4bf9-b725-9e180218c8f2,,category-nationality-create,category-nationality-create,Kategori Kewarganegaraan - Buat,permissions
+d663d5cd-f168-4192-a91e-992c729eef24,,category-nationality-delete,category-nationality-delete,Kategori Kewarganegaraan - Hapus,permissions
+cedcfd75-b3e1-4526-80b9-2dc4a6972087,,category-nationality-update,category-nationality-update,Kategori Kewarganegaraan - Ubah,permissions
+9d0cbc68-75fd-4478-b5f2-2d821eaa5e96,,category-cities-read,category-cities-read,Kategori Kota - Baca,permissions
+7d6178ab-4a36-4c60-a8db-e252350847d8,,category-cities-create,category-cities-create,Kategori Kota - Buat,permissions
+a47ed331-9692-490a-b88d-9eed9bd0dba3,,category-cities-delete,category-cities-delete,Kategori Kota - Hapus,permissions
+427662b1-3f58-4b92-9f29-30234cd3d06b,,category-cities-update,category-cities-update,Kategori Kota - Ubah,permissions
+21c0eeb4-388d-47f5-9a9b-89d3184f03d2,,category-payment-method-read,category-payment-method-read,Kategori Metode Pembayaran - Baca,permissions
+af8f0cc0-5418-4be8-85a5-3b377bd4f141,,category-payment-method-create,category-payment-method-create,Kategori Metode Pembayaran - Buat,permissions
+b436e3f9-b7d7-4002-8b38-97f4d20a3902,,category-payment-method-delete,category-payment-method-delete,Kategori Metode Pembayaran - Hapus,permissions
+01db8911-d5a8-4cab-b26a-2bae246c3035,,category-payment-method-update,category-payment-method-update,Kategori Metode Pembayaran - Ubah,permissions
+a5bff782-c294-45e4-b5c6-5ba327502cf0,,category-education-read,category-education-read,Kategori Pendidikan - Baca,permissions
+ee43a7d6-b813-4a36-93ef-b8f020404c4a,,category-education-create,category-education-create,Kategori Pendidikan - Buat,permissions
+473a22fb-a968-4629-af75-f95ca11c9929,,category-education-delete,category-education-delete,Kategori Pendidikan - Hapus,permissions
+95117dc8-4e67-4a81-8c4e-0f0750b87039,,category-education-update,category-education-update,Kategori Pendidikan - Ubah,permissions
+682c5a9e-aa0d-44b7-92c1-902257cee670,,category-provinces-read,category-provinces-read,Kategori Provinsi - Baca,permissions
+142c3290-d082-467b-8250-9adafc301e39,,category-provinces-create,category-provinces-create,Kategori Provinsi - Buat,permissions
+a2868edc-c852-45cb-b186-8c1cd8f735e4,,category-provinces-delete,category-provinces-delete,Kategori Provinsi - Hapus,permissions
+a65e6e26-4e91-45cb-829b-27305b4881ad,,category-provinces-update,category-provinces-update,Kategori Provinsi - Ubah,permissions
+0dd5dbea-8c6c-4e94-a6ac-e4b596f33932,,category-marital-status-read,category-marital-status-read,Kategori Status Pernikahan - Baca,permissions
+f79bf3fa-31d0-4b8d-9489-65443babc401,,category-marital-status-create,category-marital-status-create,Kategori Status Pernikahan - Buat,permissions
+c0769892-19d4-4eff-8472-24066497c1d6,,category-marital-status-delete,category-marital-status-delete,Kategori Status Pernikahan - Hapus,permissions
+5aa57e73-4b90-4910-8053-7fec6da657f5,,category-marital-status-update,category-marital-status-update,Kategori Status Pernikahan - Ubah,permissions
 87f06216-69cc-4c65-85e5-cbfad61d6345,,tutor-read,tutor-read,Tutor - Baca,permissions
-73fe4721-3e41-499e-b047-9b81aa08fd13,,tutor-update,tutor-update,Tutor - Ubah,permissions
+2b82f9b5-e803-484a-8d26-cc5bdb9c4c63,,tutor-create,tutor-create,Tutor - Buat,permissions
 22c33c4e-fb47-4c82-a1a2-279e7c7ab80e,,tutor-delete,tutor-delete,Tutor - Hapus,permissions
-7c7c7aa2-f246-4138-b614-ade302d58d04,,administrator,Administrator,Administrator,permission_groups
-fdb709c5-611b-4d7e-bead-835a553b0109,,tutor,Tutor,Tutor,permission_groups
+73fe4721-3e41-499e-b047-9b81aa08fd13,,tutor-update,tutor-update,Tutor - Ubah,permissions
+bf4e4032-ac6c-4615-b056-d79a0d6377c0,,director,Director,1,permission_groups
+cf879efc-8eaf-4bc6-be4f-c7cee4298f2d,,financial-manager,Financial Manager,2,permission_groups
+63745204-4eb0-4608-9bd9-f85ccfdb6ab1,,operational,Operational,3,permission_groups
+05da1a2c-5010-412b-9718-6f476da511ca,,branch-manager,Branch Manager,4,permission_groups
+e5c73678-caa1-4829-89a7-1b7235aa7929,,agent,Agent,5,permission_groups
+4518e518-8f78-475f-8015-141e28aaff95,,congregation,Congregation,6,permission_groups
+b42ec0d2-3738-4acd-98ce-67f953defb78,,director,Director,1,people
+4360f6f7-7afc-4ba4-aa3a-d2aa161449da,,financial-manager,Financial Manager,2,people
+c18d3476-cb8f-44af-a549-769699036e15,,operational,Operational,3,people
+f7918b4c-aad8-4370-bab5-5e2633b9c31a,,branch-manager,Branch Manager,4,people
+70956469-36fd-4201-8b3d-dba2db0f7117,,agent,Agent,5,people
+c117f191-b61e-42bf-9d66-04c088cc820e,,congregation,Congregation,6,people
+2d6cf580-5ed8-4707-a470-8a5f121c8276,,tunai,Tunai,,payment_methods
+5b232aba-621a-4f4e-bd51-60ad5612ae0c,,transfer,Transfer,,payment_methods
+38a51ee1-a9aa-432a-b0a3-54d02431da32,,double,Double,1,packet_types
+65add86e-1aed-4797-ba26-1305b86c1585,,triple,Triple,2,packet_types
+1894721a-a4f6-4145-892f-f0ee5db5d41d,,quad,Quad,3,packet_types
+fbce95a8-18cb-4acd-8e8b-c006fd3f7784,,indonesia,Indonesia,,nationalities
+bace449a-abec-42ce-bf83-5bdbf990ac9e,,belum-kawin,Belum Kawin,1,marital_statuses
+935c5789-895b-4514-8dcf-935e6a66f99e,,kawin,Kawin,2,marital_statuses
+b0c4cf99-1cc3-469e-8fc0-97538835c2de,,cerai-hidup,Cerai Hidup,3,marital_statuses
+8f0096de-ecce-44b5-afe1-70a50db5bff6,,cerai-mati,Cerai Mati,4,marital_statuses
+18bf11bf-2cc6-483c-b836-497a6e00db77,,sd,SD,1,educations
+2753c31e-2b51-432c-8d97-7413a6a210ce,,smp,SMP,2,educations
+8f2b1559-9dd4-4c62-a957-3153cca2f188,,sma,SMA,3,educations
+1ab218d7-71cd-43af-be81-a01e4227a326,,s1,S1,4,educations
+db929aed-7999-47cb-84dd-6ce0b1fcf6e6,,s2,S2,5,educations
+43a8cb1a-9cdf-460b-8e33-c92e1d8ee45e,,s3,S3,6,educations

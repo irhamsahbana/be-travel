@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('broadcast_messages', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('person_id');
             $table->string('title');
             $table->text('message');
             $table->string('status')->default('draft');
