@@ -16,22 +16,26 @@ class AuthController extends Controller
     {
         $fields = [
             'username' => $request->username,
+            'email' => $request->email,
             'password' => $request->password
         ];
 
         $rules = [
-            'username' => ['required'],
-            'password' => ['required']
+            'username' => 'required_without:email',
+            'email' => 'required_without:username',
+            'password' => 'required'
         ];
+
+        if ($request->username) unset($fields['email']);
+        if ($request->email) unset($fields['username']);
 
         $validator = Validator::make($fields, $rules);
         $response = new Response();
-        if ($validator->fails())
-            return $response->json(null, $validator->errors(), HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
+        if ($validator->fails()) return $response->json(null, $validator->errors(), HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
 
 
        if (Auth::attempt($fields)) {
-            $user = Auth::user();
+            $user = Auth::user()->with('person', 'person.category', 'person.company')->first();
             $token = $user->createToken('auth_token')->plainTextToken;
 
             return$response->json([

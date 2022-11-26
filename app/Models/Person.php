@@ -21,13 +21,33 @@ class Person extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function city()
+    public function company()
     {
-        return $this->HasOne(Category::class, 'id', 'city_id');
+        return $this->belongsTo(Company::class, 'company_id');
     }
 
-    public function image()
+    public function branch()
     {
-        return $this->morphOne(Image::class, 'imageable');
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(Category::class, 'city_id');
+    }
+
+    public function nationality()
+    {
+        return $this->belongsTo(Category::class, 'nationality_id');
+    }
+
+    public function file()
+    {
+        return $this->morphOne(File::class, 'fileable');
+    }
+
+    public function files()
+    {
+        return $this->morphMany(File::class, 'fileable');
     }
 }
