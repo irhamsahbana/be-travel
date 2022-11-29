@@ -13,19 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('permission_group_rights', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('company_id')->nullable();
-            $table->uuid('branch_id')->nullable();
-            $table->uuid('person_id');
-            $table->uuid('permission_group_id')->nullable();
-            $table->string('email')->unique();
-            $table->string('username')->unique()->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->uuid('permission_group_id');
+            $table->uuid('permission_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -36,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('permission_group_rights');
     }
 };

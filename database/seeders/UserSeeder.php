@@ -10,6 +10,7 @@ use App\Models\{
     Company,
     User,
     Meta,
+    PermissionGroupRight,
     Person,
 };
 
@@ -22,11 +23,50 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $permissions = Category::where('group_by', 'permissions')->get();
-
         $company = new Company();
         $company->name = 'PT. Testing Travel';
         $company->save();
+
+        // create director permission group
+        // PG = Permission Group
+        $baseDirectorPG = Category::whereNull('company_id')
+            ->where([
+                'name' => 'director',
+                'group_by' => 'permission_groups',
+            ])
+            ->first();
+
+        $directorPG = new Category();
+        $directorPG->company_id = $company->id;
+        $directorPG->name = $baseDirectorPG->name;
+        $directorPG->label = $baseDirectorPG->label;
+        $directorPG->notes = $baseDirectorPG->notes;
+        $directorPG->group_by = $baseDirectorPG->group_by;
+        $directorPG->save();
+
+        $directorPG = Category::where([
+            'company_id' => $company->id,
+            'name' => 'director',
+            'group_by' => 'permission_groups',
+        ])->first();
+
+        $basePermissions = Category::whereNull('company_id')->where('group_by', 'permissions')->get();
+
+        foreach ($basePermissions as $permission) {
+            $category = new Category();
+            $category->category_id = $permission->category_id;
+            $category->company_id = $company->id;
+            $category->name = $permission->name;
+            $category->label = $permission->label;
+            $category->notes = $permission->notes;
+            $category->group_by = $permission->group_by;
+            $category->save();
+
+            PermissionGroupRight::create([
+                'permission_group_id' => $directorPG->id,
+                'permission_id' => $category->id,
+            ]);
+        }
 
         $person = new Person();
         $person->company_id = $company->id;
@@ -36,32 +76,11 @@ class UserSeeder extends Seeder
 
         $user = new User();
         $user->person_id = $person->id;
+        $user->company_id = $company->id;
+        $user->permission_group_id = $directorPG->id;
         $user->email = 'director@director';
         $user->username = 'director';
         $user->password = bcrypt('director');
         $user->save();
-
-        $adminPermissionGroup = Category::where([
-            'name' => 'director',
-            'group_by' => 'permission_groups',
-        ])->first();
-
-        // generate full access for administrator groups
-        foreach ($permissions as $permission) {
-            $meta = new Meta();
-            $meta->fk_id = $adminPermissionGroup->id;
-            $meta->table_name = $adminPermissionGroup->getTable();
-            $meta->key = 'permission_id';
-            $meta->value = $permission->id;
-            $meta->save();
-        }
-
-        // create admin user his permission group
-        Meta::create([
-            'fk_id' => $user->id,
-            'table_name' => $user->getTable(),
-            'key' => 'permission_group_id',
-            'value' => $adminPermissionGroup->id,
-        ]);
     }
 }

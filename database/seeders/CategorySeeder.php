@@ -22,8 +22,8 @@ class CategorySeeder extends Seeder
     {
        $csvList = [
         storage::disk('database')->path('csv/categories.csv'),
+        storage::disk('database')->path('csv/company-categories.csv'),
         storage::disk('database')->path('csv/provinces-cities.csv'),
-        // storage::disk('database')->path('csv/courses-course_levels.csv')
        ];
 
        foreach ($csvList as $csvFilePath) {
@@ -33,6 +33,8 @@ class CategorySeeder extends Seeder
 
     public function generics($path)
     {
+        if (!file_exists($path)) return;
+
         $csv = new \ParseCsv\Csv();
         $csv->auto($path);
 
@@ -45,6 +47,7 @@ class CategorySeeder extends Seeder
                 ],
                 [
                     'category_id' => $category['CATEGORY_ID'] == "" ? null : $category['CATEGORY_ID'],
+                    "company_id" => $category['COMPANY_ID'] == "" ? null : $category['COMPANY_ID'],
                     'name' => $category['NAME'],
                     'group_by' => $category['GROUP_BY'],
                     'label' => $category['LABEL'],

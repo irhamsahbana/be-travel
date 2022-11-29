@@ -7,6 +7,8 @@ use App\Http\Controllers\Api\{
     CategoryController,
     TutorController,
     // GetCitiesController
+
+    BranchController
 };
 
 /*
@@ -30,6 +32,12 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('public/tutors', [TutorController::class, 'indexPublic']);
     Route::get('tutors', [TutorController::class, 'index']);
     Route::get('tutors/{id}', [TutorController::class, 'show']);
+
+    Route::get('branches', [BranchController::class, 'index']);
+    Route::post('branches', [BranchController::class, 'store']);
+    Route::get('branches/{id}', [BranchController::class, 'show']);
+    Route::patch('branches/{id}', [BranchController::class, 'update']);
+    Route::delete('branches/{id}', [BranchController::class, 'destroy']);
     /**
      * Dangerous route, only for development purpose
      * Should be removed in production

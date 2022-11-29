@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Branch extends Model
+class PermissionGroupRight extends Model
 {
     use HasFactory, HasUuids;
-
-    protected $guarded = [];
 }

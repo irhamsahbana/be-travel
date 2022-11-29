@@ -25,7 +25,7 @@ class DBtoCSVProvincesCities extends Seeder
            touch($csvFilePath);
             $csv->save(
                 $csvFilePath,
-                [['ID', 'CATEGORY_ID', 'NAME', 'LABEL', 'NOTES', 'GROUP_BY']]
+                [['ID', 'CATEGORY_ID', 'COMPANY_ID', 'NAME', 'LABEL', 'NOTES', 'GROUP_BY']]
             );
         }
 
@@ -41,6 +41,7 @@ class DBtoCSVProvincesCities extends Seeder
             $toCSV[] = [
                 $row['id'],
                 $row['category_id'] === null ? "" : $row['category_id'],
+                $row['company_id'] === null ? "" : $row['company_id'],
                 $row['name'],
                 $row['label'],
                 $row['notes'] === null ? "" : $row['notes'],
