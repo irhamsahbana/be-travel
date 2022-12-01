@@ -11,4 +11,10 @@ class Branch extends Model
     use HasFactory, HasUuids;
 
     protected $guarded = [];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 }

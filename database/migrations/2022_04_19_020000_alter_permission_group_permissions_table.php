@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('permission_group_rights', function (Blueprint $table) {
+        Schema::table('permission_group_permissions', function (Blueprint $table) {
             $table->index('company_id');
             $table->foreign('company_id')
             ->references('id')->on('companies')
@@ -38,7 +38,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('permission_group_rights', function (Blueprint $table) {
+        Schema::table('permission_group_permissions', function (Blueprint $table) {
             $table->dropForeign(['company_id']);
             $table->dropIndex(['company_id']);
 

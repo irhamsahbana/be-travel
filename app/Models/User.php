@@ -54,6 +54,16 @@ class User extends Authenticatable
         return $this->belongsTo(Person::class, 'person_id');
     }
 
+    public function company()
+    {
+        return $this->belongsTo(Company::class, 'company_id');
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
+
     public function hasAccess(string $access) : bool
     {
         $this->setAccessControl($this->getAccessControl());

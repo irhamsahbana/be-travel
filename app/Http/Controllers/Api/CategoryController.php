@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Repositories\Finder\CategoryFinder;
 use App\Libs\Response;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -14,46 +15,104 @@ class CategoryController extends Controller
         $finder = new CategoryFinder();
         $finder->setAccessControl($this->getAccessControl());
 
-        if(isset($request->group_by))
+        if (isset($request->group_by))
             $finder->setGroup($request->group_by);
 
-        if(isset($request->order_by))
+        if (isset($request->order_by))
             $finder->setOrderBy($request->order_by);
 
-        if(isset($request->order_type))
+        if (isset($request->order_type))
             $finder->setOrderType($request->order_type);
 
-        if(isset($request->parent_id))
+        if (isset($request->parent_id))
             $finder->setParentId($request->parent_id);
         else
             $finder->setParentId(null);
 
-        if(isset($request->paginate)) {
+        if (isset($request->paginate)) {
             $finder->usePagination($request->paginate);
 
-            if(isset($request->page))
+            if (isset($request->page))
                 $finder->setPage($request->page);
 
-            if(isset($request->per_page))
+            if (isset($request->per_page))
                 $finder->setPerPage($request->per_page);
         }
 
         $paginator = $finder->get();
         $data = [];
 
-        if(!$finder->isUsePagination()) {
+        if (!$finder->isUsePagination()) {
             foreach ($paginator as $item)
                 $data[] = $item;
         } else {
             foreach ($paginator->items() as $item)
                 $data[] = $item;
 
-            foreach($paginator->toArray() as $key => $value)
-                if($key != 'data')
+            foreach ($paginator->toArray() as $key => $value)
+                if ($key != 'data')
                     $data['pagination'][$key] = $value;
         }
 
         $response = new Response;
         return $response->json($data, "success get {$request->group_by} data");
+    }
+
+    public function public(Request $request)
+    {
+        $request->validate([
+            'group_by' => [
+                'string',
+                'required',
+                Rule::in([
+                    'genders', 'marital_statuses',
+                    'educations', 'nationalities',
+                    'banks', 'provinces', 'cities',
+                    'nationalities',
+                ]),
+            ],
+        ]);
+        $finder = new CategoryFinder();
+
+        if (isset($request->group_by))
+            $finder->setGroup($request->group_by);
+
+        if (isset($request->order_by))
+            $finder->setOrderBy($request->order_by);
+
+        if (isset($request->order_type))
+            $finder->setOrderType($request->order_type);
+
+        if (isset($request->parent_id))
+            $finder->setParentId($request->parent_id);
+        else
+            $finder->setParentId(null);
+
+        if (isset($request->paginate)) {
+            $finder->usePagination($request->paginate);
+
+            if (isset($request->page))
+                $finder->setPage($request->page);
+
+            if (isset($request->per_page))
+                $finder->setPerPage($request->per_page);
+        }
+
+        $paginator = $finder->get();
+        $data = [];
+
+        if (!$finder->isUsePagination()) {
+            foreach ($paginator as $item)
+                $data[] = $item;
+        } else {
+            foreach ($paginator->items() as $item)
+                $data[] = $item;
+
+            foreach ($paginator->toArray() as $key => $value)
+                if ($key != 'data')
+                    $data['pagination'][$key] = $value;
+        }
+
+        return (new Response)->json($data, "success get {$request->group_by} data");
     }
 }

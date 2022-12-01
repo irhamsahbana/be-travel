@@ -3,14 +3,19 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Libs\Response;
-use App\Models\Branch;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
+use App\Libs\Response;
+use App\Libs\RefNoGenerator;
+
+use App\Models\Branch;
+
 class BranchController extends Controller
 {
+    use RefNoGenerator;
 
     public function index()
     {
@@ -24,9 +29,12 @@ class BranchController extends Controller
 
     public function store(Request $request)
     {
+        $refNo = $this->generateRefNo('branches', 4, 'BR/', $this->getPostfix());
+
         $fields = [
             'company_id' => auth()->user()->company_id,
             'name' => $request->name,
+            'ref_no' => $refNo,
         ];
 
         $rules = [
@@ -104,7 +112,6 @@ class BranchController extends Controller
         ];
 
         $validator = Validator::make($fields, $rules);
-
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
 
         $branch = Branch::where('company_id', auth()->user()->company_id)

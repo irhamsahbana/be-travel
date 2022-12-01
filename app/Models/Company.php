@@ -15,4 +15,9 @@ class Company extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function branches()
+    {
+        return $this->hasMany(Branch::class, 'company_id');
+    }
 }

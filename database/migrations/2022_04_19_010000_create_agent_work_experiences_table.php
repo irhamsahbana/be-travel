@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('person_id');
             $table->string('company_name');
-            $table->string('position');
+            $table->string('role');
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->timestamps();

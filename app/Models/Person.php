@@ -16,6 +16,12 @@ class Person extends Model
         'deleted_at',
     ];
 
+    protected $guarded = [];
+
+    protected $casts = [
+        'agent_work_experiences' => 'array',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
@@ -49,5 +55,10 @@ class Person extends Model
     public function files()
     {
         return $this->morphMany(File::class, 'fileable');
+    }
+
+    public function agentWorkExperiences()
+    {
+        return $this->hasMany(AgentWorkExperience::class);
     }
 }

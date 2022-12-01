@@ -10,7 +10,7 @@ use App\Models\{
     Company,
     User,
     Meta,
-    PermissionGroupRight,
+    PermissionGroupPermission,
     Person,
 };
 
@@ -62,7 +62,7 @@ class UserSeeder extends Seeder
             $category->group_by = $permission->group_by;
             $category->save();
 
-            PermissionGroupRight::create([
+            PermissionGroupPermission::create([
                 'permission_group_id' => $directorPG->id,
                 'permission_id' => $category->id,
             ]);

@@ -30,21 +30,27 @@ class AuthController extends Controller
         if ($request->email) unset($fields['username']);
 
         $validator = Validator::make($fields, $rules);
-        $response = new Response();
-        if ($validator->fails()) return $response->json(null, $validator->errors(), HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
+        if ($validator->fails()) return (new Response)->json(null, $validator->errors(), HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
 
 
        if (Auth::attempt($fields)) {
-            $user = Auth::user()->with('person', 'person.category', 'person.company')->first();
+            $user = Auth::user()->with('person', 'person.category')->first();
             $token = $user->createToken('auth_token')->plainTextToken;
 
-            return$response->json([
+            return (new Response)->json([
                 'token' => $token,
                 'user' => $user,
             ], 'Login success');
         }
 
-        return $response->json(null, 'Invalid login credentials.', HttpResponse::HTTP_UNAUTHORIZED);
+        return (new Response)->json(null, 'Invalid login credentials.', HttpResponse::HTTP_UNAUTHORIZED);
+    }
+
+    public function me()
+    {
+        $user = Auth::user()->with('company', 'company.branches', 'branch', 'person', 'person.category')->first();
+
+        return (new Response)->json($user->toArray(), 'Login success');
     }
 
     public function logout(Request $request)

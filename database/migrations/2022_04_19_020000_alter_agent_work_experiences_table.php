@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('agent_work_experiences', function (Blueprint $table) {
             $table->index('person_id');
-            $table->foreign('person_id')->references('id')->on('people');
+            $table->foreign('person_id')->references('id')->on('people')->cascadeOnDelete();
         });
     }
 

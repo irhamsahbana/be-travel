@@ -1,1 +1,35 @@
-[]
+[
+  {
+    "_id": "6494bf0b-fec5-4775-b8d2-ac4052beb7af",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}/agents",
+    "url": "{{base_url}}/agents",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-30T08:12:10.230Z",
+    "modified": "2022-11-30T08:12:10.230Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "76d752bb-b59f-4431-bf7f-07926c1155ef",
+    "colId": "history",
+    "containerId": "",
+    "name": "{{base_url}}/agents",
+    "url": "{{base_url}}/agents",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-30T08:12:17.960Z",
+    "modified": "2022-11-30T08:13:26.959Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"branch_id\": \"xx\",\n    \"name\": \"{{$randomFullName}}\",\n    \"father_name\": \"{{$randomFullName}}\",\n    \"mother_name\": \"{{$randomFullName}}\",\n    \"place_of_birth\": \"{{$randomCity}}\",\n    \"date_of_birth\": \"{{$randomDatePast}}\",\n    \"gender_id\": \"xx\",\n    \"national_id\": \"mmm\",\n    \"address\": \"{{$randomStreetAddress}}\",\n    \"city_id\": \"xx\",\n    \"nationality_id\": \"xx\",\n    \"phone\": \"{{$randomPhoneNumber}}\",\n    \"wa\": \"{{$randomPhoneNumber}}\",\n    \"email\": \"{{$randomEmail}}\",\n    \"education_id\": \"xx\",\n    \"profession\": \"{{$randomJobTitle}}\",\n    \"marital_status_id\": \"xx\",\n    \"account_name\": \"{{$randomFullName}}\",\n    \"bank_id\": \"xx\",\n    \"account_number\": \"{{$randomBankAccount}}\",\n    \"emergency_name\": null,\n    \"emergency_address\": null,\n    \"emergency_home_phone\": null,\n    \"emergency_phone\": null,\n    \"work_experiences\": [\n        {\n            \"company_name\": \"{{$randomCompanyName}}\",\n            \"role\": \"{{$randomJobTitle}}\",\n            \"start_date\": \"{{$randomDatePast}}\",\n            \"end_date\": \"{{$randomDateRecent}}\"\n        }\n    ],\n    \"notes\": null\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]

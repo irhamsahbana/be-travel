@@ -15,12 +15,12 @@ trait RefNoGenerator
      * @param string $postfix
      * @return string
      */
-    protected function generateRefNo($table, $digitLength = 4, $prefix = null, $postfix = null)
+    protected function generateRefNo(string $table, int $digitLength = 4, ?string $prefix = null, ?string $postfix = null)
     {
         // $digitLength = 4;
         $refNo = null;
         // pattern for SQL where LIKE
-        $pattern = sprintf('%s' . str_repeat('_', $digitLength) . '%s', $prefix, $postfix);
+        $pattern = sprintf('%s' . str_repeat('_', $digitLength) . '%s', $prefix, $postfix); // $pattern will be like '____'
 
         $index = 1;
         $row = DB::table($table)
@@ -32,11 +32,11 @@ trait RefNoGenerator
         $refNo = null;
         while(!empty($row)) {
             // Increase XXXXX(index) by +1
-            $formatted = str_replace($prefix, '', str_replace($postfix, '', $row->ref_no));
-            $index = (int) $formatted;
+            $formatted = str_replace($prefix, '', str_replace($postfix, '', $row->ref_no)); // remove prefix and postfix
+            $index = (int) $formatted; // convert to integer
             $index++;
 
-            $refNo = sprintf("%s%s%s", $prefix, sprintf('%0' . $digitLength . 'd', $index), $postfix);
+            $refNo = sprintf("%s%s%s", $prefix, sprintf('%0' . $digitLength . 'd', $index), $postfix); // add prefix and postfix with zero padding
 
             // Verify that ref no is unique
             $row = DB::table($table)->where('ref_no', $refNo)->first();

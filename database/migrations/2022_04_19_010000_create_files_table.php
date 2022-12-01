@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('fileable_id');
             $table->string('fileable_type');
+            $table->string('name');
             $table->string('path');
             $table->timestamps();
         });

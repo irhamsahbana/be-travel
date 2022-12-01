@@ -8,7 +8,9 @@ use App\Http\Controllers\Api\{
     TutorController,
     // GetCitiesController
 
-    BranchController
+    BranchController,
+    AgentController,
+    FileController,
 };
 
 /*
@@ -21,8 +23,12 @@ use App\Http\Controllers\Api\{
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('agents', [AgentController::class, 'store']);
+Route::get('public-categories', [CategoryController::class, 'index']);
 
-Route::middleware('auth:sanctum')->group(function() {
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('me', [AuthController::class, 'me']);
+
     Route::get('auth/logout', [AuthController::class, 'logout']);
     Route::get('auth/logout-all-devices', [AuthController::class, 'logoutAll']);
 
@@ -38,12 +44,21 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('branches/{id}', [BranchController::class, 'show']);
     Route::patch('branches/{id}', [BranchController::class, 'update']);
     Route::delete('branches/{id}', [BranchController::class, 'destroy']);
+
+    Route::post('files', [FileController::class, 'storeFile']);
+
+    Route::get('agents', [AgentController::class, 'index']);
+    Route::get('agents/{id}', [AgentController::class, 'show']);
+    Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
+
+
     /**
      * Dangerous route, only for development purpose
      * Should be removed in production
      */
     // Route::get('seed-provinces-cities', [GetCitiesController::class, 'provincesAndCities']);
 });
+
 
 
 Route::post("auth/login", [AuthController::class, 'attempt']);

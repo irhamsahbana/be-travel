@@ -27,6 +27,7 @@ class CategorySeeder extends Seeder
        ];
 
        foreach ($csvList as $csvFilePath) {
+        dump($csvFilePath);
          $this->generics($csvFilePath);
        }
     }
@@ -41,6 +42,7 @@ class CategorySeeder extends Seeder
         $categories =  $csv->data;
 
         foreach ($categories as $category) {
+            dump($category);
             Category::updateOrCreate(
                 [
                     'id' => !empty($category['ID']) ? $category['ID'] : Str::uuid()->toString(),

@@ -23,10 +23,14 @@ class CreatePeopleTable extends Migration
             $table->uuid('nationality_id')->nullable();
             $table->uuid('education_id')->nullable();
             $table->uuid('bank_id')->nullable();
+            $table->string('ref_no')->unique()->nullable();
             $table->string('name');
+            $table->enum('sex', ['male', 'female'])->nullable();
+            $table->string('account_name')->nullable();
+            $table->string('account_number')->nullable();
             $table->string('father_name')->nullable();
             $table->string('mother_name')->nullable();
-            $table->string('place_birth')->nullable();
+            $table->string('place_of_birth')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
@@ -39,6 +43,7 @@ class CreatePeopleTable extends Migration
             $table->string('emergency_home_phone')->nullable();
             $table->string('emergency_phone')->nullable();
             $table->string('notes')->nullable();
+            $table->timestamp('verified_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
