@@ -19,14 +19,24 @@ use App\Libs\Dumper;
 use App\Models\Category;
 use App\Models\Person;
 use App\Models\AgentWorkExperience;
+use App\Models\User;
 
 class AgentController extends Controller
 {
     use RefNoGenerator, FileSaver, Dumper;
 
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $agents = Person::where('company_id', auth()->user()->company_id)
+            ->whereHas('category', function ($query) {
+                $query->where('name', 'agent')
+                    ->where('group_by', 'people')
+                    ->whereNull('company_id');
+            })
+            ->get()->toArray();
+
+
+        return (new Response)->json($agents, 'Agents retrieved successfully');
     }
 
     public function store(Request $request)
@@ -71,7 +81,7 @@ class AgentController extends Controller
             'branch_id' => [
                 'required',
                 'uuid',
-               Rule::exists('branches', 'id')->where(function ($query) use ($request) {
+                Rule::exists('branches', 'id')->where(function ($query) use ($request) {
                     return $query->where('company_id', $request->company_id);
                 })
             ],
@@ -83,7 +93,7 @@ class AgentController extends Controller
             'place_of_birth' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required', 'date_format:Y-m-d'],
             'sex' => ['required', 'in:male,female'],
-            'national_id' => ['required','string','max:30', 'unique:people'],
+            'national_id' => ['required', 'string', 'max:30', 'unique:people'],
             'address' => ['required', 'string', 'max:255'],
             'city_id' => [
                 'required',
@@ -177,7 +187,10 @@ class AgentController extends Controller
 
     public function downloadAttachments($id)
     {
-        $person = Person::find($id)->load('file')->toArray() ?? null;
+        $person = Person::where('id', $id)
+            ->where('company_id', Auth::user()->company_id)
+            ->with(['file'])
+            ->first();
 
         if (!$person) return (new Response)->json(null, 'agent not found', 404);
 
