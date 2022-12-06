@@ -49,7 +49,7 @@ class Person extends Model
 
     public function file()
     {
-        return $this->morphOne(File::class, 'fileable');
+        return $this->morphOne(File::class, 'fileable')->latest();
     }
 
     public function files()

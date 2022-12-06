@@ -93,7 +93,7 @@ class AgentController extends Controller
             'place_of_birth' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required', 'date_format:Y-m-d'],
             'sex' => ['required', 'in:male,female'],
-            'national_id' => ['required', 'string', 'max:30', 'unique:people'],
+            'national_id' => ['required', 'string', 'max:30'],
             'address' => ['required', 'string', 'max:255'],
             'city_id' => [
                 'required',
@@ -188,7 +188,7 @@ class AgentController extends Controller
     public function downloadAttachments($id)
     {
         $person = Person::where('id', $id)
-            ->where('company_id', Auth::user()->company_id)
+            ->where('company_id', auth()->user()->company_id)
             ->with(['file'])
             ->first();
 

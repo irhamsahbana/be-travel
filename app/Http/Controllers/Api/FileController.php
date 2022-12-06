@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 use App\Libs\Response;
 use App\Libs\FileSaver;
+use Illuminate\Validation\Rule;
 
 class FileController extends Controller
 {
@@ -20,36 +21,48 @@ class FileController extends Controller
         $field = [
             'file' => $request->file('file'),
             'fileable_id' => $request->fileable_id,
+            'fileable_type' => $request->fileable_type,
         ];
 
         $rules = [
             'file' =>  ['required', 'file', 'mimes:pdf'],
             'fileable_id' => ['required', 'uuid'],
+            'fileable_type' => [
+                'required',
+                'string',
+                Rule::in([
+                    'person'
+                ])
+            ],
         ];
 
         $validator = Validator::make($field, $rules);
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
 
-        $tables = [
-            'people' => [
+        $type = [
+            'person' => [
                 'model' => 'App\Models\Person',
                 'path' => 'people',
             ],
         ];
 
-        foreach ($tables as $table => $data) {
-            $model = $data['model'];
-            $path = $data['path'];
+        $fileable = $type[$request->fileable_type]['model']::where('id', $request->fileable_id)->first();
+        if (!$fileable) return (new Response)->json(null, 'Fileable not found', 404);
 
-            $fileable = DB::table($table)->where('id', $field['fileable_id'])->first();
-            if ($fileable) {
-                $filename = ((string) Str::uuid()) . '.' . $field['file']->getClientOriginalExtension();
+        $filename = ((string) Str::uuid()) . '.' . $field['file']->getClientOriginalExtension();
 
-                $this->saveFile($field['file'], $path, $field['fileable_id'], $model, $filename);
-                return (new Response)->json(null, 'uploaded successfully', 200);
-            }
+        try {
+            $file = $this->saveFile(
+                $request->file('file'),
+                $type[$request->fileable_type]['path'],
+                $request->fileable_id,
+                $type[$request->fileable_type]['model'],
+                $filename
+            );
+
+            return (new Response)->json($file->toArray(), 'File uploaded successfully');
+        } catch (\Exception $e) {
+            return (new Response)->json(null, $e->getMessage(), 500);
         }
-
-        return (new Response)->json(null, 'fileable_id not found', 404);
     }
 }

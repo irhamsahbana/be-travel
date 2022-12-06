@@ -7,7 +7,7 @@ use Illuminate\Http\UploadedFile;
 
 trait FileSaver
 {
-    public function saveFile(UploadedFile $file, $path, $fileableId, $fileableType, string $name)
+    public function saveFile(UploadedFile $file, $path, $fileableId, $fileableType, string $name): ?File
     {
         $path = $file->storeAs($path, $name);
 

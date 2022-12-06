@@ -35,7 +35,7 @@ class CreatePeopleTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone')->unique()->nullable();
             $table->string('wa')->unique()->nullable();
-            $table->string('national_id')->unique()->nullable();
+            $table->string('national_id')->nullable();
             $table->string('address')->nullable();
             $table->string('profession')->nullable();
             $table->string('emergency_name')->nullable();
