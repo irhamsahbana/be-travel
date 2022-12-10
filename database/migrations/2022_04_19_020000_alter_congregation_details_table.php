@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('congregation_checklists', function (Blueprint $table) {
+        Schema::table('congregation_details', function (Blueprint $table) {
             $table->index('person_id');
             $table->foreign('person_id')
             ->references('id')->on('people')->onDelete('cascade');
@@ -27,7 +27,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('congregation_checklists', function (Blueprint $table) {
+        Schema::table('congregation_details', function (Blueprint $table) {
             $table->dropForeign(['person_id']);
             $table->dropIndex(['person_id']);
         });

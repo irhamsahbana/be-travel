@@ -17,8 +17,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('company_id');
             $table->uuid('congregation_id');
-            $table->decimal('amount', 15, 2);
-            $table->decimal('paid', 15, 2);
+            $table->decimal('amount', 15, 2)->default(0);
+            $table->decimal('paid', 15, 2)->default(0);
             $table->timestamps();
         });
     }

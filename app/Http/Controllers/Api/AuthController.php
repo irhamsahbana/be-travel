@@ -33,7 +33,7 @@ class AuthController extends Controller
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
 
 
-       if (Auth::attempt($fields)) {
+        if (Auth::attempt($fields)) {
             $user = Auth::user()->with('person', 'person.category')->first();
             $token = $user->createToken('auth_token')->plainTextToken;
 

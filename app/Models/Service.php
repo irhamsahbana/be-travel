@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Company extends Model
+class Service extends Model
 {
     use HasFactory, HasUuids;
 
@@ -16,13 +16,8 @@ class Company extends Model
         'deleted_at',
     ];
 
-    public function branches()
+    public function packetType()
     {
-        return $this->hasMany(Branch::class, 'company_id');
-    }
-
-    public function services()
-    {
-        return $this->hasMany(Service::class, 'company_id');
+        return $this->belongsTo(Category::class);
     }
 }

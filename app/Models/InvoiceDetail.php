@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Company extends Model
+class InvoiceDetail extends Model
 {
     use HasFactory, HasUuids;
 
@@ -16,13 +16,15 @@ class Company extends Model
         'deleted_at',
     ];
 
-    public function branches()
+    protected $guarded = [];
+
+    public function invoice()
     {
-        return $this->hasMany(Branch::class, 'company_id');
+        return $this->belongsTo(Invoice::class, 'invoice_id');
     }
 
-    public function services()
+    public function service()
     {
-        return $this->hasMany(Service::class, 'company_id');
+        return $this->belongsTo(Service::class, 'service_id');
     }
 }

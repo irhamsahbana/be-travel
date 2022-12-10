@@ -26,6 +26,10 @@ class AlterPeopleTable extends Migration
             $table->foreign('category_id')
             ->references('id')->on('categories');
 
+            $table->index('agent_id');
+            $table->foreign('agent_id')
+            ->references('id')->on('people');
+
             $table->index('city_id');
             $table->foreign('city_id')
             ->references('id')->on('categories');
@@ -48,6 +52,9 @@ class AlterPeopleTable extends Migration
 
             $table->dropForeign(['category_id']);
             $table->dropIndex(['category_id']);
+
+            $table->dropForeign(['agent_id']);
+            $table->dropIndex(['agent_id']);
 
             $table->dropForeign(['city_id']);
             $table->dropIndex(['city_id']);

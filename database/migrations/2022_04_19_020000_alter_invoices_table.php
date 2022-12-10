@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('invoices', function (Blueprint $table) {
             $table->index('company_id');
             $table->foreign('company_id')
-            ->references('id')->on('people')->onDelete('cascade');
+            ->references('id')->on('companies')->onDelete('cascade');
 
             $table->index('congregation_id');
             $table->foreign('congregation_id')

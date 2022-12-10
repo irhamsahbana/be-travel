@@ -59,6 +59,16 @@ class Person extends Model
 
     public function agentWorkExperiences()
     {
-        return $this->hasMany(AgentWorkExperience::class);
+        return $this->hasMany(AgentWorkExperience::class, 'person_id');
+    }
+
+    public function congregationDetail()
+    {
+        return $this->hasOne(CongregationDetail::class, 'person_id');
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class, 'congregation_id');
     }
 }

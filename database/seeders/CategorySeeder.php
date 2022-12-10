@@ -42,7 +42,6 @@ class CategorySeeder extends Seeder
         $categories =  $csv->data;
 
         foreach ($categories as $category) {
-            dump($category);
             Category::updateOrCreate(
                 [
                     'id' => !empty($category['ID']) ? $category['ID'] : Str::uuid()->toString(),

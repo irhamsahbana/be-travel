@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('company_id');
             $table->uuid('packet_type_id');
             $table->string('name');
             $table->decimal('price', 15, 2);

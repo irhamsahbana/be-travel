@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Rules\AgentRules;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Str;
@@ -13,17 +14,14 @@ use Illuminate\Validation\Rule;
 
 use App\Libs\RefNoGenerator;
 use App\Libs\Response;
-use App\Libs\FileSaver;
-use App\Libs\Dumper;
 
 use App\Models\Category;
 use App\Models\Person;
 use App\Models\AgentWorkExperience;
-use App\Models\User;
 
 class AgentController extends Controller
 {
-    use RefNoGenerator, FileSaver, Dumper;
+    use RefNoGenerator;
 
     public function index(Request $request)
     {
@@ -43,7 +41,7 @@ class AgentController extends Controller
     {
         $refNo = $this->generateRefNo('people', 4, 'AG/', $this->getPostfix());
 
-        $fields = [
+        $personData = [
             'category_id' => Category::where('name', 'agent')->where('group_by', 'people')->first()->id ?? null,
             'company_id' => $request->company_id,
             'branch_id' => $request->branch_id,
@@ -71,95 +69,27 @@ class AgentController extends Controller
             'emergency_address' => $request->emergency_address,
             'emergency_home_phone' => $request->emergency_home_phone,
             'emergency_phone' => $request->emergency_phone,
-            'work_experiences' => $request->work_experiences,
             'notes' => $request->notes,
-            // 'file' => $file
         ];
 
-        $rules = [
-            'company_id' => ['required', 'uuid', 'exists:companies,id'],
-            'branch_id' => [
-                'required',
-                'uuid',
-                Rule::exists('branches', 'id')->where(function ($query) use ($request) {
-                    return $query->where('company_id', $request->company_id);
-                })
-            ],
-
-            'ref_no' => ['required', 'string', 'max:255', 'unique:people'],
-            'name' => ['required', 'string', 'max:255'],
-            'father_name' => ['required', 'string', 'max:255'],
-            'mother_name' => ['required', 'string', 'max:255'],
-            'place_of_birth' => ['required', 'string', 'max:255'],
-            'date_of_birth' => ['required', 'date_format:Y-m-d'],
-            'sex' => ['required', 'in:male,female'],
-            'national_id' => ['required', 'string', 'max:30'],
-            'address' => ['required', 'string', 'max:255'],
-            'city_id' => [
-                'required',
-                'uuid',
-                Rule::exists('categories', 'id')->where(function ($query) {
-                    return $query->where('group_by', 'cities');
-                })
-            ],
-            'nationality_id' => [
-                'required',
-                'uuid',
-                Rule::exists('categories', 'id')->where(function ($query) {
-                    return $query->where('group_by', 'nationalities');
-                })
-            ],
-            'phone' => ['required', 'string', 'max:15'],
-            'wa' => ['required', 'string', 'max:15'],
-            'email' => ['required', 'string', 'email:rfc,dns', 'max:255'],
-            'education_id' => [
-                'required',
-                'uuid',
-                Rule::exists('categories', 'id')->where(function ($query) {
-                    return $query->where('group_by', 'educations');
-                })
-            ],
-            'profession' => ['required', 'string', 'max:255'],
-            'marital_status_id' => [
-                'required',
-                'uuid',
-                Rule::exists('categories', 'id')->where(function ($query) {
-                    return $query->where('group_by', 'marital_statuses');
-                })
-            ],
-            'account_name' => ['required', 'string', 'max:255'],
-            'bank_id' => [
-                'required',
-                'uuid',
-                Rule::exists('categories', 'id')->where(function ($query) {
-                    return $query->where('group_by', 'banks');
-                })
-            ],
-            'account_number' => ['required', 'string', 'max:25'],
-            'emergency_name' => ['required', 'string', 'max:255'],
-            'emergency_address' => ['required', 'string', 'max:255'],
-            'emergency_home_phone' => ['required', 'string', 'max:15'],
-            'emergency_phone' => ['required', 'string', 'max:15'],
-
-            'work_experiences' => ['array', 'min:0'],
-            'work_experiences.*.company_name' => ['required', 'string', 'max:255'],
-            'work_experiences.*.role' => ['required', 'string', 'max:255'],
-            'work_experiences.*.start_date' => ['required', 'date_format:Y-m-d'],
-            'work_experiences.*.end_date' => ['nullable', 'date_format:Y-m-d'],
-
-            'notes' => ['nullable', 'string', 'max:255'],
+        $workExperiencesData = [
+            'work_experiences' => $request->work_experiences,
         ];
+
+        $fields = array_merge($personData, $workExperiencesData);
+
+        $personRules = (new AgentRules)->store($request);
+        $workExperiencesRules = (new AgentRules)->workExperiences($request);
+
+        $rules = array_merge($personRules, $workExperiencesRules);
 
         $validator = Validator::make($fields, $rules);
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
 
         DB::beginTransaction();
         try {
-            $workExperiences = (array) $fields['work_experiences'];
-
-            unset($fields['work_experiences']);
-            unset($fields['file']);
-            $person = Person::create($fields);
+            $person = Person::create($personData);
+            $workExperiences = (array) $workExperiencesData['work_experiences'];
 
             foreach ($workExperiences as $key => $value) {
                 $workExperiences[$key]['person_id'] = $person->id;

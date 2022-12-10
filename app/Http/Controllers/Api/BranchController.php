@@ -27,6 +27,18 @@ class BranchController extends Controller
         return (new Response)->json($branches, 'Branches retrieved successfully.');
     }
 
+    public function publicIndex(Request $request)
+    {
+        $data = Branch::select('id', 'name');
+
+        if ($request->company_id) {
+            $data = $data->where('company_id', $request->company_id);
+        }
+
+        $data = $data->orderBy('ref_no')->get()->toArray();
+        return (new Response)->json($data, 'Branches retrieved successfully.');
+    }
+
     public function store(Request $request)
     {
         $refNo = $this->generateRefNo('branches', 4, 'BR/', $this->getPostfix());

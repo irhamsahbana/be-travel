@@ -53,6 +53,11 @@ class Response
         $this->headers = $headers;
     }
 
+    public function addheader(string $key, string $value)
+    {
+        return $this->headers[$key] = $value;
+    }
+
     private function getHeaders()
     {
         return $this->headers;

@@ -7,9 +7,10 @@ use App\Http\Controllers\Api\{
     CategoryController,
     TutorController,
     // GetCitiesController
-
+    CompanyController,
     BranchController,
     AgentController,
+    CongregationController,
     FileController,
 };
 
@@ -24,7 +25,11 @@ use App\Http\Controllers\Api\{
 |
 */
 Route::post('agents', [AgentController::class, 'store']);
+Route::post('congregations', [CongregationController::class, 'store']);
 Route::get('public-categories', [CategoryController::class, 'index']);
+
+Route::get('public-companies', [CompanyController::class, 'publicIndex']);
+Route::get('public-branches', [BranchController::class, 'publicIndex']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('me', [AuthController::class, 'me']);
@@ -47,10 +52,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('files', [FileController::class, 'storeFile']);
 
-    Route::get('agents', [AgentController::class, 'index']);
-    Route::get('agents/{id}', [AgentController::class, 'show']);
     Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
-
+    Route::get('agents/{id}', [AgentController::class, 'show']);
+    Route::get('agents', [AgentController::class, 'index']);
 
     /**
      * Dangerous route, only for development purpose

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('invoice_id');
             $table->uuid('service_id');
-            $table->decimal('quantity', 15, 2);
-            $table->decimal('price', 15, 2);
+            $table->decimal('quantity', 15, 2)->default(0);
+            $table->decimal('price', 15, 2)->default(0);
             $table->string('notes')->nullable();
             $table->timestamps();
         });

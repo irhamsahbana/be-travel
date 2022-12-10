@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
     private function DummySeeder()
     {
         $this->call(DummyCategorySeeder::class);
+        $this->call(DummyServiceSeeder::class);
+        $this->call(DummyBranchSeeder::class);
         // $this->call(DummyCourseMasterSeeder::class);
         // $this->call(DummyCourseSeeder::class);
         // $this->call(DummyClassroomSeeder::class);
