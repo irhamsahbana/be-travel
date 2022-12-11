@@ -18,8 +18,9 @@ return new class extends Migration
             $table->uuid('person_id');
             $table->string('title');
             $table->text('message');
-            $table->string('status')->default('draft');
-            $table->timestamp('scheduled_at')->nullable();
+            // $table->string('status')->default('draft');
+            $table->date('scheduled_date')->nullable();
+            $table->time('scheduled_time', 0)->nullable();
             $table->timestamps();
         });
     }

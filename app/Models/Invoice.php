@@ -28,6 +28,11 @@ class Invoice extends Model
         return $this->belongsTo(Person::class, 'person_id');
     }
 
+    public function congregation()
+    {
+        return $this->belongsTo(Person::class, 'congregation_id');
+    }
+
     public function company()
     {
         return $this->belongsTo(Company::class, 'company_id');

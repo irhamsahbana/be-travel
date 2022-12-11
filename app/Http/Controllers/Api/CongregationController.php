@@ -130,50 +130,26 @@ class CongregationController extends Controller
             $person = Person::with([
                 'congregationDetail'
             ])->find($person->id);
-            $invoice = Invoice::with(['invoiceDetails.service.packetType'])->find($invoice->id);
+
+            $invoice = Invoice::with([
+                'invoiceDetails.service.packetType',
+                'company.accounts.bank',
+            ])
+                ->find($invoice->id);
 
             $p = $person->toArray();
             $inv = ['invoice' => $invoice->toArray()];
             $response = array_merge($p, $inv);
 
+            $job = new SendRegisteredNotificationJob($invoice, $person);
+            $this->dispatch($job);
+
             DB::commit();
 
-            $waNumber = $request->wa;
-            $invo = $invoice->toArray();
-            $company = Company::with('accounts.bank')->find($request->company_id);
-            $departureDate = \Carbon\Carbon::parse($invo['invoice_details'][0]['service']['departure_date'])
-                ->locale('id')
-                ->settings(['formatFunction' => 'translatedFormat'])
-                ->format('l, j F Y');
-            $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->settings(['formatFunction' => 'translatedFormat'])->format('l, j F Y');
-            $price = number_format($invo['invoice_details'][0]['price'], 0, ',', '.');
-            $price = 'Rp. ' . $price . ',-';
-            $accounts = '';
-            foreach ($company->accounts as $account) {
-                $accounts .= "- {$account->bank->label} {$account->account_number} (a/n {$account->account_name}) \n";
-            }
-
-            $message = <<<EOD
-            {$timestamps}
-            Terima kasih telah melakukan pendaftaran di {$company->name}. Berikut adalah detail pendaftaran anda:
-
-            Nama: $person->name
-            No. Invoice: {$invo['id']}
-            Paket: {$invo['invoice_details'][0]['service']['packet_type']['label']}
-            Keberangkatan: {$departureDate}
-            Harga: {$price}
-
-            Silahkan melakukan pembayaran hanya melalui transfer ke rekening berikut:
-
-            {$accounts}
-            EOD;
-
-            $job = new SendRegisteredNotificationJob($waNumber, $message);
-            $this->dispatch($job);
             return (new Response)->json($response, 'success to create congregation', 201);
         } catch (\Exception $e) {
             DB::rollBack();
-            return (new Response)->json(null, $e->getMessage(), 500);
+            return (new Response)->json(null, $e->getMessage(), 500, get_class($e), $e->getFile(), $e->getLine(), $e->getTrace());
         }
     }
 

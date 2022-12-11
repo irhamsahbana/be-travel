@@ -2,6 +2,8 @@
 
 namespace App\Jobs;
 
+use App\Models\Invoice;
+use App\Models\Person;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -14,22 +16,55 @@ class SendRegisteredNotificationJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected string $waNumber = '';
+    protected ?Invoice $invoice;
+    protected ?Person $congregation;
     protected string $message = '';
 
-    public function __construct(string $waNumber, string $message)
+    public function __construct(Invoice $invoice, Person $congregation)
     {
-        $this->waNumber = $waNumber;
+        $this->invoice = $invoice;
+        $this->congregation = $congregation;
+
+        $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->translatedFormat('l, j F Y');
+
+        $departureDate = \Carbon\Carbon::parse(
+            $invoice->invoiceDetails[0]->service->departure_date
+        )->locale('id')->translatedFormat('l, j F Y');
+
+        $price = number_format($invoice->invoiceDetails[0]->price, 0, ',', '.');
+        $price = 'Rp. ' . $price . ',-';
+
+        $accounts = '';
+        foreach ($invoice->company->accounts as $account) {
+            $accounts .= "- {$account->bank->label} {$account->account_number} (a/n {$account->account_name}) \n";
+        }
+
+        $message = <<<EOD
+        {$timestamps}
+
+        Terima kasih telah melakukan pendaftaran di {$invoice->company->name}. Berikut adalah detail pendaftaran anda:
+
+        Nama: {$congregation->name}
+        No. Invoice: {$invoice->id}
+        Paket: {$invoice->invoiceDetails[0]->service->packetType->label}
+        Keberangkatan: {$departureDate}
+        Harga: {$price}
+
+        Silahkan melakukan pembayaran hanya melalui transfer ke rekening berikut:
+
+        {$accounts}
+        EOD;
+
         $this->message = $message;
     }
 
     public function handle()
     {
-        sleep(5);
+        sleep(4);
 
         $formParams = [
             'token' => config('services.ruangwa.token'),
-            'number' => $this->waNumber,
+            'number' => $this->congregation->wa ?? '',
             'message' => $this->message,
         ];
 
@@ -38,6 +73,38 @@ class SendRegisteredNotificationJob implements ShouldQueue
             'form_params' => $formParams
         ]);
 
+        $res = json_decode($response->getBody()->getContents());
 
+        if ($response->getStatusCode() >= 200 && $response->getStatusCode() < 300) {
+            $result = filter_var($res->result, FILTER_VALIDATE_BOOLEAN);
+            if ($result) {
+                Invoice::where('id', $this->invoice->id)->update([
+                    'notification_status' => 'sent',
+                ]);
+            } else {
+                Invoice::where('id', $this->invoice->id)->update([
+                    'notification_status' => 'failed',
+                ]);
+            }
+        } else if ($response->getStatusCode() >= 400 && $response->getStatusCode() < 600) {
+            Invoice::where('id', $this->invoice->id)->update([
+                'notification_status' => 'failed',
+            ]);
+        }
+
+        // array:2 [ // app/Jobs/SendRegisteredNotificationJob.php:85
+        //     "result" => "false"
+        //     "message" => "Tidak ada data!"
+        //   ]
+
+        // {#1805 // app/Jobs/SendRegisteredNotificationJob.php:77
+        // +"result": "true"
+        // +"id": "BAE5250D11A36D52"
+        // +"number": "6282188449289"
+        // +"message": "Kirim pesan sukses!"
+        // +"status": "sent"
+        // }
+
+        // sample response
     }
 }
