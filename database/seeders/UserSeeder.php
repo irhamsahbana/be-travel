@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\{
     Category,
     Company,
+    CompanyAccount,
     User,
     Meta,
     PermissionGroupPermission,

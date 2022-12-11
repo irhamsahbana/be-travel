@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DummyCategorySeeder::class);
         $this->call(DummyServiceSeeder::class);
         $this->call(DummyBranchSeeder::class);
+        $this->call(DummyCompanyAccountSeeder::class);
         // $this->call(DummyCourseMasterSeeder::class);
         // $this->call(DummyCourseSeeder::class);
         // $this->call(DummyClassroomSeeder::class);
