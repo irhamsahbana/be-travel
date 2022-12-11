@@ -63,8 +63,8 @@ class CongregationRules extends PeopleRules
                 'required',
                 'uuid',
                 Rule::exists('services', 'id')->where(function ($query) use ($request) {
-                    return $query->where('company_id', $request->company_id)
-                        ->where('departure_date', '>', date('Y-m-d'));
+                    return $query->where('company_id', $request->company_id);
+                        // ->whereDate('departure_date', '>', date('Y-m-d'));
                 }),
             ],
         ];

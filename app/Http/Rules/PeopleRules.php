@@ -42,8 +42,18 @@ class PeopleRules
                     return $query->where('group_by', 'nationalities');
                 })
             ],
-            'phone' => ['required', 'string', 'max:15'],
-            'wa' => ['required', 'string', 'max:15'],
+            'phone' => ['required', 'string', 'max:15',
+                Rule::unique('people')->where(function ($query) use ($request) {
+                    return $query->where('company_id', $request->company_id);
+                }),
+                'regex:/^62[0-9]{6,11}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
+            ],
+            'wa' => ['required', 'string', 'max:15',
+                Rule::unique('people')->where(function ($query) use ($request) {
+                    return $query->where('company_id', $request->company_id);
+                }),
+                'regex:/^62[0-9]{6,11}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
+            ],
             'email' => ['required', 'string', 'email:rfc,dns', 'max:255'],
             'education_id' => [
                 'required',

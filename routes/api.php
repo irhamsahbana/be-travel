@@ -14,6 +14,8 @@ use App\Http\Controllers\Api\{
     FileController,
 };
 
+use App\Jobs\SendRegisteredNotificationJob;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,6 +26,7 @@ use App\Http\Controllers\Api\{
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::post('agents', [AgentController::class, 'store']);
 Route::post('congregations', [CongregationController::class, 'store']);
 Route::get('public-categories', [CategoryController::class, 'index']);

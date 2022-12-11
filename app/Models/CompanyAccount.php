@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Company extends Model
+class CompanyAccount extends Model
 {
     use HasFactory, HasUuids;
 
@@ -16,18 +16,13 @@ class Company extends Model
         'deleted_at',
     ];
 
-    public function branches()
+    public function company()
     {
-        return $this->hasMany(Branch::class, 'company_id');
+        return $this->belongsTo(Company::class, 'company_id');
     }
 
-    public function services()
+    public function bank()
     {
-        return $this->hasMany(Service::class, 'company_id');
-    }
-
-    public function accounts()
-    {
-        return $this->hasMany(CompanyAccount::class, 'company_id');
+        return $this->belongsTo(Category::class, 'bank_id');
     }
 }
