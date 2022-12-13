@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-use App\Models\Person;
-use App\Models\Service;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DummyServiceSeeder extends Seeder
+use App\Models\Category;
+use App\Models\Company;
+use App\Models\Service;
+
+class DummyCompanyServiceSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,12 +18,10 @@ class DummyServiceSeeder extends Seeder
      */
     public function run()
     {
-        $person = Person::whereHas('category', function ($query) {
-            $query->where('name', 'director');
-        })->first();
+        $company = Company::all()->first();
 
         $category = new Category();
-        $packetTypes = $category->packetTypes($person->company_id)->get();
+        $packetTypes = $category->packetTypes($company->id)->get();
 
         $uuids = [
             '97f2dc11-0f70-4dc8-aa58-d0a6dd01ad85',
@@ -33,7 +32,7 @@ class DummyServiceSeeder extends Seeder
         foreach ($packetTypes as $key => $packetType) {
             $dummyService = new Service();
             $dummyService->id = $uuids[$key] ?? null;
-            $dummyService->company_id = $person->company_id;
+            $dummyService->company_id = $company->id;
             $dummyService->packet_type_id = $packetType->id;
             $dummyService->name = 'Dummy Service ' . $key;
             $dummyService->price = 1_000_000 + $key;

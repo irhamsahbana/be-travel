@@ -113,6 +113,7 @@ class CongregationController extends Controller
             $invoiceData = [
                 'company_id' => $request->company_id,
                 'congregation_id' => $person->id,
+                'agent_id' => $request->agent_id,
                 'amount' => $service->price,
                 'paid' => 0,
             ];

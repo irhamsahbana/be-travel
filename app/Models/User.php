@@ -38,6 +38,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
         'email_verified_at',
+        'created_at',
+        'updated_at',
+        'deleted_at'
     ];
 
     /**
@@ -48,6 +51,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 
     public function person()
     {
@@ -97,4 +101,10 @@ class User extends Authenticatable
 
         return null;
     }
+
+    public function permissionGroup()
+    {
+        return $this->belongsTo(Category::class, 'permission_group_id');
+    }
+
 }

@@ -21,6 +21,10 @@ return new class extends Migration
             $table->index('congregation_id');
             $table->foreign('congregation_id')
             ->references('id')->on('people')->onDelete('cascade');
+
+            $table->index('agent_id');
+            $table->foreign('agent_id')
+            ->references('id')->on('people')->onDelete('set null');
         });
     }
 
@@ -37,6 +41,9 @@ return new class extends Migration
 
             $table->dropForeign(['congregation_id']);
             $table->dropIndex(['congregation_id']);
+
+            $table->dropForeign(['agent_id']);
+            $table->dropIndex(['agent_id']);
         });
     }
 };

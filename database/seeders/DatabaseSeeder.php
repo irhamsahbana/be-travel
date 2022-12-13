@@ -14,8 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(CategorySeeder::class);
-        $this->call(UserSeeder::class);
-        // $this->call(PermissionGroupSeeder::class);
 
         $this->DummySeeder();
     }
@@ -23,15 +21,16 @@ class DatabaseSeeder extends Seeder
     private function DummySeeder()
     {
         $this->call(DummyCategorySeeder::class);
-        $this->call(DummyServiceSeeder::class);
-        $this->call(DummyBranchSeeder::class);
-        $this->call(DummyCompanyAccountSeeder::class);
-        // $this->call(DummyCourseMasterSeeder::class);
-        // $this->call(DummyCourseSeeder::class);
-        // $this->call(DummyClassroomSeeder::class);
-        // $this->call(DummyPersonSeeder::class);
-        // $this->call(DummyUserSeeder::class);
 
-        // $this->call(DummyClassroomParticipantSeeder::class);
+        $this->call(DummyCompanySeeder::class);
+        $this->call(DummyCompanyAccountSeeder::class);
+        $this->call(DummyCompanyPacketTypeSeeder::class);
+        $this->call(DummyCompanyServiceSeeder::class);
+
+        $this->call(DummyCompanyPermissionGroupSeeder::class);
+
+        $this->call(DummyBranchSeeder::class);
+        $this->call(DummyPersonSeeder::class);
+        $this->call(DummyUserSeeder::class);
     }
 }

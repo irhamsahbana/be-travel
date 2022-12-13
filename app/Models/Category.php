@@ -69,4 +69,16 @@ class Category extends Model
     {
         return $this->where('group_by', 'payment_methods');
     }
+
+    // categories as permission groups
+    public function permissions()
+    {
+        return $this->belongsToMany(Category::class, 'permission_group_permissions', 'permission_group_id', 'permission_id');
+    }
+
+    // categories as permissions
+    public function permissionGroups()
+    {
+        return $this->belongsToMany(Category::class, 'permission_group_permissions', 'permission_id', 'permission_group_id');
+    }
 }

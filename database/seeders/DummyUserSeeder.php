@@ -3,11 +3,15 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
-use App\Models\Category;
-use App\Models\Person;
-use App\Models\User;
-use App\Models\Meta;
+use App\Models\{
+    Category,
+    Company,
+    User,
+    PermissionGroupPermission,
+    Person,
+};
 
 class DummyUserSeeder extends Seeder
 {
@@ -18,81 +22,49 @@ class DummyUserSeeder extends Seeder
      */
     public function run()
     {
-        $people = $this->getPeople();
+        // companies table
+        $company = Company::all()->first();
 
-        $personCategories = Category::where('group_by', 'people')->get();
-        $personLecturer = $personCategories->where('name', 'lecturer')->first();
-        $personLearner = $personCategories->where('name', 'learner')->first();
+        // company permission groups
+        $companyPGs = Category::where('company_id', $company->id)->where('group_by', 'permission_groups')->get();
+        $directorPG = $companyPGs->where('name', 'director')->first();
+        $branchManagerPG = $companyPGs->where('name', 'branch-manager')->first();
+        $agentPG = $companyPGs->where('name', 'agent')->first();
 
-        foreach ($people as $person) {
-            $user = $this->createUser($person);
+        // people table
+        $people = Person::with('category')
+            ->where('company_id', $company->id)
+            ->get();
+        $director = $people->where('category.name', 'director')->first();
+        $branchManager = $people->where('category.name', 'branch-manager')->first();
+        $agent = $people->where('category.name', 'agent')->first();
 
-            // get permission group
-            $permissionGroups = Category::where('group_by', 'permission_groups')->get();
-            $lecturerGroup = $permissionGroups->where('name', 'lecturer')->first();
-            $learnerGroup = $permissionGroups->where('name', 'learner')->first();
+        // users table
+        $user = new User();
+        $user->person_id = $director->id;
+        $user->company_id = $company->id;
+        $user->permission_group_id = $directorPG->id;
+        $user->email = 'director@director';
+        $user->username = 'director';
+        $user->password = bcrypt('director');
+        $user->save();
 
-            // select permission group by person category
-            $value = null;
-            switch($person->category_id) {
-                case $personLecturer->id: // if lecturer
-                    $value = $lecturerGroup->id;
-                    break;
-                case $personLearner->id: // if learner
-                    $value = $learnerGroup->id;
-                    break;
-            }
+        $user = new User();
+        $user->person_id = $branchManager->id;
+        $user->company_id = $company->id;
+        $user->permission_group_id = $branchManagerPG->id;
+        $user->email = 'branch-manager@branch-manager';
+        $user->username = 'branch-manager';
+        $user->password = bcrypt('branch-manager');
+        $user->save();
 
-            // create permission group for user if he/she is lecturer or learner
-            if ($value)
-                Meta::create([
-                    'fk_id' => $user->id,
-                    'table_name' => $user->getTable(),
-                    'key' => 'permission_group_id',
-                    'value' => $value,
-                ]);
-        }
-    }
-
-    private function getPeople()
-    {
-        return Person::select(
-            'people.id',
-            'people.category_id',
-            'people.name',
-            'people.email',
-
-            'categories.name AS category_name',
-            'categories.group_by',
-        )
-        ->join('categories', 'categories.id', '=', 'people.category_id')
-        ->get();
-    }
-
-    private function createUser(Person $person)
-    {
-        try {
-            $user = new User();
-            $name = explode(' ', $person->name);
-
-            $user->username = strtolower($name[1]);
-            $user->person_id = $person->id;
-            $user->name = $person->name;
-            $user->email = $person->email;
-            $user->password = bcrypt('password');
-            $user->save();
-        } catch (\Throwable $th) {
-            $user = new User();
-            $name = explode(' ', $person->name);
-
-            $user->username = strtolower($name[1]) . '_' . $person->id;
-            $user->person_id = $person->id;
-            $user->name = $person->name;
-            $user->email = $person->email;
-            $user->password = bcrypt('password');
-            $user->save();
-        }
-
-        return $user;
+        $user = new User();
+        $user->person_id = $agent->id;
+        $user->company_id = $company->id;
+        $user->permission_group_id = $agentPG->id;
+        $user->email = 'agent@agent';
+        $user->username = 'agent';
+        $user->password = bcrypt('agent');
+        $user->save();
     }
 }
