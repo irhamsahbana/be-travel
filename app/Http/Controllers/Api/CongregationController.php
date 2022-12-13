@@ -26,6 +26,11 @@ class CongregationController extends Controller
 
     public function store(Request $request)
     {
+        //
+    }
+
+    public function register(Request $request)
+    {
         $refNo = $this->generateRefNo('people', 4, 'CG/', $this->getPostfix());
 
         $personData = [

@@ -39,6 +39,11 @@ class AgentController extends Controller
 
     public function store(Request $request)
     {
+        //
+    }
+
+    public function register(Request $request)
+    {
         $refNo = $this->generateRefNo('people', 4, 'AG/', $this->getPostfix());
 
         $personData = [

@@ -28,12 +28,13 @@ use App\Libs\Response;
 |
 */
 
-Route::post('agents', [AgentController::class, 'store']);
-Route::post('congregations', [CongregationController::class, 'store']);
+Route::post('agents/register', [AgentController::class, 'register']);
+Route::post('congregations/register', [CongregationController::class, 'register']);
 Route::get('public-categories', [CategoryController::class, 'index']);
 
 Route::get('public-companies', [CompanyController::class, 'publicIndex']);
 Route::get('public-branches', [BranchController::class, 'publicIndex']);
+Route::post("auth/login", [AuthController::class, 'attempt']);
 
 Route::get('test', function() {
     return (new Response)->json(['test' => 'test'], 'success');
@@ -75,4 +76,4 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 
-Route::post("auth/login", [AuthController::class, 'attempt']);
+
