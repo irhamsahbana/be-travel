@@ -62,15 +62,9 @@ class CompanyController extends Controller
             'person.name' => ['required', 'string', 'max:255'],
             'person.username' => ['required', 'string', 'max:255', 'unique:users,username'],
             'person.password' => ['required', 'string', 'min:8'],
-            'person.phone' => [
-                'required', 'string', 'max:255',
-                'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
+            'person.phone' => ['required', 'string', 'max:15', 'regex:/^62[0-9]{6,15}$/', // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
-            'person.wa' => [
-                'required', 'string', 'max:255',
-                'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
-
-            ],
+            'person.wa' => ['required', 'string', 'max:15', 'regex:/^62[0-9]{6,15}$/','unique:people,wa'],
             'person.email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:people,email'],
         ];
 

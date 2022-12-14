@@ -27,9 +27,11 @@ use App\Libs\Response;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('companies/register', [CompanyController::class, 'register']);
-Route::post('agents/register', [AgentController::class, 'register']);
-Route::post('congregations/register', [CongregationController::class, 'register']);
+Route::post('register-companies', [CompanyController::class, 'register']);
+Route::post('register-agents', [AgentController::class, 'register']);
+Route::post('register-congregations', [CongregationController::class, 'register']);
+
+Route::get('status-congregations/{identifier}', [CongregationController::class, 'check']);
 Route::get('public-categories', [CategoryController::class, 'index']);
 
 Route::get('public-companies', [CompanyController::class, 'publicIndex']);

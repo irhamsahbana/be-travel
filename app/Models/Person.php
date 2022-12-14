@@ -27,6 +27,11 @@ class Person extends Model
         return $this->hasOne(User::class, 'person_id');
     }
 
+    public function agent()
+    {
+        return $this->belongsTo(Person::class, 'agent_id');
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
@@ -72,8 +77,13 @@ class Person extends Model
         return $this->hasOne(CongregationDetail::class, 'person_id');
     }
 
-    public function invoices()
+    public function congregationInvoices()
     {
         return $this->hasMany(Invoice::class, 'congregation_id');
+    }
+
+    public function agentInvoices()
+    {
+        return $this->hasMany(Invoice::class, 'agent_id');
     }
 }

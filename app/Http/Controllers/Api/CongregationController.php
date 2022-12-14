@@ -24,6 +24,33 @@ class CongregationController extends Controller
         //
     }
 
+    public function check($identifier)
+    {
+        $congregation = Person::whereNotNull('wa')
+            ->whereNotNull('phone')
+            ->whereNotNull('national_id')
+            ->where(function ($query) use ($identifier) {
+                $query->where('wa', $identifier)
+                    ->orWhere('phone', $identifier)
+                    ->orWhere('national_id', $identifier);
+            })
+            ->first();
+
+        if ($congregation) {
+            $congregation->load([
+                'company',
+                'branch',
+                'agent' => fn ($query) => $query->select('id', 'name', 'phone', 'wa'),
+                'city' => fn ($query) => $query->select('id', 'label', 'group_by'),
+                'congregationInvoices.invoiceDetails'
+            ]);
+
+            return (new Response)->json($congregation->toArray(), 'Congregation retrieved successfully.');
+        } else {
+            return (new Response)->json(null, 'Congregation not found.', 404);
+        }
+    }
+
     public function store(Request $request)
     {
         //
@@ -31,6 +58,7 @@ class CongregationController extends Controller
 
     public function register(Request $request)
     {
+
         $refNo = $this->generateRefNo('people', 4, 'CG/', $this->getPostfix());
 
         $personData = [
