@@ -16,6 +16,8 @@ class Company extends Model
         'deleted_at',
     ];
 
+    protected $guarded = [];
+
     public function branches()
     {
         return $this->hasMany(Branch::class, 'company_id');
@@ -29,5 +31,10 @@ class Company extends Model
     public function accounts()
     {
         return $this->hasMany(CompanyAccount::class, 'company_id');
+    }
+
+    public function people()
+    {
+        return $this->hasMany(Person::class, 'company_id');
     }
 }

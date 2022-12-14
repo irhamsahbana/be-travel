@@ -24,38 +24,7 @@ class SendRegisteredNotificationJob implements ShouldQueue
     {
         $this->invoice = $invoice;
         $this->congregation = $congregation;
-
-        $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->translatedFormat('l, j F Y');
-
-        $departureDate = \Carbon\Carbon::parse(
-            $invoice->invoiceDetails[0]->service->departure_date
-        )->locale('id')->translatedFormat('l, j F Y');
-
-        $price = number_format($invoice->invoiceDetails[0]->price, 0, ',', '.');
-        $price = 'Rp. ' . $price . ',-';
-
-        $accounts = '';
-        foreach ($invoice->company->accounts as $account) {
-            $accounts .= "- {$account->bank->label} {$account->account_number} (a/n {$account->account_name}) \n";
-        }
-
-        $message = <<<EOD
-        {$timestamps}
-
-        Terima kasih telah melakukan pendaftaran di {$invoice->company->name}. Berikut adalah detail pendaftaran anda:
-
-        Nama: {$congregation->name}
-        No. Invoice: {$invoice->id}
-        Paket: {$invoice->invoiceDetails[0]->service->packetType->label}
-        Keberangkatan: {$departureDate}
-        Harga: {$price}
-
-        Silahkan melakukan pembayaran hanya melalui transfer ke rekening berikut:
-
-        {$accounts}
-        EOD;
-
-        $this->message = $message;
+        $this->message = $this->generateMessage($invoice, $congregation);
     }
 
     public function handle()
@@ -106,5 +75,40 @@ class SendRegisteredNotificationJob implements ShouldQueue
         // }
 
         // sample response
+    }
+
+    protected function generateMessage(Invoice $invoice, Person $congregation): string
+    {
+        $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->translatedFormat('l, j F Y');
+
+        $departureDate = \Carbon\Carbon::parse(
+            $invoice->invoiceDetails[0]->service->departure_date
+        )->locale('id')->translatedFormat('l, j F Y');
+
+        $price = number_format($invoice->invoiceDetails[0]->price, 0, ',', '.');
+        $price = 'Rp. ' . $price . ',-';
+
+        $accounts = '';
+        foreach ($invoice->company->accounts as $account) {
+            $accounts .= "- {$account->bank->label} {$account->account_number} (a/n {$account->account_name}) \n";
+        }
+
+        $message = <<<EOD
+        {$timestamps}
+
+        Terima kasih telah melakukan pendaftaran di {$invoice->company->name}. Berikut adalah detail pendaftaran anda:
+
+        Nama: {$congregation->name}
+        No. Invoice: {$invoice->id}
+        Paket: {$invoice->invoiceDetails[0]->service->packetType->label}
+        Keberangkatan: {$departureDate}
+        Harga: {$price}
+
+        Silahkan melakukan pembayaran hanya melalui transfer ke rekening berikut:
+
+        {$accounts}
+        EOD;
+
+        return $message;
     }
 }

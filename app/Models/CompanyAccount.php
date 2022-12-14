@@ -16,6 +16,8 @@ class CompanyAccount extends Model
         'deleted_at',
     ];
 
+    protected $guarded = [];
+
     public function company()
     {
         return $this->belongsTo(Company::class, 'company_id');

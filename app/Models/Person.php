@@ -22,6 +22,11 @@ class Person extends Model
         'agent_work_experiences' => 'array',
     ];
 
+    public function user()
+    {
+        return $this->hasOne(User::class, 'person_id');
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
