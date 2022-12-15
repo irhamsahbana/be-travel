@@ -44,7 +44,7 @@ class DummyUserSeeder extends Seeder
         $user->person_id = $director->id;
         $user->company_id = $company->id;
         $user->permission_group_id = $directorPG->id;
-        $user->email = 'director@director';
+        $user->email = 'director@director.com';
         $user->username = 'director';
         $user->password = bcrypt('director');
         $user->save();
@@ -52,8 +52,9 @@ class DummyUserSeeder extends Seeder
         $user = new User();
         $user->person_id = $branchManager->id;
         $user->company_id = $company->id;
+        $user->branch_id = $branchManager->branch_id;
         $user->permission_group_id = $branchManagerPG->id;
-        $user->email = 'branch-manager@branch-manager';
+        $user->email = 'branch-manager@branch-manager.com';
         $user->username = 'branch-manager';
         $user->password = bcrypt('branch-manager');
         $user->save();
@@ -61,8 +62,9 @@ class DummyUserSeeder extends Seeder
         $user = new User();
         $user->person_id = $agent->id;
         $user->company_id = $company->id;
+        $user->branch_id = $agent->branch_id;
         $user->permission_group_id = $agentPG->id;
-        $user->email = 'agent@agent';
+        $user->email = 'agent@agent.com';
         $user->username = 'agent';
         $user->password = bcrypt('agent');
         $user->save();

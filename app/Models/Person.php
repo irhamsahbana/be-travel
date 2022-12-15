@@ -27,11 +27,6 @@ class Person extends Model
         return $this->hasOne(User::class, 'person_id');
     }
 
-    public function agent()
-    {
-        return $this->belongsTo(Person::class, 'agent_id');
-    }
-
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
@@ -67,23 +62,35 @@ class Person extends Model
         return $this->morphMany(File::class, 'fileable');
     }
 
-    public function agentWorkExperiences()
-    {
-        return $this->hasMany(AgentWorkExperience::class, 'person_id');
-    }
-
     public function congregationDetail()
     {
         return $this->hasOne(CongregationDetail::class, 'person_id');
     }
 
-    public function congregationInvoices()
+    // for agent only
+    public function agentWorkExperiences()
     {
-        return $this->hasMany(Invoice::class, 'congregation_id');
+        return $this->hasMany(AgentWorkExperience::class, 'person_id');
     }
 
     public function agentInvoices()
     {
         return $this->hasMany(Invoice::class, 'agent_id');
+    }
+
+    public function registeredCongregations()
+    {
+        return $this->hasMany(Person::class, 'agent_id');
+    }
+
+    // for congregation only
+    public function agent()
+    {
+        return $this->belongsTo(Person::class, 'agent_id');
+    }
+
+    public function congregationInvoices()
+    {
+        return $this->hasMany(Invoice::class, 'congregation_id');
     }
 }

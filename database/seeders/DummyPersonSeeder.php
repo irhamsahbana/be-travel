@@ -21,7 +21,7 @@ class DummyPersonSeeder extends Seeder
      */
     public function run()
     {
-        $company = Company::all()->first();
+        $company = Company::with('branches')->first();
         $personCategories = Category::where('group_by', 'people')->get();
 
         $person = new Person();
@@ -33,6 +33,7 @@ class DummyPersonSeeder extends Seeder
 
         $person = new Person();
         $person->company_id = $company->id;
+        $person->branch_id = $company->branches->first()->id;
         $person->category_id = $personCategories->where('name', 'branch-manager')->first()->id;
         $person->ref_no = $this->generateRefNo('people', 4, 'BM/', $this->getPostfix());
         $person->name = 'Testing Branch Manager';
@@ -40,6 +41,7 @@ class DummyPersonSeeder extends Seeder
 
         $person = new Person();
         $person->company_id = $company->id;
+        $person->branch_id = $company->branches->first()->id;
         $person->category_id = $personCategories->where('name', 'agent')->first()->id;
         $person->ref_no = $this->generateRefNo('people', 4, 'AG/', $this->getPostfix());
         $person->name = 'Testing Agent';

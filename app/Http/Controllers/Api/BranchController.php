@@ -80,13 +80,13 @@ class BranchController extends Controller
 
     public function show($id)
     {
-        $branch = Branch::where('company_id', auth()->user()->company_id)
+        $data = Branch::where('company_id', auth()->user()->company_id)
             ->where('id', $id)
             ->first();
 
-        if (!$branch) return (new Response)->json(null, 'Branch not found.', 404);
+        if (!$data) return (new Response)->json(null, 'Branch not found.', 404);
 
-        return (new Response)->json($branch, 'Branch retrieved successfully.');
+        return (new Response)->json($data, 'Branch retrieved successfully.');
     }
 
     public function update(Request $request, $id)
@@ -141,15 +141,17 @@ class BranchController extends Controller
 
     public function destroy($id)
     {
-        $branch = Branch::where('company_id', auth()->user()->company_id)
-            ->where('id', $id)
-            ->first();
+        $user = $this->getUser();
 
-        if (!$branch) return (new Response)->json(null, 'Branch not found.', 404);
+        if ($user->person->category->name == 'director') {
+            $data = Branch::where('company_id', $user->company_id)
+                ->where('id', $id)
+                ->first();
+        } else {
+            return (new Response)->json(null, 'You are not authorized to perform this action.', 403);
+        }
 
-        $data = $branch->toArray();
-        $branch->delete();
-
+        if (!$data) return (new Response)->json(null, 'Branch not found.', 404);
         return (new Response)->json($data, 'Branch deleted successfully.');
     }
 }

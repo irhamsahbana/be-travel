@@ -33,8 +33,18 @@ class Invoice extends Model
         return $this->belongsTo(Person::class, 'congregation_id');
     }
 
+    public function agent()
+    {
+        return $this->belongsTo(Person::class, 'agent_id');
+    }
+
     public function company()
     {
         return $this->belongsTo(Company::class, 'company_id');
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id');
     }
 }

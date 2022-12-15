@@ -10,14 +10,14 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
-use Illuminate\Validation\Rule;
 
 use App\Libs\RefNoGenerator;
 use App\Libs\Response;
 
+use App\Models\AgentWorkExperience;
 use App\Models\Category;
 use App\Models\Person;
-use App\Models\AgentWorkExperience;
+use App\Models\User;
 
 class AgentController extends Controller
 {
@@ -25,16 +25,47 @@ class AgentController extends Controller
 
     public function index(Request $request)
     {
-        $agents = Person::where('company_id', auth()->user()->company_id)
-            ->whereHas('category', function ($query) {
-                $query->where('name', 'agent')
-                    ->where('group_by', 'people')
-                    ->whereNull('company_id');
-            })
-            ->get()->toArray();
+        $user = $this->getUser();
+        $paginate = isset($request->paginate) ? (bool) $request->paginate : true;
 
+        if ($user->person->category->name == 'director') {
+            $data = Person::with([
+                'category' => fn ($query) => $query->select('id', 'label'),
+                'branch' => fn ($query) => $query->select('id', 'name'),
+            ])
+                ->select(['id', 'branch_id', 'category_id', 'ref_no', 'name', 'wa', 'email'])
+                ->where('company_id', $user->person->company_id)
+                ->whereHas('category', function ($query) {
+                    $query->where('name', 'agent')
+                        ->where('group_by', 'people')
+                        ->whereNull('company_id');
+                });
 
-        return (new Response)->json($agents, 'Agents retrieved successfully');
+            if (!empty($request->branch_id)) $data = $data->where('branch_id', $request->branch_id);
+        } else if ($user->person->category->name == 'branch-manager') {
+            $data = Person::where('branch_id', $user->person->branch_id)
+                ->whereHas('category', function ($query) {
+                    $query->where('name', 'agent')
+                        ->where('group_by', 'people')
+                        ->whereNull('company_id');
+                });
+        } else {
+            return (new Response)->json(null, 'You are not authorized to access this resource.', 403);
+        }
+
+        if ($paginate) {
+            $data = $data->paginate((int) $request->per_page ?? 15)->toArray();
+
+            $pagination = $data;
+            unset($pagination['data']);
+
+            $data = $data['data'];
+            $data['pagination'] = $pagination;
+        } else {
+            $data = $data->get()->toArray();
+        }
+
+        return (new Response)->json($data, 'Agents retrieved successfully');
     }
 
     public function store(Request $request)
@@ -81,12 +112,20 @@ class AgentController extends Controller
             'work_experiences' => $request->work_experiences,
         ];
 
-        $fields = array_merge($personData, $workExperiencesData);
+        $userData = [
+            'username' => $request->username,
+            'permission_group_id' => Category::where('name', 'agent')
+                ->where('group_by', 'permission_groups')
+                ->where('company_id', $request->company_id)->first()->id ?? null,
+        ];
+
+        $fields = array_merge($personData, $workExperiencesData, $userData);
 
         $personRules = (new AgentRules)->store($request);
         $workExperiencesRules = (new AgentRules)->workExperiences($request);
+        $userRules = (new AgentRules)->user();
 
-        $rules = array_merge($personRules, $workExperiencesRules);
+        $rules = array_merge($personRules, $workExperiencesRules, $userRules);
 
         $validator = Validator::make($fields, $rules);
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
@@ -102,7 +141,18 @@ class AgentController extends Controller
             }
 
             AgentWorkExperience::insert($workExperiences);
-            $person = Person::find($person->id)->load('agentWorkExperiences')->toArray() ?? null;
+            User::create([
+                'person_id' => $person->id,
+                'company_id' => $request->company_id,
+                'branch_id' => $request->branch_id,
+                'email' => $request->email,
+                'username' => $request->username,
+                'password' => bcrypt(Str::random(8)),
+                'permission_group_id' => Category::where('name', 'agent')
+                    ->where('group_by', 'permission_groups')
+                    ->where('company_id', $request->company_id)->first()->id ?? null,
+            ]);
+            $person = Person::find($person->id)->load('agentWorkExperiences')->toArray();
 
             DB::commit();
             return (new Response)->json($person, 'success to create agent', 201);
@@ -114,7 +164,12 @@ class AgentController extends Controller
 
     public function show($id)
     {
-        $person = Person::find($id)->load('agentWorkExperiences', 'category', 'file')->toArray() ?? null;
+        $person = Person::find($id)?->load([
+            'category',
+            'agentWorkExperiences',
+            'registeredCongregations' => fn ($q) => $q->select('id', 'agent_id', 'congregation_id', 'ref_no', 'name'),
+            'file'
+        ])->toArray() ?? null;
 
         if (!$person) return (new Response)->json(null, 'agent not found', 404);
         return (new Response)->json($person, 'success to get agent', 200);

@@ -23,6 +23,14 @@ class CongregationRules extends PeopleRules
                         ->where('category_id', Category::where('name', 'agent')->where('group_by', 'people')->first()->id ?? null);
                 })
             ],
+            'congregation_id' => [
+                'nullable',
+                'uuid',
+                Rule::exists('people', 'id')->where(function ($query) use ($request) {
+                    return $query->where('company_id', $request->company_id)
+                        ->where('category_id', Category::where('name', 'congregation')->where('group_by', 'people')->first()->id ?? null);
+                })
+            ],
         ];
 
         return array_merge($parentRules, $rules);

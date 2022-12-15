@@ -18,9 +18,13 @@ return new class extends Migration
             $table->foreign('company_id')
             ->references('id')->on('companies')->onDelete('cascade');
 
+            $table->index('branch_id');
+            $table->foreign('branch_id')
+            ->references('id')->on('branches')->onDelete('set null');
+
             $table->index('congregation_id');
             $table->foreign('congregation_id')
-            ->references('id')->on('people')->onDelete('cascade');
+            ->references('id')->on('people')->onDelete('set null');
 
             $table->index('agent_id');
             $table->foreign('agent_id')
@@ -38,6 +42,9 @@ return new class extends Migration
         Schema::table('invoices', function (Blueprint $table) {
             $table->dropForeign(['company_id']);
             $table->dropIndex(['company_id']);
+
+            $table->dropForeign(['branch_id']);
+            $table->dropIndex(['branch_id']);
 
             $table->dropForeign(['congregation_id']);
             $table->dropIndex(['congregation_id']);

@@ -40,8 +40,9 @@ class CongregationController extends Controller
             $congregation->load([
                 'company',
                 'branch',
-                'agent' => fn ($query) => $query->select('id', 'name', 'phone', 'wa'),
+                'agent' => fn ($query) => $query->select('id', 'ref_no', 'name', 'phone', 'wa'),
                 'city' => fn ($query) => $query->select('id', 'label', 'group_by'),
+                'congregationDetail',
                 'congregationInvoices.invoiceDetails'
             ]);
 
@@ -145,6 +146,7 @@ class CongregationController extends Controller
             $service = Service::find($request->service_id);
             $invoiceData = [
                 'company_id' => $request->company_id,
+                'branch_id' => $request->branch_id,
                 'congregation_id' => $person->id,
                 'agent_id' => $request->agent_id,
                 'amount' => $service->price,

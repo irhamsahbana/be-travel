@@ -69,7 +69,6 @@ class CompanyController extends Controller
         ];
 
         $validator = Validator::make($fields, $rules);
-
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
 
         DB::beginTransaction();
@@ -104,6 +103,8 @@ class CompanyController extends Controller
             ]);
 
             $user = $person->user()->create([
+                'company_id' => $company->id,
+                'branch_id' => null,
                 'email' => $request->person['email'],
                 'username' => $request->person['username'],
                 'password' => bcrypt($request->person['password']),

@@ -21,10 +21,10 @@ class CategoryController extends Controller
         if (isset($request->order_by))
             $finder->setOrderBy($request->order_by);
 
-        if (isset($request->order_type))
+        if (isset($request->order_type) && !empty($request->order_type))
             $finder->setOrderType($request->order_type);
 
-        if (isset($request->parent_id))
+        if (isset($request->parent_id) && !empty($request->parent_id))
             $finder->setParentId($request->parent_id);
         else
             $finder->setParentId(null);

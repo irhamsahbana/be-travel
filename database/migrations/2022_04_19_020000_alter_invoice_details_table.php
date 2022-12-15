@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::table('invoice_details', function (Blueprint $table) {
             $table->index('invoice_id');
             $table->foreign('invoice_id')
-            ->references('id')->on('invoices');
+            ->references('id')->on('invoices')
+            ->onDelete('cascade');
 
             $table->index('service_id');
             $table->foreign('service_id')
-            ->references('id')->on('services');
+            ->references('id')->on('services')
+            ->onDelete('cascade');
         });
     }
 

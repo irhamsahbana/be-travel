@@ -80,4 +80,11 @@ class PeopleRules
             'notes' => ['nullable', 'string', 'max:255'],
         ];
     }
+
+    public function user() : array
+    {
+        return [
+            'username' => ['required', 'string', 'max:255', 'unique:users,username'],
+        ];
+    }
 }

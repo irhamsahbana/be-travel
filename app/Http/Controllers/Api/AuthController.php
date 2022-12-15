@@ -15,26 +15,28 @@ class AuthController extends Controller
     public function attempt(Request $request)
     {
         $fields = [
-            'username' => $request->username,
-            'email' => $request->email,
+            'identifier' => $request->identifier,
             'password' => $request->password
         ];
 
         $rules = [
-            'username' => 'required_without:email',
-            'email' => 'required_without:username',
+            'identifier' => 'required',
             'password' => 'required'
         ];
 
-        if ($request->username) unset($fields['email']);
-        if ($request->email) unset($fields['username']);
-
         $validator = Validator::make($fields, $rules);
-        if ($validator->fails()) return (new Response)->json(null, $validator->errors(), HttpResponse::HTTP_UNPROCESSABLE_ENTITY);
+        if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
 
+        $identifier = $fields['identifier'];
+        $loginType = filter_var($identifier, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        $fields = [
+            $loginType => $identifier,
+            'password' => $fields['password']
+        ];
 
         if (Auth::attempt($fields)) {
-            $user = Auth::user()->with('person', 'person.category')->first();
+            $user = Auth::user();
             $token = $user->createToken('auth_token')->plainTextToken;
 
             return (new Response)->json([
@@ -43,12 +45,28 @@ class AuthController extends Controller
             ], 'Login success');
         }
 
-        return (new Response)->json(null, 'Invalid login credentials.', HttpResponse::HTTP_UNAUTHORIZED);
+        return (new Response)->json(null, 'Invalid login credentials.', 401);
     }
 
     public function me()
     {
-        $user = Auth::user()->with('company', 'company.branches', 'branch', 'person', 'person.category')->first();
+        $user = $this->getUser();
+        if ($user->person->category->name == 'director' || $user->person->category->name == 'branch-manager') {
+            $user = Auth::user()->load([
+                'company.accounts',
+                'company.branches',
+                'person',
+                'person.category'
+            ]);
+        } else if ($user->person->category->name == 'agent') {
+            $user = Auth::user()->load([
+                'company.accounts',
+                'company.branches',
+                'person',
+                'person.category',
+                'person.agentWorkExperiences'
+            ]);
+        }
 
         return (new Response)->json($user->toArray(), 'Login success');
     }

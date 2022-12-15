@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 
 use App\Libs\AccessControl;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class Controller extends BaseController
 {
@@ -34,5 +35,13 @@ class Controller extends BaseController
         if ($accessControl)
             if(!$accessControl->hasAccess($access))
                 AccessControl::throwUnauthorizedException($message);
+    }
+
+    public function getUser(): Authenticatable
+    {
+        return auth()->user()->load([
+            'person' => fn ($query) => $query->select('id', 'company_id', 'branch_id', 'category_id'),
+            'person.category' => fn ($query) => $query->select('id', 'name')
+        ]);
     }
 }

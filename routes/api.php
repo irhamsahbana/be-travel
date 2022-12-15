@@ -68,6 +68,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('agents', [AgentController::class, 'index']);
 
     Route::get('invoices', [InvoiceController::class, 'index']);
+    route::get('invoices/{id}', [InvoiceController::class, 'show']);
+    route::delete('invoices/{id}', [InvoiceController::class, 'destroy']);
 
     /**
      * Dangerous route, only for development purpose
