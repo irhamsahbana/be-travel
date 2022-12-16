@@ -21,7 +21,54 @@ class CongregationController extends Controller
 
     public function index(Request $request)
     {
-        //
+        $user = $this->getUser();
+        $paginate = isset($request->paginate) ? (bool) $request->paginate : true;
+
+        $data = Person::with([
+            'category' => fn ($query) => $query->select('id', 'label'),
+            'branch' => fn ($query) => $query->select('id', 'name'),
+        ])
+            ->select(['id', 'branch_id', 'category_id', 'ref_no', 'name', 'wa', 'email'])
+            ->where('company_id', $user->person->company_id)
+            ->whereHas('category', function ($query) {
+                $query->where('name', 'congregation')
+                    ->where('group_by', 'people')
+                    ->whereNull('company_id');
+            });
+
+        if ($user->person->category->name == 'director') {
+            // filters
+            if (!empty($request->branch_id)) $data = $data->where('branch_id', $request->branch_id);
+            if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
+            if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
+        } else if ($user->person->category->name == 'branch-manager') {
+            $data = $data->where('branch_id', $user->person->branch_id);
+
+            // filters
+            if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
+            if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
+        } else if ($user->person->category->name == 'agent') {
+            $data = $data->where('branch_id', $user->person->branch_id)->where('agent_id', $user->person->id);
+
+            // filters
+            if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
+        } else {
+            return (new Response)->json(null, 'You are not authorized to access this resource.', 403);
+        }
+
+        if ($paginate) {
+            $data = $data->paginate((int) $request->per_page ?? 15)->toArray();
+
+            $pagination = $data;
+            unset($pagination['data']);
+
+            $data = $data['data'];
+            $data['pagination'] = $pagination;
+        } else {
+            $data = $data->get()->toArray();
+        }
+
+        return (new Response)->json($data, 'Congregations retrieved successfully');
     }
 
     public function check($identifier)
@@ -61,6 +108,7 @@ class CongregationController extends Controller
     {
 
         $refNo = $this->generateRefNo('people', 4, 'CG/', $this->getPostfix());
+        $refNoInvoice = $this->generateRefNo('invoices', 4, 'INV/', $this->getPostfix());
 
         $personData = [
             'category_id' => Category::where('name', 'congregation')->where('group_by', 'people')->first()->id ?? null,
@@ -149,6 +197,7 @@ class CongregationController extends Controller
                 'branch_id' => $request->branch_id,
                 'congregation_id' => $person->id,
                 'agent_id' => $request->agent_id,
+                'ref_no' => $refNoInvoice,
                 'amount' => $service->price,
                 'paid' => 0,
             ];

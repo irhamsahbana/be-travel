@@ -76,10 +76,8 @@ class Response
         $clientError = $status >= HttpResponse::HTTP_BAD_REQUEST && $status < HttpResponse::HTTP_INTERNAL_SERVER_ERROR;
         $serverError = $status >= HttpResponse::HTTP_INTERNAL_SERVER_ERROR;
 
-        if ($clientError && $status !== 404)
-            Log::warning($statusText, $debug);
-        elseif ($serverError)
-            Log::error($statusText, $debug);
+        if ($clientError && $status !== 404 && $status !== 422 && $status !== 403 && $status !== 401) Log::warning($statusText, $debug);
+        else if ($serverError) Log::error($statusText, $debug);
 
         return $debug;
     }

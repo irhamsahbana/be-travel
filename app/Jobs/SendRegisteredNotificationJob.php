@@ -79,7 +79,8 @@ class SendRegisteredNotificationJob implements ShouldQueue
 
     protected function generateMessage(Invoice $invoice, Person $congregation): string
     {
-        $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->translatedFormat('l, j F Y');
+        // Jumat, 16 Desember 2022 10:00:00
+        $timestamps = \Carbon\Carbon::now('Asia/Makassar')->locale('id')->translatedFormat('l, j F Y H:i:s') . ' WITA';
 
         $departureDate = \Carbon\Carbon::parse(
             $invoice->invoiceDetails[0]->service->departure_date
@@ -100,6 +101,7 @@ class SendRegisteredNotificationJob implements ShouldQueue
 
         Nama: {$congregation->name}
         No. Invoice: {$invoice->id}
+        No. Ref Invoice: {$invoice->ref_no}
         Paket: {$invoice->invoiceDetails[0]->service->packetType->label}
         Keberangkatan: {$departureDate}
         Harga: {$price}

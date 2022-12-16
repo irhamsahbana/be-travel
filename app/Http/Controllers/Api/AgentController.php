@@ -28,27 +28,23 @@ class AgentController extends Controller
         $user = $this->getUser();
         $paginate = isset($request->paginate) ? (bool) $request->paginate : true;
 
-        if ($user->person->category->name == 'director') {
-            $data = Person::with([
-                'category' => fn ($query) => $query->select('id', 'label'),
-                'branch' => fn ($query) => $query->select('id', 'name'),
-            ])
-                ->select(['id', 'branch_id', 'category_id', 'ref_no', 'name', 'wa', 'email'])
-                ->where('company_id', $user->person->company_id)
-                ->whereHas('category', function ($query) {
-                    $query->where('name', 'agent')
-                        ->where('group_by', 'people')
-                        ->whereNull('company_id');
-                });
+        $data = Person::with([
+            'category' => fn ($query) => $query->select('id', 'label'),
+            'branch' => fn ($query) => $query->select('id', 'name'),
+        ])
+            ->select(['id', 'branch_id', 'category_id', 'ref_no', 'name', 'wa', 'email'])
+            ->where('company_id', $user->person->company_id)
+            ->whereHas('category', function ($query) {
+                $query->where('name', 'agent')
+                    ->where('group_by', 'people')
+                    ->whereNull('company_id');
+            });
 
+        if ($user->person->category->name == 'director') {
+            // filters
             if (!empty($request->branch_id)) $data = $data->where('branch_id', $request->branch_id);
         } else if ($user->person->category->name == 'branch-manager') {
-            $data = Person::where('branch_id', $user->person->branch_id)
-                ->whereHas('category', function ($query) {
-                    $query->where('name', 'agent')
-                        ->where('group_by', 'people')
-                        ->whereNull('company_id');
-                });
+            $data = $data->where('branch_id', $user->person->branch_id);
         } else {
             return (new Response)->json(null, 'You are not authorized to access this resource.', 403);
         }
@@ -164,15 +160,25 @@ class AgentController extends Controller
 
     public function show($id)
     {
-        $person = Person::find($id)?->load([
+        $user = $this->getUser();
+        $userCategory = $user->person->category->name ?? null;
+        $data = Person::with([
             'category',
             'agentWorkExperiences',
             'registeredCongregations' => fn ($q) => $q->select('id', 'agent_id', 'congregation_id', 'ref_no', 'name'),
             'file'
-        ])->toArray() ?? null;
+        ])->where('id', $id)->where('company_id', $user->company_id);
 
-        if (!$person) return (new Response)->json(null, 'agent not found', 404);
-        return (new Response)->json($person, 'success to get agent', 200);
+        if ($userCategory == 'director') {
+            $data = $data->first()?->toArray();
+        } else if ($userCategory == 'branch-manager') {
+            $data = $data->where('branch_id', $user->branch_id)->first()?->toArray();
+        } else {
+            return (new Response)->json(null, 'you are not authorized to access this resource', 403);
+        }
+
+        if (!$data) return (new Response)->json(null, 'agent not found', 404);
+        return (new Response)->json($data, 'success to get agent', 200);
     }
 
     public function downloadAttachments($id)

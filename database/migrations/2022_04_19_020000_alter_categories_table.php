@@ -36,6 +36,9 @@ class AlterCategoriesTable extends Migration
         Schema::table('categories', function (Blueprint $table) {
             $table->dropUnique(['company_id', 'name', 'group_by']);
 
+            $table->dropForeign(['company_id']);
+            $table->dropIndex(['company_id']);
+
             $table->dropForeign(['category_id']);
             $table->dropIndex(['category_id']);
         });

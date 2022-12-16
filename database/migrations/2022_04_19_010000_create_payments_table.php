@@ -18,6 +18,7 @@ return new class extends Migration
             $table->uuid('invoice_id');
             $table->uuid('payment_method_id');
             $table->decimal('amount', 15, 2);
+            $table->dateTime('created');
             $table->string('notes')->nullable();
             $table->timestamps();
         });

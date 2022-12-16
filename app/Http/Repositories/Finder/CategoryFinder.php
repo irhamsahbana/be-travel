@@ -3,6 +3,7 @@
 namespace App\Http\Repositories\Finder;
 
 use App\Models\Category as Model;
+use Illuminate\Support\Str;
 
 class CategoryFinder extends AbstractFinder
 {
@@ -67,7 +68,12 @@ class CategoryFinder extends AbstractFinder
 
     protected function doQuery()
     {
-        foreach ($this->groups as $group) {
+        // map group to kebab case
+        $groups = array_map(function($group) {
+            return str_replace(['_'], '-', $group);
+        }, $this->groups);
+
+        foreach ($groups as $group) {
             if ($group === 'permission_groups')
                 $this->filterByAccessControl('access-right-read');
             else

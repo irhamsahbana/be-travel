@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::table('payments', function (Blueprint $table) {
             $table->index('invoice_id');
             $table->foreign('invoice_id')
-            ->references('id')->on('invoices');
+            ->references('id')->on('invoices')
+            ->onDelete('cascade');
 
             $table->index('payment_method_id');
             $table->foreign('payment_method_id')

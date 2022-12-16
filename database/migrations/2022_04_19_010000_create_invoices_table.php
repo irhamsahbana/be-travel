@@ -19,6 +19,7 @@ return new class extends Migration
             $table->uuid('branch_id')->nullable();
             $table->uuid('congregation_id')->nullable();
             $table->uuid('agent_id')->nullable();
+            $table->uuid('ref_no')->unique();
             $table->decimal('amount', 15, 2)->default(0);
             $table->decimal('paid', 15, 2)->default(0);
             $table->enum('notification_status', ['pending', 'sent', 'failed'])->default('pending');

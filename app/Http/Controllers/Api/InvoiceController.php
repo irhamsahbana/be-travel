@@ -58,14 +58,11 @@ class InvoiceController extends Controller
     {
         $user = $this->getUser();
 
+        $data = Invoice::with(['invoiceDetails', 'payments'])->where('id', $id);
         if ($user->person->category->name == 'director') {
-            $data = Invoice::with(['invoiceDetails'])->where('id', $id)
-                ->where('company_id', $user->person->company_id)
-                ->first();
+            $data = $data->where('company_id', $user->company_id)->first();
         } else if ($user->person->category->name == 'branch-manager') {
-            $data = Invoice::with(['invoiceDetails'])->where('id', $id)
-                ->where('branch_id', $user->person->branch_id)
-                ->first();
+            $data = $data->where('branch_id', $user->branch_id)->first();
         } else {
             return (new Response)->json(null, 'You are not authorized to access this resource', 403);
         }
@@ -90,7 +87,7 @@ class InvoiceController extends Controller
                     ->where('company_id', $user->person->company_id)
                     ->first();
 
-                $invoice?->delete(); // invoice details will be deleted by cascade
+                $invoice?->delete(); // invoice details and payments will be deleted by cascade
             } else if ($user->person->category->name == 'branch-manager') {
                 $invoice = Invoice::with(['invoiceDetails'])->where('id', $id)
                     ->where('branch_id', $user->person->branch_id)

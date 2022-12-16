@@ -43,7 +43,7 @@ class SendCompanyRegisteredNotificationJob implements ShouldQueue
 
     protected function generateMessage($company) : string
     {
-        $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->translatedFormat('l, j F Y');
+        $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->translatedFormat('l, j F Y H:i:s');
 
         $accounts = '';
 

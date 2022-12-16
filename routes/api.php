@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\{
     FileController,
     InvoiceController,
     TutorController,
+    PaymentController,
 };
 
 use App\Libs\Response;
@@ -63,13 +64,17 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('files', [FileController::class, 'storeFile']);
 
+    Route::get('congregations', [CongregationController::class, 'index']);
+
     Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
     Route::get('agents/{id}', [AgentController::class, 'show']);
     Route::get('agents', [AgentController::class, 'index']);
 
     Route::get('invoices', [InvoiceController::class, 'index']);
-    route::get('invoices/{id}', [InvoiceController::class, 'show']);
-    route::delete('invoices/{id}', [InvoiceController::class, 'destroy']);
+    Route::get('invoices/{id}', [InvoiceController::class, 'show']);
+    Route::delete('invoices/{id}', [InvoiceController::class, 'destroy']);
+
+    Route::post('payments', [PaymentController::class, 'store']);
 
     /**
      * Dangerous route, only for development purpose
