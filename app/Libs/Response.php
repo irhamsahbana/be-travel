@@ -22,9 +22,7 @@ class Response
 
         $data = (array) $data;
         $pagination = $data['pagination'] ?? null;
-        if ($pagination) {
-            unset($data['pagination']);
-        }
+        if ($pagination) unset($data['pagination']);
 
         $response = [
             'code' => $status,
@@ -34,10 +32,7 @@ class Response
             'data' => $data,
         ];
 
-        if ($pagination) {
-            $response['pagination'] = $pagination;
-        }
-
+        if ($pagination) $response['pagination'] = $pagination;
 
         $exception = $this->exception($status, $excep, $file, $line, $trace);
 

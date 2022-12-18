@@ -14,9 +14,11 @@ use App\Http\Controllers\Api\{
     InvoiceController,
     TutorController,
     PaymentController,
+    TestController,
 };
 
 use App\Libs\Response;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,7 @@ use App\Libs\Response;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::post('register-companies', [CompanyController::class, 'register']);
 Route::post('register-agents', [AgentController::class, 'register']);
 Route::post('register-congregations', [CongregationController::class, 'register']);
@@ -39,7 +42,7 @@ Route::get('public-companies', [CompanyController::class, 'publicIndex']);
 Route::get('public-branches', [BranchController::class, 'publicIndex']);
 Route::post("auth/login", [AuthController::class, 'attempt']);
 
-Route::get('test', function() {
+Route::get('test', function () {
     return (new Response)->json(['test' => 'test'], 'success');
 });
 
@@ -75,18 +78,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('invoices/{id}', [InvoiceController::class, 'destroy']);
 
     Route::post('payments', [PaymentController::class, 'store']);
-
-    /**
-     * Dangerous route, only for development purpose
-     * Should be removed in production
-     */
-    // Route::get('seed-provinces-cities', [GetCitiesController::class, 'provincesAndCities']);
 });
+
+Route::get('delete-non-dummy-data', [TestController::class, 'deleteNonDummy']);
 
 Route::fallback(function () {
     return (new Response)->json([], 'Endpoint not found.', 404);
 });
-
-
-
-

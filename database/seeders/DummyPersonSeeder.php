@@ -25,6 +25,7 @@ class DummyPersonSeeder extends Seeder
         $personCategories = Category::where('group_by', 'people')->get();
 
         $person = new Person();
+        $person->id = '5f6108f0-36f1-4381-b87d-e699e36e9c1b';
         $person->company_id = $company->id;
         $person->category_id = $personCategories->where('name', 'director')->first()->id;
         $person->ref_no = $this->generateRefNo('people', 4, 'DR/', $this->getPostfix());
@@ -32,6 +33,7 @@ class DummyPersonSeeder extends Seeder
         $person->save();
 
         $person = new Person();
+        $person->id = '15e69304-6550-49ed-8f31-911ae8c0f15c';
         $person->company_id = $company->id;
         $person->branch_id = $company->branches->first()->id;
         $person->category_id = $personCategories->where('name', 'branch-manager')->first()->id;
@@ -40,6 +42,7 @@ class DummyPersonSeeder extends Seeder
         $person->save();
 
         $person = new Person();
+        $person->id = '96881465-455e-4322-8228-039564b74609';
         $person->company_id = $company->id;
         $person->branch_id = $company->branches->first()->id;
         $person->category_id = $personCategories->where('name', 'agent')->first()->id;

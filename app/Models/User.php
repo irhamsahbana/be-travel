@@ -107,9 +107,13 @@ class User extends Authenticatable
         return null;
     }
 
+    // public function permissionGroup()
+    // {
+    //     return $this->belongsTo(Category::class, 'permission_group_id');
+    // }
+
     public function permissionGroup()
     {
-        return $this->belongsTo(Category::class, 'permission_group_id');
+        return $this->belongsTo(PermissionGroup::class, 'permission_group_id');
     }
-
 }

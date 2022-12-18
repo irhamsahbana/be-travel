@@ -19,6 +19,8 @@ class Category extends Model
         'deleted_at',
     ];
 
+    protected $guarded = [];
+
     public function parent()
     {
         return $this->belongsTo(Category::class, 'parent_id');
