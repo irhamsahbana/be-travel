@@ -68,6 +68,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('files', [FileController::class, 'storeFile']);
 
     Route::get('congregations', [CongregationController::class, 'index']);
+    Route::get('congregations/{id}', [CongregationController::class, 'show']);
+    Route::patch('congregations/{id}', [CongregationController::class, 'update']);
 
     Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
     Route::get('agents/{id}', [AgentController::class, 'show']);

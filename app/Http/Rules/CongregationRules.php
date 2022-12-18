@@ -36,6 +36,22 @@ class CongregationRules extends PeopleRules
         return array_merge($parentRules, $rules);
     }
 
+    public function update(Request $request) : array
+    {
+        $rules = $this->store($request);
+        unset($rules['ref_no']);
+
+        $updateRules = [
+            'id' => ['required', 'uuid', Rule::exists('people', 'id')->where(function ($query) use ($request) {
+                return $query->where('company_id', $request->company_id)
+                    ->where('branch_id', $request->branch_id)
+                    ->where('category_id', Category::where('name', 'congregation')->where('group_by', 'people')->first()?->id);
+            })],
+        ];
+
+        return array_merge($rules, $updateRules);
+    }
+
     public function congregationDetail() : array
     {
         $rules = [

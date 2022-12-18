@@ -24,14 +24,18 @@ class TestController extends Controller
             }
 
             // delete people
-            $people = \App\Models\Person::whereNotIn('id', [
+            $people = \App\Models\Person::with(['category'])->whereNotIn('id', [
                 '5f6108f0-36f1-4381-b87d-e699e36e9c1b',
                 '15e69304-6550-49ed-8f31-911ae8c0f15c',
                 '96881465-455e-4322-8228-039564b74609',
             ])->get();
-            foreach ($people as $person) {
+            foreach ($people->where('category.name', 'congregation') as $person) {
+                $person->congregationDetail()->delete();
+                $person->user()->delete();
+                $person->delete();
+            }
+            foreach ($people->where('category.name', 'agent') as $person) {
                 $person->agentWorkExperiences()->delete();
-                $person->congregationDetails()->delete();
                 $person->user()->delete();
                 $person->delete();
             }

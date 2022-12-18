@@ -115,6 +115,7 @@ class CongregationController extends Controller
             'company_id' => $request->company_id,
             'branch_id' => $request->branch_id,
             'agent_id' => $request->agent_id,
+            'congregation_id' => $request->congregation_id,
             'ref_no' => $refNo,
             'name' => $request->name,
             'father_name' => $request->father_name,
@@ -240,12 +241,105 @@ class CongregationController extends Controller
 
     public function show($id)
     {
-        //
+        $data = Person::with([
+            'congregationDetail',
+            'congregationInvoices.invoiceDetails.service.packetType',
+        ])->where('id', $id)->first()?->toArray();
+
+        if (!$data) return (new Response)->json(null, 'congregation not found', 404);
+        return (new Response)->json($data, 'success to get congregation', 200);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        // add id to request
+        $request->merge(['id' => $id]);
+
+        $personData = [
+            'id' => $request->id,
+            'category_id' => $request->category_id ?: Category::where('name', 'congregation')->where('group_by', 'people')->first()?->id,
+            'company_id' => $request->company_id,
+            'branch_id' => $request->branch_id,
+            'agent_id' => $request->agent_id,
+            'congregation_id' => $request->congregation_id,
+            // 'ref_no' => $request->ref_no ?: $this->generateRefNo('people', 4, 'CG/', $this->getPostfix()),
+            'name' => $request->name,
+            'father_name' => $request->father_name,
+            'mother_name' => $request->mother_name,
+            'place_of_birth' => $request->place_of_birth,
+            'date_of_birth' => $request->date_of_birth,
+            'sex' => $request->sex,
+            'national_id' => $request->national_id,
+            'address' => $request->address,
+            'city_id' => $request->city_id,
+            'nationality_id' => $request->nationality_id,
+            'phone' => $request->phone,
+            'wa' => $request->wa,
+            'email' => $request->email,
+            'education_id' => $request->education_id,
+            'profession' => $request->profession,
+            'marital_status_id' => $request->marital_status_id,
+            'account_name' => $request->account_name,
+            'bank_id' => $request->bank_id,
+            'account_number' => $request->account_number,
+            'emergency_name' => $request->emergency_name,
+            'emergency_address' => $request->emergency_address,
+            'emergency_home_phone' => $request->emergency_home_phone,
+            'emergency_phone' => $request->emergency_phone,
+            'notes' => $request->notes,
+        ];
+
+        $congregationDetailData = [
+            'is_has_meningitis_vaccinated' => $request->is_has_meningitis_vaccinated,
+            'is_has_family_card' => $request->is_has_family_card,
+            'is_has_photo' => $request->is_has_photo,
+            'is_has_mahram' => $request->is_has_mahram,
+            'is_airport_handling' => $request->is_airport_handling,
+            'is_equipment' => $request->is_equipment,
+            'is_single_mahram' => $request->is_single_mahram,
+            'is_double_mahram' => $request->is_double_mahram,
+            'is_pusher_guide' => $request->is_pusher_guide,
+            'is_special_guide' => $request->is_special_guide,
+            'is_manasik' => $request->is_manasik,
+            'is_domestic_ticket' => $request->is_domestic_ticket,
+            'blood_type' => $request->blood_type,
+            'chronic_disease' => $request->chronic_disease,
+            'allergy' => $request->allergy,
+            'passport_number' => $request->passport_number,
+            'passport_issued_in' => $request->passport_issued_in,
+            'passport_issued_at' => $request->passport_issued_at,
+            'passport_expired_at' => $request->passport_expired_at,
+            'passport_name' => $request->passport_name,
+        ];
+
+        $personRules = (new CongregationRules)->update($request);
+        $congregationDetailRules = (new CongregationRules)->congregationDetail();
+
+        $fields = array_merge($personData, $congregationDetailData);
+        $rules = array_merge($personRules, $congregationDetailRules);
+
+        $validator = Validator::make($fields, $rules);
+        if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
+
+        $person = Person::find($id);
+        if (!$person) return (new Response)->json(null, 'congregation not found', 404);
+
+        DB::beginTransaction();
+        try {
+            $person->update($personData);
+            $person->congregationDetail->updateOrCreate(['person_id' => $person->id], $congregationDetailData);
+
+            $person = Person::with([
+                'congregationDetail',
+                'congregationInvoices.invoiceDetails.service.packetType',
+            ])->find($person->id)?->toArray();
+
+            DB::commit();
+            return (new Response)->json($person, 'success to update congregation', 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 
     public function destroy($id)

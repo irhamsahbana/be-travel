@@ -62,11 +62,6 @@ class Person extends Model
         return $this->morphMany(File::class, 'fileable');
     }
 
-    public function congregationDetail()
-    {
-        return $this->hasOne(CongregationDetail::class, 'person_id');
-    }
-
     // for agent only
     public function agentWorkExperiences()
     {
@@ -92,5 +87,10 @@ class Person extends Model
     public function congregationInvoices()
     {
         return $this->hasMany(Invoice::class, 'congregation_id');
+    }
+
+    public function congregationDetail()
+    {
+        return $this->hasOne(CongregationDetail::class, 'person_id');
     }
 }

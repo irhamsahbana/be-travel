@@ -19,14 +19,14 @@ class PeopleRules
                     return $query->where('company_id', $request->company_id);
                 })
             ],
-            'ref_no' => ['required', 'string', 'max:255', 'unique:people'],
+            'ref_no' => ['required', 'string', 'max:255', 'unique:people,id,'. $request->id],
             'name' => ['required', 'string', 'max:255'],
             'father_name' => ['required', 'string', 'max:255'],
             'mother_name' => ['required', 'string', 'max:255'],
             'place_of_birth' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required', 'date_format:Y-m-d'],
             'sex' => ['required', 'in:male,female'],
-            'national_id' => ['required', 'string', 'max:30', 'unique:people,national_id'],
+            'national_id' => ['required', 'string', 'max:30', 'unique:people,national_id,'. $request->id],
             'address' => ['required', 'string', 'max:255'],
             'city_id' => [
                 'required',
@@ -42,13 +42,13 @@ class PeopleRules
                     return $query->where('group_by', 'nationalities');
                 })
             ],
-            'phone' => ['required', 'string', 'max:15', 'unique:people,phone',
+            'phone' => ['required', 'string', 'max:15', 'unique:people,phone,'. $request->id,
                 'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
-            'wa' => ['required', 'string', 'max:15', 'unique:people,wa',
+            'wa' => ['required', 'string', 'max:15', 'unique:people,wa,'. $request->id,
                 'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
-            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:people,email'],
+            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:people,email,'. $request->id],
             'education_id' => [
                 'required',
                 'uuid',
