@@ -36,14 +36,17 @@ class TestController extends Controller
                 $person->delete();
             }
 
-            // delete branches
-            $branches = \App\Models\Branch::where('id', '!=', '97f2d9b0-005a-443c-9183-93e9ca910ceb')->delete();
-
             // delete companies permission groups and its permissions
             $permissionGroups = \App\Models\PermissionGroupPermission::where('company_id', '!=', '97f2d9af-6c15-4757-bb35-2562175708b7')->delete();
 
+            // delete companies services
+            $companiesServices = \App\Models\Service::whereNotIn('company_id', ['97f2d9af-6c15-4757-bb35-2562175708b7'])->forceDelete();
+
             // delete companies categories
             $companiesCategories = \App\Models\Category::whereNotIn('company_id', [null, '97f2d9af-6c15-4757-bb35-2562175708b7'])->forceDelete();
+
+            // delete branches
+            $branches = \App\Models\Branch::where('id', '!=', '97f2d9b0-005a-443c-9183-93e9ca910ceb')->delete();
 
             // delete companies
             $companies = \App\Models\Company::where('id', '!=', '97f2d9af-6c15-4757-bb35-2562175708b7')->delete();
