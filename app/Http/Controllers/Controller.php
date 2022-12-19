@@ -15,6 +15,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    protected ?string $userCategory;
+    protected ?Authenticatable $user;
+    protected const NOT_AUTHORIZED_MESSAGE = "Anda tidak punya akses untuk mengakses resource ini.";
+
     public function getAccessControl()
     {
         $user = Auth::user();
@@ -37,11 +41,13 @@ class Controller extends BaseController
                 AccessControl::throwUnauthorizedException($message);
     }
 
-    public function getUser(): Authenticatable
+    public function getUser(): ?Authenticatable
     {
-        return auth()->user()->load([
-            'person' => fn ($query) => $query->select('id', 'company_id', 'branch_id', 'category_id'),
-            'person.category' => fn ($query) => $query->select('id', 'name')
+        $user = auth()->user()?->load([
+            'person' => fn ($q) => $q->select('id', 'company_id', 'branch_id', 'category_id'),
+            'person.category' => fn ($q) => $q->select('id', 'name')
         ]);
+
+        return $user;
     }
 }

@@ -22,6 +22,8 @@ class CongregationController extends Controller
     public function index(Request $request)
     {
         $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+
         $paginate = isset($request->paginate) ? (bool) $request->paginate : true;
 
         $data = Person::with([
@@ -36,24 +38,24 @@ class CongregationController extends Controller
                     ->whereNull('company_id');
             });
 
-        if ($user->person->category->name == 'director') {
+        if ($userCategory == 'director') {
             // filters
             if (!empty($request->branch_id)) $data = $data->where('branch_id', $request->branch_id);
             if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
             if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
-        } else if ($user->person->category->name == 'branch-manager') {
+        } else if ($userCategory == 'branch-manager') {
             $data = $data->where('branch_id', $user->person->branch_id);
 
             // filters
             if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
             if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
-        } else if ($user->person->category->name == 'agent') {
+        } else if ($userCategory == 'agent') {
             $data = $data->where('branch_id', $user->person->branch_id)->where('agent_id', $user->person->id);
 
             // filters
             if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
         } else {
-            return (new Response)->json(null, 'You are not authorized to access this resource.', 403);
+            return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
         }
 
         if ($paginate) {
@@ -241,10 +243,19 @@ class CongregationController extends Controller
 
     public function show($id)
     {
+        $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+
         $data = Person::with([
             'congregationDetail',
             'congregationInvoices.invoiceDetails.service.packetType',
-        ])->where('id', $id)->first()?->toArray();
+        ])->where('id', $id)->where('company_id', $user->company_id);
+
+        if ($userCategory == 'branch-manager') $data = $data->where('branch_id', $user->branch_id);
+        else if ($userCategory == 'agent') $data = $data->where('branch_id', $user->branch_id)->where('agent_id', $user->id);
+        else return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
+
+        $data = $data->first();
 
         if (!$data) return (new Response)->json(null, 'congregation not found', 404);
         return (new Response)->json($data, 'success to get congregation', 200);
@@ -252,17 +263,27 @@ class CongregationController extends Controller
 
     public function update(Request $request, $id)
     {
+        $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+
+        $person = Person::where('id', $id)->where('company_id', $user->company_id);
+        if ($userCategory == 'director') $person = $person->first();
+        else if ($userCategory == 'branch-manager') $person = $person->where('branch_id', $user->branch_id)->first();
+        else return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
+
+        if (!$person) return (new Response)->json(null, 'congregation not found', 404);
+
         // add id to request
         $request->merge(['id' => $id]);
 
         $personData = [
             'id' => $request->id,
-            'category_id' => $request->category_id ?: Category::where('name', 'congregation')->where('group_by', 'people')->first()?->id,
-            'company_id' => $request->company_id,
-            'branch_id' => $request->branch_id,
+            'category_id' => $person->category_id,
+            'company_id' => $person->company_id,
+            'branch_id' => $userCategory == 'director' ? $request->branch_id : $person->branch_id,
             'agent_id' => $request->agent_id,
             'congregation_id' => $request->congregation_id,
-            // 'ref_no' => $request->ref_no ?: $this->generateRefNo('people', 4, 'CG/', $this->getPostfix()),
+            'ref_no' => $person->ref_no,
             'name' => $request->name,
             'father_name' => $request->father_name,
             'mother_name' => $request->mother_name,

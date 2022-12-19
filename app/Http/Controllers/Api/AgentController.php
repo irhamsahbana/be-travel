@@ -46,7 +46,7 @@ class AgentController extends Controller
         } else if ($user->person->category->name == 'branch-manager') {
             $data = $data->where('branch_id', $user->person->branch_id);
         } else {
-            return (new Response)->json(null, 'You are not authorized to access this resource.', 403);
+            return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
         }
 
         if ($paginate) {
@@ -161,21 +161,18 @@ class AgentController extends Controller
     public function show($id)
     {
         $user = $this->getUser();
-        $userCategory = $user->person->category->name ?? null;
+        $userCategory = $user?->person?->category?->name;
+
         $data = Person::with([
             'category',
             'agentWorkExperiences',
             'registeredCongregations' => fn ($q) => $q->select('id', 'agent_id', 'congregation_id', 'ref_no', 'name'),
             'file'
-        ])->where('id', $id)->where('company_id', $user->company_id);
+        ])->where('id', $id)->where('company_id', $user?->company_id);
 
-        if ($userCategory == 'director') {
-            $data = $data->first()?->toArray();
-        } else if ($userCategory == 'branch-manager') {
-            $data = $data->where('branch_id', $user->branch_id)->first()?->toArray();
-        } else {
-            return (new Response)->json(null, 'you are not authorized to access this resource', 403);
-        }
+        if ($userCategory == 'director') $data = $data->first()?->toArray();
+        else if ($userCategory == 'branch-manager') $data = $data->where('branch_id', $user->branch_id)->first()?->toArray();
+        else return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
 
         if (!$data) return (new Response)->json(null, 'agent not found', 404);
         return (new Response)->json($data, 'success to get agent', 200);
@@ -201,7 +198,98 @@ class AgentController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+
+        $person = Person::where('id', $id)->where('company_id', $user->company_id);
+        if ($userCategory == 'director') $person = $person->first();
+        else if ($userCategory == 'branch-manager') $person = $person->where('branch_id', $user->branch_id)->first();
+        else return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
+
+        if (!$person) return (new Response)->json(null, 'agent not found', 404);
+
+        $branchId = '';
+        if ($userCategory == 'director') $branchId = $request->branch_id ? $request->branch_id : $person->branch_id;
+        else if ($userCategory == 'branch-manager') $branchId = $person->branch_id;
+
+
+        $request->merge([
+            'id' => $id,
+            'company_id' => $user->company_id,
+        ]);
+        $personData = [
+            'id' => $request->id,
+            'company_id' => $person->company_id,
+            'branch_id' => $branchId,
+            'category_id' => $person->category_id,
+            'ref_no' => $person->ref_no,
+            'name' => $request->name,
+            'father_name' => $request->father_name,
+            'mother_name' => $request->mother_name,
+            'place_of_birth' => $request->place_of_birth,
+            'date_of_birth' => $request->date_of_birth,
+            'sex' => $request->sex,
+            'national_id' => $request->national_id,
+            'address' => $request->address,
+            'city_id' => $request->city_id,
+            'nationality_id' => $request->nationality_id,
+            'phone' => $request->phone,
+            'wa' => $request->wa,
+            'email' => $request->email,
+            'education_id' => $request->education_id,
+            'profession' => $request->profession,
+            'marital_status_id' => $request->marital_status_id,
+            'account_name' => $request->account_name,
+            'bank_id' => $request->bank_id,
+            'account_number' => $request->account_number,
+            'emergency_name' => $request->emergency_name,
+            'emergency_address' => $request->emergency_address,
+            'emergency_home_phone' => $request->emergency_home_phone,
+            'emergency_phone' => $request->emergency_phone,
+            'notes' => $request->notes,
+        ];
+
+        $workExperiencesData = [
+            'work_experiences' => $request->work_experiences,
+        ];
+
+        $personRules = (new AgentRules)->update($request);
+        $workExperiencesRules = (new AgentRules)->workExperiences($request);
+
+        $fields = array_merge($personData, $workExperiencesData);
+        $rules = array_merge($personRules, $workExperiencesRules);
+
+        $validator = Validator::make($fields, $rules);
+        if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
+
+        DB::beginTransaction();
+        try {
+            // person
+            $person = Person::find($request->id);
+            unset($personData['id']);
+            $person->update($personData);
+
+            // work experiences
+            $workExperiences = collect($request->work_experiences);
+            $oldWorkExperiences = $workExperiences->filter(fn ($workExperience) => isset($workExperience['id']));
+            $newWorkExperiences = $workExperiences->filter(fn ($workExperience) => !isset($workExperience['id']));
+
+            $person->agentWorkExperiences()->whereNotIn('id', $oldWorkExperiences->pluck('id'))->delete();
+            $person->agentWorkExperiences()->createMany($newWorkExperiences->toArray());
+
+            $person = Person::find($request->id)?->load([
+                'category',
+                'agentWorkExperiences',
+                'registeredCongregations' => fn ($q) => $q->select('id', 'agent_id', 'congregation_id', 'ref_no', 'name'),
+                'file'
+            ])->toArray();
+
+            DB::commit();
+            return (new Response)->json($person, 'success to update agent', 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 
     public function destroy($id)

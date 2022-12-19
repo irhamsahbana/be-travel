@@ -73,6 +73,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
     Route::get('agents/{id}', [AgentController::class, 'show']);
+    Route::patch('agents/{id}', [AgentController::class, 'update']);
     Route::get('agents', [AgentController::class, 'index']);
 
     Route::get('invoices', [InvoiceController::class, 'index']);
