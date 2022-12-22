@@ -21,6 +21,8 @@ return new class extends Migration
             $table->index('person_id');
             $table->foreign('person_id')
             ->references('id')->on('people')->onDelete('cascade');
+
+            $table->index(['scheduled_date', 'scheduled_time'], 'scheduled_date_time_index');
         });
     }
 
@@ -37,6 +39,8 @@ return new class extends Migration
 
             $table->dropForeign(['person_id']);
             $table->dropIndex(['person_id']);
+
+            $table->dropIndex('scheduled_date_time_index');
         });
     }
 };

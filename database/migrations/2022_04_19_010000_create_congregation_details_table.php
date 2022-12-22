@@ -47,6 +47,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('congregation_checklists');
+        Schema::dropIfExists('congregation_details');
     }
 };
