@@ -2,13 +2,15 @@
 
 namespace App\Jobs;
 
-use App\Models\Company;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+
+use App\Models\Company;
+use App\Models\ApiToken;
 
 class SendCompanyRegisteredNotificationJob implements ShouldQueue
 {
@@ -27,8 +29,9 @@ class SendCompanyRegisteredNotificationJob implements ShouldQueue
     public function handle()
     {
         sleep(4);
+        $token = ApiToken::where('company_id', $this->company?->id)->where('name', 'ruang_wa')->first()?->token ?? '';
         $formParams = [
-            'token' => config('services.ruangwa.token'),
+            'token' => $token,
             'number' => $this->company->people[0]->wa ?? '',
             'message' => $this->message,
         ];
@@ -41,9 +44,9 @@ class SendCompanyRegisteredNotificationJob implements ShouldQueue
         // $res = json_decode($response->getBody()->getContents());
     }
 
-    protected function generateMessage($company) : string
+    protected function generateMessage($company): string
     {
-        $timestamps = \Carbon\Carbon::now('Asia/Jakarta')->locale('id')->translatedFormat('l, j F Y H:i:s');
+        $timestamps = \Carbon\Carbon::now()->locale('id')->translatedFormat('l, j F Y H:i:s');
 
         $accounts = '';
 

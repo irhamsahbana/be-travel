@@ -17,4 +17,14 @@ class BroadcastMessageRecipient extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function broadcastMessage()
+    {
+        return $this->belongsTo(BroadcastMessage::class);
+    }
+
+    public function person()
+    {
+        return $this->belongsTo(Person::class);
+    }
 }

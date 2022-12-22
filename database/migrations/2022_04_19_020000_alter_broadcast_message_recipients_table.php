@@ -13,12 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('broadcast_message_recepients', function (Blueprint $table) {
+        Schema::table('broadcast_message_recipients', function (Blueprint $table) {
             $table->index('broadcast_message_id');
-            $table->foreign('broadcast_message_id')->references('id')->on('broadcast_messages')->onDelete('cascade');
+            $table->foreign('broadcast_message_id')
+                ->references('id')->on('broadcast_messages')
+                ->onDelete('cascade');
 
             $table->index('person_id');
-            $table->foreign('person_id')->references('id')->on('people')->onDelete('cascade');
+            $table->foreign('person_id')
+                ->references('id')
+                ->on('people')
+                ->onDelete('cascade');
         });
     }
 
@@ -29,7 +34,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('broadcast_message_recepients', function (Blueprint $table) {
+        Schema::table('broadcast_message_recipients', function (Blueprint $table) {
             $table->dropForeign(['broadcast_message_id']);
             $table->dropIndex(['broadcast_message_id']);
 

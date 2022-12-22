@@ -16,11 +16,15 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('broadcast:send')
+            ->everyMinute();
+
         $schedule->command('queue:work', [
-                '--max-time' => 300,
-            ])
+            '--max-time' => 300,
+        ])
             ->everyMinute()
-            ->withoutOverlapping();
+            ->withoutOverlapping()
+            ->appendOutputTo(storage_path('logs/queue.log'));
     }
 
     /**
@@ -30,7 +34,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

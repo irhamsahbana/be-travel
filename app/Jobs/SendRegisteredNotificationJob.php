@@ -2,8 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Models\Invoice;
-use App\Models\Person;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,6 +9,12 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log as FacadesLog;
+
+use App\Models\ApiToken;
+use App\Models\Invoice;
+use App\Models\Log;
+use App\Models\Person;
 
 class SendRegisteredNotificationJob implements ShouldQueue
 {
@@ -30,35 +34,58 @@ class SendRegisteredNotificationJob implements ShouldQueue
     public function handle()
     {
         sleep(4);
+        try {
+            $formParams = [
+                'token' => ApiToken::where('company_id', $this->company?->id)->where('name', 'ruang_wa')->first()?->token ?? '',
+                'number' => $this->congregation->wa ?? '',
+                'message' => $this->message,
+            ];
 
-        $formParams = [
-            'token' => config('services.ruangwa.token'),
-            'number' => $this->congregation->wa ?? '',
-            'message' => $this->message,
-        ];
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('POST', 'https://app.ruangwa.id/api/send_message', [
+                'form_params' => $formParams
+            ]);
 
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', 'https://app.ruangwa.id/api/send_message', [
-            'form_params' => $formParams
-        ]);
+            $res = json_decode($response->getBody()->getContents());
 
-        $res = json_decode($response->getBody()->getContents());
-
-        if ($response->getStatusCode() >= 200 && $response->getStatusCode() < 300) {
-            $result = filter_var($res->result, FILTER_VALIDATE_BOOLEAN);
-            if ($result) {
-                Invoice::where('id', $this->invoice->id)->update([
-                    'notification_status' => 'sent',
-                ]);
-            } else {
-                Invoice::where('id', $this->invoice->id)->update([
+            if ($response->getStatusCode() >= 200 && $response->getStatusCode() < 300) {
+                $result = filter_var($res->result, FILTER_VALIDATE_BOOLEAN);
+                if ($result) {
+                    Invoice::where('id', $this->invoice?->id)?->update([
+                        'notification_status' => 'sent',
+                    ]);
+                } else {
+                    Invoice::where('id', $this->invoice?->id)?->update([
+                        'notification_status' => 'failed',
+                    ]);
+                }
+            } else if ($response->getStatusCode() >= 400 && $response->getStatusCode() < 600) {
+                Invoice::where('id', $this->invoice?->id)?->update([
                     'notification_status' => 'failed',
                 ]);
+
+                Log::create([
+                    'table' => 'invoices',
+                    'message' => $res->message,
+                    'data' => $res,
+                ]);
+
+                FacadesLog::error($res->message, $res);
             }
-        } else if ($response->getStatusCode() >= 400 && $response->getStatusCode() < 600) {
-            Invoice::where('id', $this->invoice->id)->update([
+        } catch (\Exception $e) {
+            Invoice::where('id', $this->invoice?->id)?->update([
                 'notification_status' => 'failed',
             ]);
+
+            Log::create([
+                'company_id' => $this->invoice?->company_id,
+                'table' => 'invoices',
+                'action' => 'send_congregation_registered_notification',
+                'message' => $e->getMessage(),
+                'data' => $e->getTraceAsString(),
+            ]);
+
+            FacadesLog::error($e->getMessage(), $e->getTrace());
         }
 
         // array:2 [ // app/Jobs/SendRegisteredNotificationJob.php:85
@@ -80,7 +107,7 @@ class SendRegisteredNotificationJob implements ShouldQueue
     protected function generateMessage(Invoice $invoice, Person $congregation): string
     {
         // Jumat, 16 Desember 2022 10:00:00
-        $timestamps = \Carbon\Carbon::now('Asia/Makassar')->locale('id')->translatedFormat('l, j F Y H:i:s') . ' WITA';
+        $timestamps = \Carbon\Carbon::now()->locale('id')->translatedFormat('l, j F Y H:i:s') . ' WITA';
 
         $departureDate = \Carbon\Carbon::parse(
             $invoice->invoiceDetails[0]->service->departure_date

@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\{
     AuthController,
     AgentController,
     BranchController,
+    BroadcastMessageController,
     CategoryController,
     CompanyController,
     CongregationController,
@@ -79,6 +80,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('invoices', [InvoiceController::class, 'index']);
     Route::get('invoices/{id}', [InvoiceController::class, 'show']);
     Route::delete('invoices/{id}', [InvoiceController::class, 'destroy']);
+
+    Route::delete('broadcast-messages/{id}', [BroadcastMessageController::class, 'destroy']);
+    Route::get('broadcast-messages/{id}', [BroadcastMessageController::class, 'show']);
+    Route::get('broadcast-messages', [BroadcastMessageController::class, 'index']);
+    Route::post('broadcast-messages', [BroadcastMessageController::class, 'store']);
 
     Route::post('payments', [PaymentController::class, 'store']);
 });

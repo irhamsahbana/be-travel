@@ -23,6 +23,12 @@ class TestController extends Controller
                 $invoice->delete();
             }
 
+            // delete broadcast messages
+            $broadcastMessages = \App\Models\BroadcastMessage::all();
+            foreach ($broadcastMessages as $broadcastMessage) {
+                $broadcastMessage->delete();
+            }
+
             // delete people
             $people = \App\Models\Person::with(['category'])->whereNotIn('id', [
                 '5f6108f0-36f1-4381-b87d-e699e36e9c1b',

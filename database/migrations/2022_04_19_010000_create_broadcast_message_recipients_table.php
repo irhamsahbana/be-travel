@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+        Schema::create('broadcast_message_recipients', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->uuid('broadcast_message_id');
+            $table->uuid('person_id');
+            $table->enum('status', ['pending', 'sent', 'failed'])->default('pending');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists('broadcast_message_recipients');
     }
 };

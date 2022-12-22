@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DummyCompanyServiceSeeder::class);
 
         $this->call(DummyCompanyPermissionGroupSeeder::class);
+        $this->call(DummyCompanyApiTokenSeeder::class);
 
         $this->call(DummyBranchSeeder::class);
         $this->call(DummyPersonSeeder::class);

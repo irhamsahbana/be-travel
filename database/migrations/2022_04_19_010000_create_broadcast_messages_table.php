@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('broadcast_messages', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->uuid('company_id');
             $table->uuid('person_id');
             $table->string('title');
             $table->text('message');
             // $table->string('status')->default('draft');
-            $table->date('scheduled_date')->nullable();
-            $table->time('scheduled_time', 0)->nullable();
+            $table->date('scheduled_date');
+            $table->time('scheduled_time');
             $table->timestamps();
         });
     }

@@ -172,7 +172,6 @@ class CongregationController extends Controller
             'passport_name' => $request->passport_name,
         ];
 
-
         $fields = array_merge($personData, $serviceData, $congregationDetailData);
 
         $personRules = (new CongregationRules)->store($request);

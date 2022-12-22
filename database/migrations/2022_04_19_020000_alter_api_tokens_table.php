@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('broadcast_message_recepients', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('broadcast_message_id');
-            $table->uuid('person_id');
-            $table->string('status');
-            $table->timestamps();
+        Schema::table('api_tokens', function (Blueprint $table) {
+            $table->index('company_id');
+            $table->foreign('company_id')
+            ->references('id')->on('companies')
+            ->onDelete('cascade');
         });
     }
 
@@ -29,6 +28,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('broadcast_message_recepients');
+        Schema::table('api_tokens', function (Blueprint $table) {
+            $table->dropForeign(['company_id']);
+            $table->dropIndex(['company_id']);
+        });
     }
 };

@@ -37,4 +37,9 @@ class Company extends Model
     {
         return $this->hasMany(Person::class, 'company_id');
     }
+
+    public function apiTokens()
+    {
+        return $this->hasMany(ApiToken::class, 'company_id');
+    }
 }
