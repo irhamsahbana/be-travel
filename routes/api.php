@@ -43,12 +43,19 @@ Route::get('public-companies', [CompanyController::class, 'publicIndex']);
 Route::get('public-branches', [BranchController::class, 'publicIndex']);
 Route::post("auth/login", [AuthController::class, 'attempt']);
 
+Route::get('ping-public', function () {
+    return (new Response)->json(['pong' => 'pong'], 'success');
+});
+
 Route::get('test', function () {
     return (new Response)->json(['test' => 'test'], 'success');
 });
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('me', [AuthController::class, 'me']);
+    Route::get('ping', function () {
+        return (new Response)->json(['pong' => 'pong'], 'success');
+    });
 
     Route::get('auth/logout', [AuthController::class, 'logout']);
     Route::get('auth/logout-all-devices', [AuthController::class, 'logoutAll']);
