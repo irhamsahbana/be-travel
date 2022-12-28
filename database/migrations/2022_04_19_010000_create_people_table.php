@@ -20,6 +20,7 @@ class CreatePeopleTable extends Migration
             $table->uuid('category_id');
             $table->uuid('agent_id')->nullable();
             $table->uuid('congregation_id')->nullable();
+            $table->uuid('province_id')->nullable();
             $table->uuid('city_id')->nullable();
             $table->uuid('marital_status_id')->nullable();
             $table->uuid('nationality_id')->nullable();

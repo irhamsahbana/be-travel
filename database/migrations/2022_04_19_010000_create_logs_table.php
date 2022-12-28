@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('table')->nullable();
             $table->string('action')->nullable();
             $table->text('data')->nullable();
+            $table->text('response')->nullable();
             $table->string('exception')->nullable();
             $table->string('message')->nullable();
             $table->string('file')->nullable();

@@ -9,8 +9,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+use App\Libs\WaGateway\Wablas;
+
 use App\Models\Company;
-use App\Models\ApiToken;
 
 class SendCompanyRegisteredNotificationJob implements ShouldQueue
 {
@@ -19,6 +20,7 @@ class SendCompanyRegisteredNotificationJob implements ShouldQueue
     protected ?Company $company;
     protected string $message = '';
     protected string $userPassword = '';
+
 
     public function __construct(Company $company)
     {
@@ -29,19 +31,11 @@ class SendCompanyRegisteredNotificationJob implements ShouldQueue
     public function handle()
     {
         sleep(4);
-        $token = ApiToken::where('company_id', $this->company?->id)->where('name', 'ruang_wa')->first()?->token ?? '';
-        $formParams = [
-            'token' => $token,
-            'number' => $this->company->people[0]->wa ?? '',
-            'message' => $this->message,
-        ];
 
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', 'https://app.ruangwa.id/api/send_message', [
-            'form_params' => $formParams
-        ]);
-
-        // $res = json_decode($response->getBody()->getContents());
+        $waGateway = (new Wablas())
+            ->setToken('97f2d9af-6c15-4757-bb35-2562175708b7')
+            ->setNumber($this->company->people[0]->wa ?? '')
+            ->setMessage($this->message);
     }
 
     protected function generateMessage($company): string

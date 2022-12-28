@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Libs\Logger;
+use App\Libs\WaGateway\Wablas;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -32,45 +33,16 @@ class SendBroadcastMessageJob implements ShouldQueue
     public function handle()
     {
         sleep(4);
-        $token = ApiToken::where('company_id', $this->bm->company_id)->first()?->token;
+        $companyId = $this->bm->company_id;
         $number = $this->br->person->wa ?? '';
         $message = $this->generateMessage();
 
-        $formParams = [
-            'token' => $token,
-            'number' => $number,
-            'message' => $message,
-        ];
+        $waGateway = (new Wablas)
+            ->setToken($companyId)
+            ->setNumber($number)
+            ->setMessage($message);
 
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', 'https://app.ruangwa.id/api/send_message', [
-            'form_params' => $formParams
-        ]);
-
-        $res = json_decode($response->getBody()->getContents());
-
-        if ($response->getStatusCode() >= 200 && $response->getStatusCode() < 300) {
-            $result = filter_var($res->result, FILTER_VALIDATE_BOOLEAN);
-
-            if ($result) BroadcastMessageRecipient::where('id', $this->br?->id)?->update(['status' => 'sent']);
-            else BroadcastMessageRecipient::where('id', $this->br?->id)?->update(['status' => 'failed']);
-        } else {
-            BroadcastMessageRecipient::where('id', $this->br?->id)?->update(['status' => 'failed']);
-
-            Logger::log(
-                null,
-                Logger::LEVEL_ERROR,
-                Logger::ACTION_SEND_BROADCAST_MESSAGE,
-                Logger::TABLE_BROADCAST_MESSAGE_RECIPIENT,
-                $this->br?->id,
-                $this->bm?->company?->id,
-                null,
-                null,
-                json_encode($formParams)
-            );
-
-            $this->fail(new \Exception('Failed to send broadcast message'));
-        }
+        $response = $waGateway->sendMessage();
     }
 
     protected function generateMessage(): string

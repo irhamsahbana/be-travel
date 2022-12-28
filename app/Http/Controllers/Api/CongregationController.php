@@ -127,6 +127,7 @@ class CongregationController extends Controller
             'sex' => $request->sex,
             'national_id' => $request->national_id,
             'address' => $request->address,
+            'province_id' => $request->province_id,
             'city_id' => $request->city_id,
             'nationality_id' => $request->nationality_id,
             'phone' => $request->phone,

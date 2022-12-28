@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 
 class PeopleRules
 {
-    public function store(Request $request) : array
+    public function store(Request $request): array
     {
         return [
             // people table
@@ -19,20 +19,28 @@ class PeopleRules
                     return $query->where('company_id', $request->company_id);
                 })
             ],
-            'ref_no' => ['required', 'string', 'max:255', 'unique:people,id,'. $request->id],
+            'ref_no' => ['required', 'string', 'max:255', 'unique:people,id,' . $request->id],
             'name' => ['required', 'string', 'max:255'],
             'father_name' => ['required', 'string', 'max:255'],
             'mother_name' => ['required', 'string', 'max:255'],
             'place_of_birth' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required', 'date_format:Y-m-d'],
             'sex' => ['required', 'in:male,female'],
-            'national_id' => ['required', 'string', 'max:30', 'unique:people,national_id,'. $request->id],
+            'national_id' => ['required', 'string', 'max:30', 'unique:people,national_id,' . $request->id],
             'address' => ['required', 'string', 'max:255'],
-            'city_id' => [
+            'province_id' => [
                 'required',
                 'uuid',
                 Rule::exists('categories', 'id')->where(function ($query) {
-                    return $query->where('group_by', 'cities');
+                    return $query->where('group_by', 'provinces');
+                })
+            ],
+            'city_id' => [
+                'required',
+                'uuid',
+                Rule::exists('categories', 'id')->where(function ($query) use ($request) {
+                    return $query->where('group_by', 'cities')
+                        ->where('category_id', $request->province_id);
                 })
             ],
             'nationality_id' => [
@@ -42,13 +50,15 @@ class PeopleRules
                     return $query->where('group_by', 'nationalities');
                 })
             ],
-            'phone' => ['required', 'string', 'max:15', 'unique:people,phone,'. $request->id,
+            'phone' => [
+                'required', 'string', 'max:15', 'unique:people,phone,' . $request->id,
                 'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
-            'wa' => ['required', 'string', 'max:15', 'unique:people,wa,'. $request->id,
+            'wa' => [
+                'required', 'string', 'max:15', 'unique:people,wa,' . $request->id,
                 'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
-            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:people,email,'. $request->id],
+            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:people,email,' . $request->id],
             'education_id' => [
                 'required',
                 'uuid',
@@ -81,7 +91,7 @@ class PeopleRules
         ];
     }
 
-    public function user() : array
+    public function user(): array
     {
         return [
             'username' => ['required', 'string', 'max:255', 'unique:users,username'],
