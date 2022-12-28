@@ -78,11 +78,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('congregations', [CongregationController::class, 'index']);
     Route::get('congregations/{id}', [CongregationController::class, 'show']);
     Route::patch('congregations/{id}', [CongregationController::class, 'update']);
+    Route::delete('congregations/{id}', [CongregationController::class, 'destroy']);
 
-    Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
+    Route::get('agents', [AgentController::class, 'index']);
     Route::get('agents/{id}', [AgentController::class, 'show']);
     Route::patch('agents/{id}', [AgentController::class, 'update']);
-    Route::get('agents', [AgentController::class, 'index']);
+    Route::delete('agents/{id}', [AgentController::class, 'destroy']);
+    Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
 
     Route::get('invoices', [InvoiceController::class, 'index']);
     Route::get('invoices/{id}', [InvoiceController::class, 'show']);

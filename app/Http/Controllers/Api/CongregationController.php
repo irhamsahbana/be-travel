@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 use App\Libs\RefNoGenerator;
 use App\Libs\Response;
@@ -365,6 +365,34 @@ class CongregationController extends Controller
 
     public function destroy($id)
     {
-        //
+        $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+
+        $person = Person::where('id', $id)->where('company_id', $user->company_id);
+
+        if ($userCategory == 'director') $person = $person->first();
+        else if ($userCategory == 'branch-manager') $person = $person->where('branch_id', $user->branch_id)->first();
+        else return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
+
+        if (!$person) return (new Response)->json(null, 'congregation not found', 404);
+
+        $fields = ['invoices' => $id];
+        $rules = ['invoices' => Rule::unique('invoices', 'congregation_id')];
+        $messages = ['invoices.unique' => 'jamaah tidak bisa dihapus karena memiliki data invoice'];
+
+        $validator = Validator::make($fields, $rules, $messages);
+        if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
+
+        DB::beginTransaction();
+        try {
+            $person->load('congregationDetail');
+            $person->delete();
+
+            DB::commit();
+            return (new Response)->json($person->toArray(), 'success to delete congregation', 200);
+        } catch (\Throwable $th) {
+            if (DB::transactionLevel() > 0) DB::rollBack();
+            throw $th;
+        }
     }
 }

@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
+use Illuminate\Validation\Rule;
 
 use App\Libs\RefNoGenerator;
 use App\Libs\Response;
@@ -295,6 +296,45 @@ class AgentController extends Controller
 
     public function destroy($id)
     {
-        //
+        $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+
+        $person = Person::where('id', $id)->where('company_id', $user->company_id);
+
+        if ($userCategory == 'director') $person = $person->first();
+        else if ($userCategory == 'branch-manager') $person = $person->where('branch_id', $user->branch_id)->first();
+        else return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
+
+        if (!$person) return (new Response)->json(null, 'agent not found', 404);
+
+        $fields = [
+            'invoices' => $id,
+            'people' => $id,
+        ];
+
+        $rules = [
+            'invoices' => Rule::unique('invoices', 'agent_id'),
+            'people' => Rule::unique('people', 'agent_id'),
+        ];
+
+        $messages = [
+            'invoices.unique' => 'agen tidak bisa dihapus karena memiliki data invoice',
+            'people.unique' => 'agen tidak bisa dihapus karena memiliki data jamaah',
+        ];
+
+        $validator = Validator::make($fields, $rules, $messages);
+        if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
+
+        DB::beginTransaction();
+        try {
+            $person->load('agentWorkExperiences', 'registeredCongregations', 'file');
+            $person->user?->delete();
+            $person->delete();
+            DB::commit();
+            return (new Response)->json($person->toArray(), 'success to delete agent', 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
     }
 }

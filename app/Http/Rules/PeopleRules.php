@@ -26,7 +26,12 @@ class PeopleRules
             'place_of_birth' => ['required', 'string', 'max:255'],
             'date_of_birth' => ['required', 'date_format:Y-m-d'],
             'sex' => ['required', 'in:male,female'],
-            'national_id' => ['required', 'string', 'max:30', 'unique:people,national_id,' . $request->id],
+            'national_id' => [
+                'required', 'string', 'max:30',
+                Rule::unique('people', 'national_id')
+                    ->where('company_id', $request->company_id)
+                    ->ignore($request->id)
+            ],
             'address' => ['required', 'string', 'max:255'],
             'province_id' => [
                 'required',
@@ -51,14 +56,23 @@ class PeopleRules
                 })
             ],
             'phone' => [
-                'required', 'string', 'max:15', 'unique:people,phone,' . $request->id,
+                'required', 'string', 'max:15',
+                Rule::unique('people', 'phone')
+                    ->where('company_id', $request->company_id)
+                    ->ignore($request->id),
                 'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
             'wa' => [
-                'required', 'string', 'max:15', 'unique:people,wa,' . $request->id,
+                'required', 'string', 'max:15',
+                Rule::unique('people', 'phone')
+                    ->where('company_id', $request->company_id)
+                    ->ignore($request->id),
                 'regex:/^62[0-9]{6,15}$/' // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
-            'email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:people,email,' . $request->id],
+            'email' => [
+                'required', 'string', 'email:rfc,dns', 'max:255',
+                Rule::unique('people', 'email')->ignore($request->id),
+            ],
             'education_id' => [
                 'required',
                 'uuid',

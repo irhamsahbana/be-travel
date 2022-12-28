@@ -64,7 +64,7 @@ class InvoiceController extends Controller
         } else if ($user->person->category->name == 'branch-manager') {
             $data = $data->where('branch_id', $user->branch_id)->first();
         } else {
-            return (new Response)->json(null, 'You are not authorized to access this resource', 403);
+            return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
         }
 
         if (!$data) return (new Response)->json(null, 'Invoice not found', 404);
@@ -79,29 +79,34 @@ class InvoiceController extends Controller
     public function destroy($id)
     {
         $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+        $invoice = null;
 
         DB::beginTransaction();
         try {
-            if ($user->person->category->name == 'director') {
-                $invoice = Invoice::with(['invoiceDetails'])->where('id', $id)
-                    ->where('company_id', $user->person->company_id)
-                    ->first();
+            switch ($userCategory) {
+                case 'director':
+                    $invoice = Invoice::with(['invoiceDetails'])->where('id', $id)
+                        ->where('company_id', $user->person->company_id)
+                        ->first();
 
-                $invoice?->delete(); // invoice details and payments will be deleted by cascade
-            } else if ($user->person->category->name == 'branch-manager') {
-                $invoice = Invoice::with(['invoiceDetails'])->where('id', $id)
-                    ->where('branch_id', $user->person->branch_id)
-                    ->first();
+                    $invoice?->delete();
+                    break;
+                case 'branch-manager':
+                    $invoice = Invoice::with(['invoiceDetails'])->where('id', $id)
+                        ->where('branch_id', $user->person->branch_id)
+                        ->first();
 
-                $invoice?->delete();
-            } else {
-                return (new Response)->json(null, 'You are not authorized to access this resource', 403);
+                    $invoice?->delete();
+                    break;
+                default:
+                    return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
             }
             if (!$invoice) return (new Response)->json(null, 'Invoice not found', 404);
             DB::commit();
             return (new Response)->json($invoice?->toArray(), 'success delete invoice');
         } catch (\Exception $e) {
-            DB::rollBack();
+            if (DB::transactionLevel() > 0) DB::rollBack();
             return (new Response)->json(null, $e->getMessage(), 500, get_class($e), $e->getFile(), $e->getLine(), $e->getTrace());
         }
     }

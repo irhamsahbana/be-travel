@@ -27,9 +27,7 @@ class Wablas extends AbstractWaGateway
         $obj =  new \StdClass();
         $client = new \GuzzleHttp\Client();
 
-        $headers = [
-            'Authorization' => $this->token
-        ];
+        $headers = ['Authorization' => $this->token];
 
         $requestData = [
             [
