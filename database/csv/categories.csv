@@ -35,6 +35,10 @@ a5bff782-c294-45e4-b5c6-5ba327502cf0,,,category-educations-read,category-educati
 ee43a7d6-b813-4a36-93ef-b8f020404c4a,,,category-educations-create,category-educations-create,Kategori Pendidikan - Buat,permissions
 473a22fb-a968-4629-af75-f95ca11c9929,,,category-educations-delete,category-educations-delete,Kategori Pendidikan - Hapus,permissions
 95117dc8-4e67-4a81-8c4e-0f0750b87039,,,category-educations-update,category-educations-update,Kategori Pendidikan - Ubah,permissions
+0c1c743e-8f05-4968-9087-61fcb5aeb728,,,category-packet-types-read,category-packet-types-read,Kategori Tipe Paket - Baca,permissions
+4de3133f-dd9a-4f45-9ffa-f70052c46c80,,,category-packet-types-create,category-packet-types-create,Kategori Tipe Paket - Buat,permissions
+dce25862-8d12-4d5c-8c9e-f57c9d047afa,,,category-packet-types-delete,category-packet-types-delete,Kategori Tipe Paket - Hapus,permissions
+1a463fe5-82f0-4155-960f-ad453673bdbc,,,category-packet-types-update,category-packet-types-update,Kategori Tipe Paket - Ubah,permissions
 682c5a9e-aa0d-44b7-92c1-902257cee670,,,category-provinces-read,category-provinces-read,Kategori Provinsi - Baca,permissions
 142c3290-d082-467b-8250-9adafc301e39,,,category-provinces-create,category-provinces-create,Kategori Provinsi - Buat,permissions
 a2868edc-c852-45cb-b186-8c1cd8f735e4,,,category-provinces-delete,category-provinces-delete,Kategori Provinsi - Hapus,permissions

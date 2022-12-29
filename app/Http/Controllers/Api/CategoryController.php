@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $user = $this->getUser();
         $userCategory = $user?->person?->category?->name;
-//
+
         $finder = new CategoryFinder();
         $finder->setAccessControl($this->getAccessControl());
 
