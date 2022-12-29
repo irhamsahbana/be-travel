@@ -36,6 +36,8 @@ class SendCompanyRegisteredNotificationJob implements ShouldQueue
             ->setToken('97f2d9af-6c15-4757-bb35-2562175708b7')
             ->setNumber($this->company->people[0]->wa ?? '')
             ->setMessage($this->message);
+
+        $waGateway->sendMessage();
     }
 
     protected function generateMessage($company): string

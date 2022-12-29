@@ -16,6 +16,8 @@ class Service extends Model
         'deleted_at',
     ];
 
+    protected $guarded = [];
+
     public function packetType()
     {
         return $this->belongsTo(Category::class);

@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\{
     InvoiceController,
     TutorController,
     PaymentController,
+    ServiceController,
     TestController,
 };
 
@@ -31,25 +32,6 @@ use Illuminate\Support\Facades\DB;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::post('register-companies', [CompanyController::class, 'register']);
-Route::post('register-agents', [AgentController::class, 'register']);
-Route::post('register-congregations', [CongregationController::class, 'register']);
-
-Route::get('status-congregations/{identifier}', [CongregationController::class, 'check']);
-Route::get('public-categories', [CategoryController::class, 'index']);
-
-Route::get('public-companies', [CompanyController::class, 'publicIndex']);
-Route::get('public-branches', [BranchController::class, 'publicIndex']);
-Route::post("auth/login", [AuthController::class, 'attempt']);
-
-Route::get('ping-public', function () {
-    return (new Response)->json(['pong' => 'pong'], 'success');
-});
-
-Route::get('test', function () {
-    return (new Response)->json(['test' => 'test'], 'success');
-});
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('me', [AuthController::class, 'me']);
@@ -72,6 +54,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('branches/{id}', [BranchController::class, 'show']);
     Route::patch('branches/{id}', [BranchController::class, 'update']);
     Route::delete('branches/{id}', [BranchController::class, 'destroy']);
+
+    Route::get('services', [ServiceController::class, 'index']);
+    Route::post('services', [ServiceController::class, 'store']);
 
     Route::post('files', [FileController::class, 'storeFile']);
 
@@ -98,7 +83,27 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('payments', [PaymentController::class, 'store']);
 });
 
+Route::post('register-companies', [CompanyController::class, 'register']);
+Route::post('register-agents', [AgentController::class, 'register']);
+Route::post('register-congregations', [CongregationController::class, 'register']);
+
+Route::get('status-congregations/{identifier}', [CongregationController::class, 'check']);
+Route::get('public-categories', [CategoryController::class, 'index']);
+
+Route::get('public-companies', [CompanyController::class, 'publicIndex']);
+Route::get('public-branches', [BranchController::class, 'publicIndex']);
+Route::post("auth/login", [AuthController::class, 'attempt']);
+
+Route::get('ping-public', function () {
+    return (new Response)->json(['pong' => 'pong'], 'success');
+});
+
+Route::get('test', function () {
+    return (new Response)->json(['test' => 'test'], 'success');
+});
+
 Route::get('delete-non-dummy-data', [TestController::class, 'deleteNonDummy']);
+
 
 Route::fallback(function () {
     return (new Response)->json([], 'Endpoint not found.', 404);

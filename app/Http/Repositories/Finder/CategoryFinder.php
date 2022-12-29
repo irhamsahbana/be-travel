@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 class CategoryFinder extends AbstractFinder
 {
     protected array $groups = [];
+    protected ?string $companyId;
 
     public function __construct()
     {
@@ -26,6 +27,11 @@ class CategoryFinder extends AbstractFinder
         } else {
             $this->query->whereNull('categories.category_id');
         }
+    }
+
+    public function setCompany(?string $companyId)
+    {
+        $this->companyId = $companyId;
     }
 
     public function whereKeyword()
@@ -66,6 +72,12 @@ class CategoryFinder extends AbstractFinder
         $this->query->whereIn('group_by', $this->groups);
     }
 
+    private function whereCompany()
+    {
+        if(!empty($this->companyId))
+            $this->query->where('company_id', $this->companyId);
+    }
+
     protected function doQuery()
     {
         // map group to kebab case
@@ -82,6 +94,7 @@ class CategoryFinder extends AbstractFinder
 
         $this->whereGroups();
         $this->whereKeyword();
+        $this->whereCompany();
         $this->whereOrderBy();
     }
 }

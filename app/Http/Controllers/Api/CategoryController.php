@@ -3,20 +3,28 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Repositories\Finder\CategoryFinder;
-use App\Libs\Response;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+
+use App\Http\Repositories\Finder\CategoryFinder;
+
+use App\Libs\Response;
 
 class CategoryController extends Controller
 {
     public function index(Request $request)
     {
+        $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+//
         $finder = new CategoryFinder();
         $finder->setAccessControl($this->getAccessControl());
 
         if (isset($request->group_by))
             $finder->setGroup($request->group_by);
+
+        if (isset($request->group_by) && in_array($request->group_by, ['packet_types']))
+            $finder->setCompany($user?->company_id);
 
         if (isset($request->order_by))
             $finder->setOrderBy($request->order_by);

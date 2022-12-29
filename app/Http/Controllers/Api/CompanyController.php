@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\SendCompanyRegisteredNotificationJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +11,7 @@ use Illuminate\Validation\Rule;
 
 use App\Libs\Response;
 use App\Libs\RefNoGenerator;
+use App\Jobs\SendCompanyRegisteredNotificationJob;
 
 use App\Models\Category;
 use App\Models\Company;
@@ -50,22 +50,31 @@ class CompanyController extends Controller
         $rules = [
             'name' => ['required', 'string', 'max:255', 'unique:companies,name'],
             'branches' => ['required', 'array', 'min:1'],
+            'branches.*.name' => ['required', 'string', 'max:255'],
             'accounts' => ['required', 'array', 'min:1'],
             'accounts.*.bank_id' => [
                 'required',
                 'uuid',
                 Rule::exists('categories', 'id')->where(function ($query) {
-                return $query->where('group_by', 'banks');
-            })],
+                    return $query->where('group_by', 'banks');
+                })
+            ],
             'accounts.*.account_name' => ['required', 'string', 'max:255'],
             'accounts.*.account_number' => ['required', 'max:255'],
             'person.name' => ['required', 'string', 'max:255'],
             'person.username' => ['required', 'string', 'max:255', 'unique:users,username'],
             'person.password' => ['required', 'string', 'min:8'],
-            'person.phone' => ['required', 'string', 'max:15', 'regex:/^62[0-9]{6,15}$/', // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
+            'person.phone' => [
+                'required', 'string', 'max:15', 'regex:/^62[0-9]{6,15}$/', // the regex is for Indonesian phone number (62 is the country code, 6-11 is the phone number)
             ],
-            'person.wa' => ['required', 'string', 'max:15', 'regex:/^62[0-9]{6,15}$/','unique:people,wa'],
-            'person.email' => ['required', 'string', 'email:rfc,dns', 'max:255', 'unique:people,email'],
+            'person.wa' => [
+                'required', 'string', 'max:15', 'regex:/^62[0-9]{6,15}$/',
+                'unique:people,wa'
+            ],
+            'person.email' => [
+                'required', 'string', 'email:rfc,dns', 'max:255',
+                'unique:people,email'
+            ],
         ];
 
         $validator = Validator::make($fields, $rules);
@@ -222,8 +231,6 @@ class CompanyController extends Controller
             $agentPG->id => $agentPermissions->pluck('id')->toArray(),
         ];
 
-        // dd($permissionGroupPermissions);
-
         foreach ($permissionGroupPermissions as $permissionGroupId => $permissionIds) {
             $permissionGroup = Category::find($permissionGroupId);
             $newPermissionIds = [];
@@ -234,6 +241,19 @@ class CompanyController extends Controller
                 ];
             }
             $permissionGroup->permissions()->sync($newPermissionIds);
+        }
+
+        // packet types category
+        $packetTypes = Category::where('group_by', 'packet_types')->whereNull('company_id')->get();
+        foreach ($packetTypes as $packetType) {
+            $pt = new Category;
+            $pt->category_id = $packetType->category_id;
+            $pt->company_id = $company->id;
+            $pt->name = $packetType->name;
+            $pt->group_by = $packetType->group_by;
+            $pt->label = $packetType->label;
+            $pt->notes = $packetType->notes;
+            $pt->save();
         }
     }
 }

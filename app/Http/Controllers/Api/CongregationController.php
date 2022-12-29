@@ -13,6 +13,7 @@ use App\Libs\Response;
 
 use App\Http\Rules\CongregationRules;
 use App\Jobs\SendRegisteredNotificationJob;
+
 use App\Models\{Company, CongregationDetail, Service, Category, Person, Invoice, InvoiceDetail};
 
 class CongregationController extends Controller
@@ -38,25 +39,30 @@ class CongregationController extends Controller
                     ->whereNull('company_id');
             });
 
-        if ($userCategory == 'director') {
-            // filters
-            if (!empty($request->branch_id)) $data = $data->where('branch_id', $request->branch_id);
-            if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
-            if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
-        } else if ($userCategory == 'branch-manager') {
-            $data = $data->where('branch_id', $user->person->branch_id);
+        switch ($userCategory) {
+            case 'director':
+                // filters
+                if (!empty($request->branch_id)) $data = $data->where('branch_id', $request->branch_id);
+                if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
+                if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
+                break;
+            case 'branch-manager':
+                $data = $data->where('branch_id', $user->person->branch_id);
 
-            // filters
-            if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
-            if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
-        } else if ($userCategory == 'agent') {
-            $data = $data->where('branch_id', $user->person->branch_id)->where('agent_id', $user->person->id);
+                // filters
+                if (!empty($request->agent_id)) $data = $data->where('agent_id', $request->agent_id);
+                if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
+                break;
+            case 'agent':
+                $data = $data->where('branch_id', $user->person->branch_id)->where('agent_id', $user->person->id);
 
-            // filters
-            if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
-        } else {
-            return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
+                // filters
+                if (!empty($request->congregation_id)) $data = $data->where('congregation_id', $request->congregation_id);
+                break;
+            default:
+                return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
         }
+
 
         if ($paginate) {
             $data = $data->paginate((int) $request->per_page ?? 15)->toArray();

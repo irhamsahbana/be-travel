@@ -7,7 +7,6 @@ use App\Libs\Logger;
 use Illuminate\Support\Facades\Log as FacadesLog;
 
 use App\Models\ApiToken;
-use App\Models\Log;
 
 class Wablas extends AbstractWaGateway
 {
