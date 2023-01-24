@@ -151,7 +151,7 @@ class AgentController extends Controller
                 'branch_id' => $request->branch_id,
                 'email' => $request->email,
                 'username' => $request->username,
-                'password' => bcrypt(Str::random(8)),
+                'password' => bcrypt($request->password),
                 'permission_group_id' => Category::where('name', 'agent')
                     ->where('group_by', 'permission_groups')
                     ->where('company_id', $request->company_id)->first()->id ?? null,
