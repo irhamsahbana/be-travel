@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\{
     AuthController,
     AgentController,
     BranchController,
+    BranchManagerController,
     BroadcastMessageController,
     CategoryController,
     CompanyController,
@@ -54,6 +55,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('branches/{id}', [BranchController::class, 'show']);
     Route::patch('branches/{id}', [BranchController::class, 'update']);
     Route::delete('branches/{id}', [BranchController::class, 'destroy']);
+
+    Route::post('branch-managers', [BranchManagerController::class, 'store']);
+    Route::get('branch-managers', [BranchManagerController::class, 'index']);
+    Route::get('branch-managers/{id}', [BranchManagerController::class, 'show']);
+    Route::patch('branch-managers/{id}', [BranchManagerController::class, 'update']);
+    Route::delete('branch-managers/{id}', [BranchManagerController::class, 'destroy']);
 
     Route::get('services', [ServiceController::class, 'index']);
     Route::post('services', [ServiceController::class, 'store']);

@@ -58,4 +58,12 @@ class AgentRules extends PeopleRules
             ],
         ]);
     }
+
+    public function password(): array
+    {
+        return [
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirmation' => ['required', 'string', 'min:8'],
+        ];
+    }
 }

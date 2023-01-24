@@ -117,13 +117,19 @@ class AgentController extends Controller
                 ->where('company_id', $request->company_id)->first()->id ?? null,
         ];
 
-        $fields = array_merge($personData, $workExperiencesData, $userData);
+        $passwordData = [
+            'password' => $request->password,
+            'password_confirmation' => $request->password_confirmation,
+        ];
+
+        $fields = array_merge($personData, $workExperiencesData, $userData, $passwordData);
 
         $personRules = (new AgentRules)->store($request);
         $workExperiencesRules = (new AgentRules)->workExperiences($request);
         $userRules = (new AgentRules)->user();
+        $passwordRules = (new AgentRules)->password();
 
-        $rules = array_merge($personRules, $workExperiencesRules, $userRules);
+        $rules = array_merge($personRules, $workExperiencesRules, $userRules, $passwordRules);
 
         $validator = Validator::make($fields, $rules);
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
@@ -155,7 +161,7 @@ class AgentController extends Controller
             DB::commit();
             return (new Response)->json($person, 'success to create agent', 201);
         } catch (\Exception $e) {
-            DB::rollBack();
+            if (DB::transactionLevel() > 0) DB::rollBack();
             return (new Response)->json(null, $e->getMessage(), 500);
         }
     }
