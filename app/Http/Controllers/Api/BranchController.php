@@ -19,8 +19,8 @@ class BranchController extends Controller
 
     public function index()
     {
-        $branches = Branch::where('company_id', auth()->user()->company_id)
-            ->orderBy('name')
+        $branches = Branch::with(['agents'])->where('company_id', auth()->user()->company_id)
+            ->orderBy('ref_no')
             ->get()->toArray() ?? [];
 
 
@@ -29,11 +29,10 @@ class BranchController extends Controller
 
     public function publicIndex(Request $request)
     {
-        $data = Branch::select('id', 'name');
+        $data = Branch::with(['agents']);
 
-        if ($request->company_id) {
+        if ($request->company_id)
             $data = $data->where('company_id', $request->company_id);
-        }
 
         $data = $data->orderBy('ref_no')->get()->toArray();
         return (new Response)->json($data, 'Branches retrieved successfully.');

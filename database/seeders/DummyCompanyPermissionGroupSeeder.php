@@ -72,6 +72,7 @@ class DummyCompanyPermissionGroupSeeder extends Seeder
         // branch manager
         $branchManagerPermissions = $companyPermissions->whereIn('name', [
             'congregations-create', 'congregations-create', 'congregations-update', 'congregations-delete',
+            'category-packet-types-read',
             'category-nationalities-read',
             'category-cities-read',
             'category-provinces-read',
@@ -84,6 +85,7 @@ class DummyCompanyPermissionGroupSeeder extends Seeder
         // agent
         $agentPermissions = $companyPermissions->whereIn('name', [
             'congregations-create', 'congregations-create', 'congregations-update', 'congregations-delete',
+            'category-packet-types-read',
             'category-nationalities-read',
             'category-cities-read',
             'category-provinces-read',

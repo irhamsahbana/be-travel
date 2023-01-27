@@ -16,25 +16,6 @@ class DummyCategorySeeder extends Seeder
      */
     public function run()
     {
-        // $this->semesters();
     }
 
-    private function semesters()
-    {
-        $data = [];
-
-        foreach (range(1, 5) as $i) {
-            $label = 'Dummy Semester ' . $i;
-
-            $data = [
-                'label' => $label,
-                'name' => Str::slug($label),
-                'group_by' => 'semesters',
-                'created_at' => now(),
-            ];
-
-            Category::create($data);
-        }
-
-    }
 }

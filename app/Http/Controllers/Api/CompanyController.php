@@ -203,6 +203,7 @@ class CompanyController extends Controller
         // branch manager
         $branchManagerPermissions = $companyPermissions->whereIn('name', [
             'congregations-create', 'congregations-create', 'congregations-update', 'congregations-delete',
+            'category-packet-types-read',
             'category-nationalities-read',
             'category-cities-read',
             'category-provinces-read',
@@ -215,6 +216,7 @@ class CompanyController extends Controller
         // agent
         $agentPermissions = $companyPermissions->whereIn('name', [
             'congregations-create', 'congregations-create', 'congregations-update', 'congregations-delete',
+            'category-packet-types-read',
             'category-nationalities-read',
             'category-cities-read',
             'category-provinces-read',

@@ -122,13 +122,12 @@ class AgentController extends Controller
             'password_confirmation' => $request->password_confirmation,
         ];
 
-        $fields = array_merge($personData, $workExperiencesData, $userData, $passwordData);
-
         $personRules = (new AgentRules)->store($request);
         $workExperiencesRules = (new AgentRules)->workExperiences($request);
         $userRules = (new AgentRules)->user();
         $passwordRules = (new AgentRules)->password();
 
+        $fields = array_merge($personData, $workExperiencesData, $userData, $passwordData);
         $rules = array_merge($personRules, $workExperiencesRules, $userRules, $passwordRules);
 
         $validator = Validator::make($fields, $rules);

@@ -23,6 +23,12 @@ class ServiceController extends Controller
             case 'director':
                 $data = Service::where('company_id', $user->company_id);
                 break;
+            case 'manager':
+                $data = Service::where('company_id', $user->company_id);
+                break;
+            case 'agent':
+                $data = Service::where('company_id', $user->company_id);
+                break;
             default:
                 return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
                 break;

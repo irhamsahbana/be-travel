@@ -17,4 +17,11 @@ class Branch extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    public function agents()
+    {
+        return $this->hasMany(Person::class)->whereHas('category', function ($query) {
+            $query->where('name', 'agent');
+        });
+    }
 }
