@@ -257,14 +257,15 @@ class CongregationController extends Controller
             'congregationInvoices.invoiceDetails.service.packetType',
         ])->where('id', $id)->where('company_id', $user->company_id);
 
-        if ($userCategory == 'branch-manager') $data = $data->where('branch_id', $user->branch_id);
-        else if ($userCategory == 'agent') $data = $data->where('branch_id', $user->branch_id)->where('agent_id', $user->id);
+        if ($userCategory == 'director') $data = $data;
+        else if ($userCategory == 'branch-manager') $data = $data->where('branch_id', $user->branch_id);
+        else if ($userCategory == 'agent') $data = $data->where('branch_id', $user->branch_id)->where('agent_id', $user->person->id);
         else return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
 
         $data = $data->first();
 
         if (!$data) return (new Response)->json(null, 'congregation not found', 404);
-        return (new Response)->json($data, 'success to get congregation', 200);
+        return (new Response)->json($data->toArray(), 'success to get congregation', 200);
     }
 
     public function update(Request $request, $id)
