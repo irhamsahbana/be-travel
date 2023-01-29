@@ -33,7 +33,7 @@ class AgentController extends Controller
             'category' => fn ($query) => $query->select('id', 'label'),
             'branch' => fn ($query) => $query->select('id', 'name'),
         ])
-            ->select(['id', 'branch_id', 'category_id', 'ref_no', 'name', 'wa', 'email'])
+            ->select(['id', 'branch_id', 'category_id', 'ref_no', 'name', 'wa', 'email', 'verified_at'])
             ->where('company_id', $user->person->company_id)
             ->whereHas('category', function ($query) {
                 $query->where('name', 'agent')
