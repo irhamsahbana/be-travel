@@ -299,6 +299,40 @@ class AgentController extends Controller
         }
     }
 
+    public function verify($id)
+    {
+        $user = $this->getUser();
+        $userCategory = $user?->person?->category?->name;
+
+        $person = Person::where('id', $id)->where('company_id', $user->company_id);
+
+        switch ($userCategory) {
+            case 'director':
+                $person = $person->first();
+                break;
+            case 'branch-manager':
+                $person = $person->where('branch_id', $user->branch_id)->first();
+                break;
+            default:
+                return (new Response)->json(null, self::NOT_AUTHORIZED_MESSAGE, 403);
+        }
+
+        if (!$person) return (new Response)->json(null, 'agent not found', 404);
+
+        $person->update([
+            'verified_at' => now(),
+        ]);
+
+        $person = Person::find($id)?->load([
+            'category',
+            'agentWorkExperiences',
+            'registeredCongregations' => fn ($q) => $q->select('id', 'agent_id', 'congregation_id', 'ref_no', 'name'),
+            'file'
+        ])->toArray();
+
+        return (new Response)->json($person, 'success to verify agent', 200);
+    }
+
     public function destroy($id)
     {
         $user = $this->getUser();

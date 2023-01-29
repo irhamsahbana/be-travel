@@ -77,6 +77,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('agents/{id}', [AgentController::class, 'update']);
     Route::delete('agents/{id}', [AgentController::class, 'destroy']);
     Route::get('agents/{id}/attachments', [AgentController::class, 'downloadAttachments']);
+    Route::patch('agents/{id}/verify', [AgentController::class, 'verify']);
 
     Route::get('invoices', [InvoiceController::class, 'index']);
     Route::get('invoices/{id}', [InvoiceController::class, 'show']);
