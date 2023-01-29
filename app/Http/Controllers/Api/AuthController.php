@@ -37,6 +37,13 @@ class AuthController extends Controller
 
         if (Auth::attempt($fields)) {
             $user = Auth::user();
+
+            $userCategory = $user->person->category->name;
+            $verifiedAt = $user->person->verified_at;
+
+            if ($userCategory == 'agent' && !$verifiedAt)
+                return (new Response)->json(null, 'Akun anda belum diverifikasi, silahkan menghubungi cabang terkait.', 401);
+
             $token = $user->createToken('auth_token')->plainTextToken;
 
             return (new Response)->json([
