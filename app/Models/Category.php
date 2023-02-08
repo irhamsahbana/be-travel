@@ -72,6 +72,16 @@ class Category extends Model
         return $this->where('group_by', 'payment_methods');
     }
 
+    public function file()
+    {
+        return $this->morphOne(File::class, 'fileable');
+    }
+
+    public function files()
+    {
+        return $this->morphMany(File::class, 'fileable');
+    }
+
     // categories as permission groups
     public function permissions()
     {

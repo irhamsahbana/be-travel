@@ -12,12 +12,21 @@ use App\Libs\Response;
 use App\Libs\FileSaver;
 use Illuminate\Validation\Rule;
 
+use App\Models\{
+    Person,
+    Category,
+    File,
+    Service
+};
+
 class FileController extends Controller
 {
     use FileSaver;
 
     public function storeFile(Request $request)
     {
+        $userCategory = $this->getUser()?->person?->category?->name;
+
         $field = [
             'file' => $request->file('file'),
             'fileable_id' => $request->fileable_id,
@@ -25,13 +34,13 @@ class FileController extends Controller
         ];
 
         $rules = [
-            'file' =>  ['required', 'file', 'mimes:pdf'],
+            'file' =>  ['required', 'file'],
             'fileable_id' => ['required', 'uuid'],
             'fileable_type' => [
                 'required',
                 'string',
                 Rule::in([
-                    'person'
+                    'services'
                 ])
             ],
         ];
@@ -39,28 +48,36 @@ class FileController extends Controller
         $validator = Validator::make($field, $rules);
         if ($validator->fails()) return (new Response)->json(null, $validator->errors(), 422);
 
-        $type = [
-            'person' => [
-                'model' => 'App\Models\Person',
-                'path' => 'people',
-            ],
-        ];
+        switch ($request->fileable_type) {
+            case 'people':
+                $model = Person::class;
+                break;
+            case 'categories':
+                $model = Category::class;
+                break;
+            case 'services':
+                $model = Service::class;
+                break;
+            default:
+                return (new Response)->json(null, 'Fileable type not found', 404);
+        }
 
-        $fileable = $type[$request->fileable_type]['model']::where('id', $request->fileable_id)->first();
+        $fileable = $model::where('id', $request->fileable_id)->first();
         if (!$fileable) return (new Response)->json(null, 'Fileable not found', 404);
 
         $filename = ((string) Str::uuid()) . '.' . $field['file']->getClientOriginalExtension();
 
         try {
             $file = $this->saveFile(
+                $fileable,
                 $request->file('file'),
-                $type[$request->fileable_type]['path'],
-                $request->fileable_id,
-                $type[$request->fileable_type]['model'],
-                $filename
+                $model,
+                $filename,
             );
 
-            return (new Response)->json($file->toArray(), 'File uploaded successfully');
+            $file = $file ? $file->toArray() : null;
+
+            return (new Response)->json($file, 'File uploaded successfully');
         } catch (\Exception $e) {
             return (new Response)->json(null, $e->getMessage(), 500);
         }

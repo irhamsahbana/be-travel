@@ -36,6 +36,7 @@ class ServiceController extends Controller
 
         $data = $data->with([
             'packetType' => fn ($query) => $query->select('id', 'label'),
+            'file'
         ])->get();
 
         return (new Response)->json($data->toArray(), 'services retrieved successfully');
