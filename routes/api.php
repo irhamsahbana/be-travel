@@ -64,6 +64,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('services', [ServiceController::class, 'index']);
     Route::post('services', [ServiceController::class, 'store']);
+    Route::delete('services/{id}', [ServiceController::class, 'destroy']);
+    Route::patch('services/{id}', [ServiceController::class, 'update']);
 
     Route::post('files', [FileController::class, 'storeFile']);
 

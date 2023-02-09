@@ -28,7 +28,7 @@ class CompanyController extends Controller
 
     public function publicIndex()
     {
-        $data = Company::with('branches.agents', 'services.packetType')->get()->toArray();
+        $data = Company::with('branches.agents', 'services.packetType', 'services.file')->get()->toArray();
 
         return (new Response)->json($data, 'Companies retrieved successfully.');
     }

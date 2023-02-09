@@ -72,7 +72,7 @@ trait FileSaver
         return $file;
     }
 
-    private function deleteFile(File $file)
+    public function deleteFile(File $file)
     {
         $oldPath = $file->path;
 
