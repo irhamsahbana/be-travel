@@ -1,0 +1,1130 @@
+[
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BRI",
+        "group_by": "banks",
+        "notes": "002"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK EKSPOR INDONESIA",
+        "group_by": "banks",
+        "notes": "003"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MANDIRI",
+        "group_by": "banks",
+        "notes": "008"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BNI",
+        "group_by": "banks",
+        "notes": "009"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BNI SYARIAH",
+        "group_by": "banks",
+        "notes": "427"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK DANAMON",
+        "group_by": "banks",
+        "notes": "011"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "PERMATA BANK",
+        "group_by": "banks",
+        "notes": "013"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BCA",
+        "group_by": "banks",
+        "notes": "014"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BII",
+        "group_by": "banks",
+        "notes": "016"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK PANIN",
+        "group_by": "banks",
+        "notes": "019"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK ARTA NIAGA KENCANA",
+        "group_by": "banks",
+        "notes": "020"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK NIAGA",
+        "group_by": "banks",
+        "notes": "022"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BUANA IND",
+        "group_by": "banks",
+        "notes": "023"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK LIPPO",
+        "group_by": "banks",
+        "notes": "026"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK NISP",
+        "group_by": "banks",
+        "notes": "028"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "AMERICAN EXPRESS BANK LTD",
+        "group_by": "banks",
+        "notes": "030"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "CITIBANK N.A.",
+        "group_by": "banks",
+        "notes": "031"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "JP. MORGAN CHASE BANK, N.A.",
+        "group_by": "banks",
+        "notes": "032"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK OF AMERICA, N.A",
+        "group_by": "banks",
+        "notes": "033"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "ING INDONESIA BANK",
+        "group_by": "banks",
+        "notes": "034"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MULTICOR TBK.",
+        "group_by": "banks",
+        "notes": "036"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK ARTHA GRAHA",
+        "group_by": "banks",
+        "notes": "037"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK CREDIT AGRICOLE INDOSUEZ",
+        "group_by": "banks",
+        "notes": "039"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "THE BANGKOK BANK COMP. LTD",
+        "group_by": "banks",
+        "notes": "040"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "THE HONGKONG & SHANGHAI B.C.",
+        "group_by": "banks",
+        "notes": "041"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "THE BANK OF TOKYO MITSUBISHI UFJ LTD",
+        "group_by": "banks",
+        "notes": "042"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SUMITOMO MITSUI INDONESIA",
+        "group_by": "banks",
+        "notes": "045"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK DBS INDONESIA",
+        "group_by": "banks",
+        "notes": "046"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK RESONA PERDANIA",
+        "group_by": "banks",
+        "notes": "047"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MIZUHO INDONESIA",
+        "group_by": "banks",
+        "notes": "048"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "STANDARD CHARTERED BANK",
+        "group_by": "banks",
+        "notes": "050"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK ABN AMRO",
+        "group_by": "banks",
+        "notes": "052"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK KEPPEL TATLEE BUANA",
+        "group_by": "banks",
+        "notes": "053"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK CAPITAL INDONESIA, TBK.",
+        "group_by": "banks",
+        "notes": "054"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BNP PARIBAS INDONESIA",
+        "group_by": "banks",
+        "notes": "057"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK UOB INDONESIA",
+        "group_by": "banks",
+        "notes": "058"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "KOREA EXCHANGE BANK DANAMON",
+        "group_by": "banks",
+        "notes": "059"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "RABOBANK INTERNASIONAL INDONESIA",
+        "group_by": "banks",
+        "notes": "060"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "ANZ PANIN BANK",
+        "group_by": "banks",
+        "notes": "061"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "DEUTSCHE BANK AG.",
+        "group_by": "banks",
+        "notes": "067"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK WOORI INDONESIA",
+        "group_by": "banks",
+        "notes": "068"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK OF CHINA LIMITED",
+        "group_by": "banks",
+        "notes": "069"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BUMI ARTA",
+        "group_by": "banks",
+        "notes": "076"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK EKONOMI",
+        "group_by": "banks",
+        "notes": "087"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK ANTARDAERAH",
+        "group_by": "banks",
+        "notes": "088"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK HAGA",
+        "group_by": "banks",
+        "notes": "089"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK IFI",
+        "group_by": "banks",
+        "notes": "093"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK CENTURY, TBK.",
+        "group_by": "banks",
+        "notes": "095"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MAYAPADA",
+        "group_by": "banks",
+        "notes": "097"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK JABAR",
+        "group_by": "banks",
+        "notes": "110"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK DKI",
+        "group_by": "banks",
+        "notes": "111"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD DIY",
+        "group_by": "banks",
+        "notes": "112"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK JATENG",
+        "group_by": "banks",
+        "notes": "113"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK JATIM",
+        "group_by": "banks",
+        "notes": "114"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD JAMBI",
+        "group_by": "banks",
+        "notes": "115"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD ACEH",
+        "group_by": "banks",
+        "notes": "116"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SUMUT",
+        "group_by": "banks",
+        "notes": "117"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK NAGARI",
+        "group_by": "banks",
+        "notes": "118"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK RIAU",
+        "group_by": "banks",
+        "notes": "119"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SUMSEL",
+        "group_by": "banks",
+        "notes": "120"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK LAMPUNG",
+        "group_by": "banks",
+        "notes": "121"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD KALSEL",
+        "group_by": "banks",
+        "notes": "122"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD KALIMANTAN BARAT",
+        "group_by": "banks",
+        "notes": "123"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD KALTIM",
+        "group_by": "banks",
+        "notes": "124"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD KALTENG",
+        "group_by": "banks",
+        "notes": "125"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD SULSEL",
+        "group_by": "banks",
+        "notes": "126"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SULUT",
+        "group_by": "banks",
+        "notes": "127"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD NTB",
+        "group_by": "banks",
+        "notes": "128"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD BALI",
+        "group_by": "banks",
+        "notes": "129"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK NTT",
+        "group_by": "banks",
+        "notes": "130"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MALUKU",
+        "group_by": "banks",
+        "notes": "131"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD PAPUA",
+        "group_by": "banks",
+        "notes": "132"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BENGKULU",
+        "group_by": "banks",
+        "notes": "133"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPD SULAWESI TENGAH",
+        "group_by": "banks",
+        "notes": "134"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SULTRA",
+        "group_by": "banks",
+        "notes": "135"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK NUSANTARA PARAHYANGAN",
+        "group_by": "banks",
+        "notes": "145"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SWADESI",
+        "group_by": "banks",
+        "notes": "146"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MUAMALAT",
+        "group_by": "banks",
+        "notes": "147"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MESTIKA",
+        "group_by": "banks",
+        "notes": "151"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK METRO EXPRESS",
+        "group_by": "banks",
+        "notes": "152"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SHINTA INDONESIA",
+        "group_by": "banks",
+        "notes": "153"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MASPION",
+        "group_by": "banks",
+        "notes": "157"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK HAGAKITA",
+        "group_by": "banks",
+        "notes": "159"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK GANESHA",
+        "group_by": "banks",
+        "notes": "161"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK WINDU KENTJANA",
+        "group_by": "banks",
+        "notes": "162"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "HALIM INDONESIA BANK",
+        "group_by": "banks",
+        "notes": "164"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK HARMONI INTERNATIONAL",
+        "group_by": "banks",
+        "notes": "166"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK KESAWAN",
+        "group_by": "banks",
+        "notes": "167"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK TABUNGAN NEGARA (PERSERO)",
+        "group_by": "banks",
+        "notes": "200"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK HIMPUNAN SAUDARA 1906, TBK .",
+        "group_by": "banks",
+        "notes": "212"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK TABUNGAN PENSIUNAN NASIONAL",
+        "group_by": "banks",
+        "notes": "213"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SWAGUNA",
+        "group_by": "banks",
+        "notes": "405"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK JASA ARTA",
+        "group_by": "banks",
+        "notes": "422"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MEGA",
+        "group_by": "banks",
+        "notes": "426"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK JASA JAKARTA",
+        "group_by": "banks",
+        "notes": "427"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BUKOPIN",
+        "group_by": "banks",
+        "notes": "441"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SYARIAH MANDIRI",
+        "group_by": "banks",
+        "notes": "451"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BISNIS INTERNASIONAL",
+        "group_by": "banks",
+        "notes": "459"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SRI PARTHA",
+        "group_by": "banks",
+        "notes": "466"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK JASA JAKARTA",
+        "group_by": "banks",
+        "notes": "472"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BINTANG MANUNGGAL",
+        "group_by": "banks",
+        "notes": "484"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BUMIPUTERA",
+        "group_by": "banks",
+        "notes": "485"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK YUDHA BHAKTI",
+        "group_by": "banks",
+        "notes": "490"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MITRANIAGA",
+        "group_by": "banks",
+        "notes": "491"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK AGRO NIAGA",
+        "group_by": "banks",
+        "notes": "494"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK INDOMONEX",
+        "group_by": "banks",
+        "notes": "498"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK ROYAL INDONESIA",
+        "group_by": "banks",
+        "notes": "501"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK ALFINDO",
+        "group_by": "banks",
+        "notes": "503"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SYARIAH MEGA",
+        "group_by": "banks",
+        "notes": "506"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK INA PERDANA",
+        "group_by": "banks",
+        "notes": "513"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK HARFA",
+        "group_by": "banks",
+        "notes": "517"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "PRIMA MASTER BANK",
+        "group_by": "banks",
+        "notes": "520"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK PERSYARIKATAN INDONESIA",
+        "group_by": "banks",
+        "notes": "521"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK AKITA",
+        "group_by": "banks",
+        "notes": "525"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "LIMAN INTERNATIONAL BANK",
+        "group_by": "banks",
+        "notes": "526"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "ANGLOMAS INTERNASIONAL BANK",
+        "group_by": "banks",
+        "notes": "531"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK DIPO INTERNATIONAL",
+        "group_by": "banks",
+        "notes": "523"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK KESEJAHTERAAN EKONOMI",
+        "group_by": "banks",
+        "notes": "535"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK UIB",
+        "group_by": "banks",
+        "notes": "536"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK ARTOS IND",
+        "group_by": "banks",
+        "notes": "542"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK PURBA DANARTA",
+        "group_by": "banks",
+        "notes": "547"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MULTI ARTA SENTOSA",
+        "group_by": "banks",
+        "notes": "548"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MAYORA",
+        "group_by": "banks",
+        "notes": "553"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK INDEX SELINDO",
+        "group_by": "banks",
+        "notes": "555"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK VICTORIA INTERNATIONAL",
+        "group_by": "banks",
+        "notes": "566"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK EKSEKUTIF",
+        "group_by": "banks",
+        "notes": "558"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "CENTRATAMA NASIONAL BANK",
+        "group_by": "banks",
+        "notes": "559"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK FAMA INTERNASIONAL",
+        "group_by": "banks",
+        "notes": "562"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK SINAR HARAPAN BALI",
+        "group_by": "banks",
+        "notes": "564"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK HARDA",
+        "group_by": "banks",
+        "notes": "567"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK FINCONESIA",
+        "group_by": "banks",
+        "notes": "945"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MERINCORP",
+        "group_by": "banks",
+        "notes": "946"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK MAYBANK INDOCORP",
+        "group_by": "banks",
+        "notes": "947"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK OCBC – INDONESIA",
+        "group_by": "banks",
+        "notes": "948"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK CHINA TRUST INDONESIA",
+        "group_by": "banks",
+        "notes": "949"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK COMMONWEALTH",
+        "group_by": "banks",
+        "notes": "950"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BANK BJB SYARIAH",
+        "group_by": "banks",
+        "notes": "425"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "BPR KS (KARYAJATNIKA SEDAYA)",
+        "group_by": "banks",
+        "notes": "688"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "INDOSAT DOMPETKU",
+        "group_by": "banks",
+        "notes": "789"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "TELKOMSEL TCASH",
+        "group_by": "banks",
+        "notes": "911"
+    },
+    {
+        "id": "",
+        "category_id": "",
+        "company_id": "",
+        "name": "LINKAJA",
+        "group_by": "banks",
+        "notes": "911"
+    }
+]

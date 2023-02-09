@@ -18,6 +18,10 @@ return new class extends Migration
             $table->uuid('company_id');
             $table->string('ref_no')->nullable()->unique();
             $table->string('name');
+            $table->string('phone');
+            $table->string('wa');
+            $table->string('email');
+            $table->string('address');
             $table->timestamps();
         });
     }

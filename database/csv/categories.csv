@@ -35,10 +35,6 @@ a5bff782-c294-45e4-b5c6-5ba327502cf0,,,category-educations-read,category-educati
 ee43a7d6-b813-4a36-93ef-b8f020404c4a,,,category-educations-create,category-educations-create,Kategori Pendidikan - Buat,permissions
 473a22fb-a968-4629-af75-f95ca11c9929,,,category-educations-delete,category-educations-delete,Kategori Pendidikan - Hapus,permissions
 95117dc8-4e67-4a81-8c4e-0f0750b87039,,,category-educations-update,category-educations-update,Kategori Pendidikan - Ubah,permissions
-0c1c743e-8f05-4968-9087-61fcb5aeb728,,,category-packet-types-read,category-packet-types-read,Kategori Tipe Paket - Baca,permissions
-4de3133f-dd9a-4f45-9ffa-f70052c46c80,,,category-packet-types-create,category-packet-types-create,Kategori Tipe Paket - Buat,permissions
-dce25862-8d12-4d5c-8c9e-f57c9d047afa,,,category-packet-types-delete,category-packet-types-delete,Kategori Tipe Paket - Hapus,permissions
-1a463fe5-82f0-4155-960f-ad453673bdbc,,,category-packet-types-update,category-packet-types-update,Kategori Tipe Paket - Ubah,permissions
 682c5a9e-aa0d-44b7-92c1-902257cee670,,,category-provinces-read,category-provinces-read,Kategori Provinsi - Baca,permissions
 142c3290-d082-467b-8250-9adafc301e39,,,category-provinces-create,category-provinces-create,Kategori Provinsi - Buat,permissions
 a2868edc-c852-45cb-b186-8c1cd8f735e4,,,category-provinces-delete,category-provinces-delete,Kategori Provinsi - Hapus,permissions
@@ -47,6 +43,10 @@ a65e6e26-4e91-45cb-829b-27305b4881ad,,,category-provinces-update,category-provin
 f79bf3fa-31d0-4b8d-9489-65443babc401,,,category-marital-statuses-create,category-marital-statuses-create,Kategori Status Pernikahan - Buat,permissions
 c0769892-19d4-4eff-8472-24066497c1d6,,,category-marital-statuses-delete,category-marital-statuses-delete,Kategori Status Pernikahan - Hapus,permissions
 5aa57e73-4b90-4910-8053-7fec6da657f5,,,category-marital-statuses-update,category-marital-statuses-update,Kategori Status Pernikahan - Ubah,permissions
+0c1c743e-8f05-4968-9087-61fcb5aeb728,,,category-packet-types-read,category-packet-types-read,Kategori Tipe Paket - Baca,permissions
+4de3133f-dd9a-4f45-9ffa-f70052c46c80,,,category-packet-types-create,category-packet-types-create,Kategori Tipe Paket - Buat,permissions
+dce25862-8d12-4d5c-8c9e-f57c9d047afa,,,category-packet-types-delete,category-packet-types-delete,Kategori Tipe Paket - Hapus,permissions
+1a463fe5-82f0-4155-960f-ad453673bdbc,,,category-packet-types-update,category-packet-types-update,Kategori Tipe Paket - Ubah,permissions
 e9b7faae-0b73-46d4-baee-0d581415ea40,,,broadcasts-read,broadcasts-read,Pengumuman - Baca,permissions
 32fac2c2-51c1-4b25-b9c9-ec7295638419,,,broadcasts-create,broadcasts-create,Pengumuman - Buat,permissions
 3ef96ba2-2158-4a4f-b0b8-befee7904b41,,,broadcasts-delete,broadcasts-delete,Pengumuman - Hapus,permissions
@@ -85,4 +85,144 @@ c7ebe7ff-7ada-4b17-8942-8e82d11a17a3,,,laki-laki,Laki-Laki,,genders
 1ab218d7-71cd-43af-be81-a01e4227a326,,,s1,S1,4,educations
 db929aed-7999-47cb-84dd-6ce0b1fcf6e6,,,s2,S2,5,educations
 43a8cb1a-9cdf-460b-8e33-c92e1d8ee45e,,,s3,S3,6,educations
-ee6c894d-034c-4266-8f5c-f815fcb70206,,,bca-syariah,BCA Syariah,,banks
+85fb274d-53ff-48b5-937f-4d8e90c1ca03,,,bank-bri,BANK BRI,002,banks
+4eefa131-01da-4317-b778-02999c76fe3c,,,bank-ekspor-indonesia,BANK EKSPOR INDONESIA,003,banks
+baaf0669-4ea2-469c-9abe-93bfd8e65f06,,,bank-mandiri,BANK MANDIRI,008,banks
+74fa9522-eb79-4c63-a5f9-876e23c57733,,,bank-bni,BANK BNI,009,banks
+0b86fc9d-b60e-4c85-a423-15f49c3d615e,,,bank-danamon,BANK DANAMON,011,banks
+1f1d6f53-b7f1-4116-8d65-e0bf9ba07295,,,permata-bank,PERMATA BANK,013,banks
+0e4d5291-d4c0-4c34-ba1c-37e1bbcac7d9,,,bank-bca,BANK BCA,014,banks
+d2511b8e-cddf-41cb-b6b6-1389fa583a9d,,,bank-bii,BANK BII,016,banks
+86bae5a4-3023-4997-a461-bb46b6bb5056,,,bank-panin,BANK PANIN,019,banks
+48d2c17e-3dfd-4a5f-b892-146808e6e457,,,bank-arta-niaga-kencana,BANK ARTA NIAGA KENCANA,020,banks
+65af0222-715e-4767-9631-e3e703f64f1c,,,bank-niaga,BANK NIAGA,022,banks
+2a84bbce-191e-4cee-8fe7-f16b1994d580,,,bank-buana-ind,BANK BUANA IND,023,banks
+32d48f83-be21-40ba-a143-92895733fea5,,,bank-lippo,BANK LIPPO,026,banks
+091648c4-13a7-4391-9034-f39ba3123516,,,bank-nisp,BANK NISP,028,banks
+d59e7837-94fd-45d5-b41f-d1062887722e,,,american-express-bank-ltd,AMERICAN EXPRESS BANK LTD,030,banks
+3e6f97db-ae28-4e7d-9d1a-0870265e813e,,,citibank-n.a.,CITIBANK N.A.,031,banks
+4285e7f1-a981-4923-bde0-51b6e90632f2,,,"jp.-morgan-chase-bank,-n.a.","JP. MORGAN CHASE BANK, N.A.",032,banks
+98ed0a80-0bf4-42d1-aa30-bb410edfee99,,,"bank-of-america,-n.a","BANK OF AMERICA, N.A",033,banks
+4c64537b-4234-4cf5-a42f-47d5e798e0c3,,,ing-indonesia-bank,ING INDONESIA BANK,034,banks
+30a0f9e3-7723-4d30-9230-bd7d26eb8bb5,,,bank-multicor-tbk.,BANK MULTICOR TBK.,036,banks
+e70c8d5a-e18a-4a40-99dc-f9a4ffc5f1d2,,,bank-artha-graha,BANK ARTHA GRAHA,037,banks
+728443ec-e6dc-4bf5-9d44-b56ccaa9aabc,,,bank-credit-agricole-indosuez,BANK CREDIT AGRICOLE INDOSUEZ,039,banks
+6efe314b-162f-480e-bc0f-283ac81d69bd,,,the-bangkok-bank-comp.-ltd,THE BANGKOK BANK COMP. LTD,040,banks
+0277281f-df6a-483e-ba49-534fc0585cfd,,,the-hongkong-&-shanghai-b.c.,THE HONGKONG & SHANGHAI B.C.,041,banks
+81fba67c-112e-44bf-bfea-16305134600c,,,the-bank-of-tokyo-mitsubishi-ufj-ltd,THE BANK OF TOKYO MITSUBISHI UFJ LTD,042,banks
+94086c39-f2d1-4e20-8ea1-8897f2c069ba,,,bank-sumitomo-mitsui-indonesia,BANK SUMITOMO MITSUI INDONESIA,045,banks
+96e9308d-fb5e-47b2-ae42-835c71a52217,,,bank-dbs-indonesia,BANK DBS INDONESIA,046,banks
+8ed79ae4-7c43-4c83-b648-bfc8196cdb7b,,,bank-resona-perdania,BANK RESONA PERDANIA,047,banks
+2d0afb59-78cd-403d-90e9-edbbdc2e4bcb,,,bank-mizuho-indonesia,BANK MIZUHO INDONESIA,048,banks
+28f3fdf8-ed21-4a2b-b91f-c9928b7aa4c6,,,standard-chartered-bank,STANDARD CHARTERED BANK,050,banks
+9b38f5f3-5333-49a4-aa7b-34f1b7a5f538,,,bank-abn-amro,BANK ABN AMRO,052,banks
+6d93c996-4758-46f8-b348-c5508addde81,,,bank-keppel-tatlee-buana,BANK KEPPEL TATLEE BUANA,053,banks
+3f920e50-77ef-49ee-9d88-66a572c23ee9,,,"bank-capital-indonesia,-tbk.","BANK CAPITAL INDONESIA, TBK.",054,banks
+c69844d1-0de1-4197-84da-e1d0c0fa5989,,,bank-bnp-paribas-indonesia,BANK BNP PARIBAS INDONESIA,057,banks
+8ca38f94-ef8c-45e1-9d73-bf53681a8a37,,,bank-uob-indonesia,BANK UOB INDONESIA,058,banks
+8e71804f-e2e7-4e02-b987-f0cb991d7a27,,,korea-exchange-bank-danamon,KOREA EXCHANGE BANK DANAMON,059,banks
+843170cd-7915-4c15-9b9b-7a34c317d81f,,,rabobank-internasional-indonesia,RABOBANK INTERNASIONAL INDONESIA,060,banks
+3359219a-9641-4172-936f-adcc38b52d71,,,anz-panin-bank,ANZ PANIN BANK,061,banks
+1e53ead4-c23f-4ba2-97b6-b91d7539236e,,,deutsche-bank-ag.,DEUTSCHE BANK AG.,067,banks
+af280455-dd70-41fd-9e62-057c18551a0f,,,bank-woori-indonesia,BANK WOORI INDONESIA,068,banks
+add37e5f-ed1a-4b20-a1e2-2c3c37061530,,,bank-of-china-limited,BANK OF CHINA LIMITED,069,banks
+8886e6d0-dae8-45b3-8065-775c48350285,,,bank-bumi-arta,BANK BUMI ARTA,076,banks
+ca2d4169-2010-476a-a9eb-22c06153c0a2,,,bank-ekonomi,BANK EKONOMI,087,banks
+2b926607-1fcd-4970-9a59-da117935b348,,,bank-antardaerah,BANK ANTARDAERAH,088,banks
+0a29846b-7f3c-48dc-a498-41173371ee55,,,bank-haga,BANK HAGA,089,banks
+4955771a-3b37-4d41-8848-b8b33533135f,,,bank-ifi,BANK IFI,093,banks
+3732ec42-f21e-449f-939a-f3c7290b5551,,,"bank-century,-tbk.","BANK CENTURY, TBK.",095,banks
+d6920b18-e873-48f5-a801-1cfb237dff75,,,bank-mayapada,BANK MAYAPADA,097,banks
+dd25e439-1cbd-4830-a266-8387888fc02c,,,bank-jabar,BANK JABAR,110,banks
+d2080879-13ee-40c2-aeba-969250796e56,,,bank-dki,BANK DKI,111,banks
+eb3e904b-f0da-4f64-ba24-75240a02a0b9,,,bpd-diy,BPD DIY,112,banks
+fb2a9a10-8e4a-4e3d-987c-713b982c1ebf,,,bank-jateng,BANK JATENG,113,banks
+71e865eb-c5bd-4376-a67e-75b0941a5ee6,,,bank-jatim,BANK JATIM,114,banks
+3319f278-d9f0-4e44-b0cf-81d0187973ff,,,bpd-jambi,BPD JAMBI,115,banks
+0cd41da8-c2f8-4190-a2cd-01de3458ecc3,,,bpd-aceh,BPD ACEH,116,banks
+87708247-9de5-4cd4-98b8-7df4bb47749f,,,bank-sumut,BANK SUMUT,117,banks
+3c1f6b05-b5ec-46de-84b3-e64713d0f7aa,,,bank-nagari,BANK NAGARI,118,banks
+c4732e53-88b0-4a80-a4e4-b551b802445f,,,bank-riau,BANK RIAU,119,banks
+088ae673-d82f-4487-b001-11740c934b66,,,bank-sumsel,BANK SUMSEL,120,banks
+54d885dd-128d-4ce5-8a0a-87e3a17580d3,,,bank-lampung,BANK LAMPUNG,121,banks
+8c876140-a273-431d-9823-003477f12af6,,,bpd-kalsel,BPD KALSEL,122,banks
+0c9bb3bc-5cc3-47d6-8e84-f8f9d88f1b79,,,bpd-kalimantan-barat,BPD KALIMANTAN BARAT,123,banks
+25f69bd5-f594-4f49-b850-9cd2577b8d6f,,,bpd-kaltim,BPD KALTIM,124,banks
+153d54b4-4f17-4d88-a201-7597d4664b2f,,,bpd-kalteng,BPD KALTENG,125,banks
+caf89090-bc05-4fb9-a3b7-8c3af58fead0,,,bpd-sulsel,BPD SULSEL,126,banks
+606f6ba6-225a-4ed1-8ab2-f801afb46f30,,,bank-sulut,BANK SULUT,127,banks
+961ac468-9213-4a53-923d-211bab6a7df4,,,bpd-ntb,BPD NTB,128,banks
+6bf64ed5-d767-461c-87e7-b59d76555bb1,,,bpd-bali,BPD BALI,129,banks
+e340f605-b5da-4625-aa5b-44a37b3bfd4b,,,bank-ntt,BANK NTT,130,banks
+39c43c8c-5ab6-4f3b-a863-8b93d187a58f,,,bank-maluku,BANK MALUKU,131,banks
+e4355c80-6136-429f-b011-226804d1778c,,,bpd-papua,BPD PAPUA,132,banks
+0b065d29-3862-49e2-8c52-0ae17a88b84c,,,bank-bengkulu,BANK BENGKULU,133,banks
+74ce2ee8-429a-4a30-afaa-e211c6ebce77,,,bpd-sulawesi-tengah,BPD SULAWESI TENGAH,134,banks
+6a79199d-93d7-4e4a-830e-4d363afcc531,,,bank-sultra,BANK SULTRA,135,banks
+6154292d-fcf5-4df3-889c-e6d0ebb065bc,,,bank-nusantara-parahyangan,BANK NUSANTARA PARAHYANGAN,145,banks
+4356577b-4824-48f8-88a9-e631093d20df,,,bank-swadesi,BANK SWADESI,146,banks
+a0446cb0-a496-4467-89e4-ffc93b6d28da,,,bank-muamalat,BANK MUAMALAT,147,banks
+90de398f-62ac-49ba-aaf1-03e96420d005,,,bank-mestika,BANK MESTIKA,151,banks
+e8d9f449-7c47-4cfd-8c8f-f72732bee099,,,bank-metro-express,BANK METRO EXPRESS,152,banks
+a42ec46a-a8a2-48c7-92db-3777b43d71bd,,,bank-shinta-indonesia,BANK SHINTA INDONESIA,153,banks
+a9b0e43d-9ead-4dba-ad7c-13aadd8e53fa,,,bank-maspion,BANK MASPION,157,banks
+b590717f-09e2-4e4e-9ca9-12aebac43609,,,bank-hagakita,BANK HAGAKITA,159,banks
+f3fa03f0-7933-484f-a95c-5f96f34e67e2,,,bank-ganesha,BANK GANESHA,161,banks
+9ed4e421-d747-47b6-9d2d-65a67fabc740,,,bank-windu-kentjana,BANK WINDU KENTJANA,162,banks
+e9c30c94-c075-4f36-b471-4ecc7fe3658b,,,halim-indonesia-bank,HALIM INDONESIA BANK,164,banks
+338c53f2-b53c-4000-8696-c274a0e1aa58,,,bank-harmoni-international,BANK HARMONI INTERNATIONAL,166,banks
+a6178a36-c771-48cf-af2b-3338002abfe6,,,bank-kesawan,BANK KESAWAN,167,banks
+5e940b21-9acd-4458-bfa9-97c08b5fe387,,,bank-tabungan-negara-(persero),BANK TABUNGAN NEGARA (PERSERO),200,banks
+dddcc8b6-8f95-4324-949a-ea9cbd4e5491,,,"bank-himpunan-saudara-1906,-tbk-.","BANK HIMPUNAN SAUDARA 1906, TBK .",212,banks
+bd16e764-4ac2-4f09-b4ab-525ba4aad871,,,bank-tabungan-pensiunan-nasional,BANK TABUNGAN PENSIUNAN NASIONAL,213,banks
+4df29183-7d05-406b-829a-f194ebe70852,,,bank-swaguna,BANK SWAGUNA,405,banks
+b7387737-2d47-4ef9-994f-b756a91adaf2,,,bank-jasa-arta,BANK JASA ARTA,422,banks
+5608ff6a-e4c6-43c5-8fa1-d27b47b8a8d4,,,bank-bjb-syariah,BANK BJB SYARIAH,425,banks
+6c41ba98-3740-4747-9f8d-581e4178d34d,,,bank-mega,BANK MEGA,426,banks
+8a472442-708a-4904-b473-81f5ba250d03,,,bank-bni-syariah,BANK BNI SYARIAH,427,banks
+c3b76e0f-a914-4d7c-8be9-19875f15fe4f,,,bank-jasa-jakarta,BANK JASA JAKARTA,427,banks
+ecfee68a-dd41-44f8-a760-90c916cf69bd,,,bank-bukopin,BANK BUKOPIN,441,banks
+1659b1c5-44a4-4d23-9e0c-8722a63e2b0a,,,bank-syariah-mandiri,BANK SYARIAH MANDIRI,451,banks
+e1ab3fae-cf89-46e5-9e58-d6f05a2d68d9,,,bank-bisnis-internasional,BANK BISNIS INTERNASIONAL,459,banks
+073f9dec-cb7c-46bc-9e56-f50af8c3b69d,,,bank-sri-partha,BANK SRI PARTHA,466,banks
+a45438be-42e3-4569-a0fd-ff690af1c236,,,bank-jasa-jakarta,BANK JASA JAKARTA,472,banks
+348e2e36-5d17-4e05-b0db-36a480ab0ce0,,,bank-bintang-manunggal,BANK BINTANG MANUNGGAL,484,banks
+bd6717d1-d61d-41df-b59b-5068a461d4a6,,,bank-bumiputera,BANK BUMIPUTERA,485,banks
+ad3b7bf8-082f-4f48-b7c4-5fbefc0e3085,,,bank-yudha-bhakti,BANK YUDHA BHAKTI,490,banks
+20238e77-6e90-4a6a-b1bf-1e0d1382af2a,,,bank-mitraniaga,BANK MITRANIAGA,491,banks
+1f295114-f3ce-4bf0-9466-b03a79117478,,,bank-agro-niaga,BANK AGRO NIAGA,494,banks
+71013aa7-8d91-4429-8702-90e9d4ed0af3,,,bank-indomonex,BANK INDOMONEX,498,banks
+d63fbbce-24d6-4bc3-8715-085c6f2dd06c,,,bank-royal-indonesia,BANK ROYAL INDONESIA,501,banks
+1f4eea08-852d-4c77-803d-e71132594b9d,,,bank-alfindo,BANK ALFINDO,503,banks
+cbda45b2-f937-4bd1-8685-c3228d6bee04,,,bank-syariah-mega,BANK SYARIAH MEGA,506,banks
+225eb9ac-6625-4d9a-a568-d952a0b2ffc4,,,bank-ina-perdana,BANK INA PERDANA,513,banks
+dd0ad636-15d3-4eee-987a-eaee368c03e3,,,bank-harfa,BANK HARFA,517,banks
+4ad51cd3-98a3-4d6b-9b46-0914a2790e82,,,prima-master-bank,PRIMA MASTER BANK,520,banks
+c65e98d1-1477-4358-8801-5c154c2b6e43,,,bank-persyarikatan-indonesia,BANK PERSYARIKATAN INDONESIA,521,banks
+a1c69d20-6a28-4790-a462-3a566f707416,,,bank-dipo-international,BANK DIPO INTERNATIONAL,523,banks
+fc249029-5b40-4380-af4f-016c84556fe0,,,bank-akita,BANK AKITA,525,banks
+7b1f89b3-4525-4386-8be5-69db42685219,,,liman-international-bank,LIMAN INTERNATIONAL BANK,526,banks
+0c5679a4-8573-4dab-9a61-f4df864e8074,,,anglomas-internasional-bank,ANGLOMAS INTERNASIONAL BANK,531,banks
+5ec6e9f3-7a6e-4b43-bd40-84b9b5599df9,,,bank-kesejahteraan-ekonomi,BANK KESEJAHTERAAN EKONOMI,535,banks
+22d20c6b-1c75-4287-81d7-faa254e618f9,,,bank-uib,BANK UIB,536,banks
+8dc080a8-5471-4564-af79-8752a991e8a5,,,bank-artos-ind,BANK ARTOS IND,542,banks
+ed27c98e-264c-44bf-82ee-15f4ca7131f5,,,bank-purba-danarta,BANK PURBA DANARTA,547,banks
+86771b42-330b-4f9d-b613-37dffe25de1f,,,bank-multi-arta-sentosa,BANK MULTI ARTA SENTOSA,548,banks
+e3bfc9ff-e5a0-4a3d-87bb-a8a7bb53a22d,,,bank-mayora,BANK MAYORA,553,banks
+611b1baf-8fe1-42eb-ad79-482b90990723,,,bank-index-selindo,BANK INDEX SELINDO,555,banks
+b22f0dac-0e3b-4c09-8ca3-97bafc2ab58d,,,bank-eksekutif,BANK EKSEKUTIF,558,banks
+33a4252f-1800-48af-8d44-1760e63965ea,,,centratama-nasional-bank,CENTRATAMA NASIONAL BANK,559,banks
+10b74a81-34fb-4cdc-b681-039792dbf3a8,,,bank-fama-internasional,BANK FAMA INTERNASIONAL,562,banks
+9b01fb09-0557-4ed4-bbb2-8c669d7dbb67,,,bank-sinar-harapan-bali,BANK SINAR HARAPAN BALI,564,banks
+994fa639-8e6c-49ae-aef4-a9f05090aa92,,,bank-victoria-international,BANK VICTORIA INTERNATIONAL,566,banks
+078546d0-3dbc-4f83-887c-cd6f03e49a52,,,bank-harda,BANK HARDA,567,banks
+5d07f1b2-c09d-4c59-ac88-243d322697d0,,,bpr-ks-(karyajatnika-sedaya),BPR KS (KARYAJATNIKA SEDAYA),688,banks
+985bef32-9f9e-4c87-83aa-14c9dbad2d98,,,indosat-dompetku,INDOSAT DOMPETKU,789,banks
+92d4d033-3f1e-449c-85ac-fbd7a55c1d42,,,linkaja,LINKAJA,911,banks
+bcd8828e-8c1e-4f4a-a7cd-534a815cdd61,,,telkomsel-tcash,TELKOMSEL TCASH,911,banks
+5f0e61ba-b47b-4865-bc6b-734b9141c221,,,bank-finconesia,BANK FINCONESIA,945,banks
+fd4008be-87e4-429f-adc0-1c2a8bc9b59f,,,bank-merincorp,BANK MERINCORP,946,banks
+95d7259c-0821-4492-b1da-14ad8719944c,,,bank-maybank-indocorp,BANK MAYBANK INDOCORP,947,banks
+a6974b49-5e6d-4f7b-94e5-9badfee4df15,,,bank-ocbc-–-indonesia,BANK OCBC – INDONESIA,948,banks
+55137892-5c58-473d-8c6a-7314c4ebe775,,,bank-china-trust-indonesia,BANK CHINA TRUST INDONESIA,949,banks
+b1853d2b-5cdc-4aa9-8204-c49c8fa68a67,,,bank-commonwealth,BANK COMMONWEALTH,950,banks

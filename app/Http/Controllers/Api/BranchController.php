@@ -44,8 +44,12 @@ class BranchController extends Controller
 
         $fields = [
             'company_id' => auth()->user()->company_id,
-            'name' => $request->name,
             'ref_no' => $refNo,
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'wa' => $request->wa,
+            'address' => $request->address,
         ];
 
         $rules = [
@@ -64,6 +68,32 @@ class BranchController extends Controller
                     $query->where('company_id', $fields['company_id']);
                 }),
             ],
+            'phone' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('branches')->where(function ($query) use ($fields) {
+                    $query->where('company_id', $fields['company_id']);
+                }),
+            ],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                Rule::unique('branches')->where(function ($query) use ($fields) {
+                    $query->where('company_id', $fields['company_id']);
+                }),
+            ],
+            'wa' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('branches')->where(function ($query) use ($fields) {
+                    $query->where('company_id', $fields['company_id']);
+                }),
+            ],
+            'address' => ['required', 'string', 'max:255'],
         ];
 
         $validator = Validator::make($fields, $rules);
@@ -94,6 +124,10 @@ class BranchController extends Controller
             'id' => $id,
             'company_id' => auth()->user()->company_id,
             'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'wa' => $request->wa,
+            'address' => $request->address,
         ];
 
         $rules = [
@@ -120,6 +154,32 @@ class BranchController extends Controller
                     $query->where('company_id', $fields['company_id']);
                 })->ignore($fields['id']),
             ],
+            'phone' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('branches')->where(function ($query) use ($fields) {
+                    $query->where('company_id', $fields['company_id']);
+                })->ignore($fields['id']),
+            ],
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                Rule::unique('branches')->where(function ($query) use ($fields) {
+                    $query->where('company_id', $fields['company_id']);
+                })->ignore($fields['id']),
+            ],
+            'wa' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('branches')->where(function ($query) use ($fields) {
+                    $query->where('company_id', $fields['company_id']);
+                })->ignore($fields['id']),
+            ],
+            'address' => ['required', 'string', 'max:255'],
         ];
 
         $validator = Validator::make($fields, $rules);

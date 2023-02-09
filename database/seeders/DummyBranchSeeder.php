@@ -23,8 +23,12 @@ class DummyBranchSeeder extends Seeder
         foreach ($companies as $company) {
             $company->branches()->create([
                 'id' => '97f2d9b0-005a-443c-9183-93e9ca910ceb',
-                'name' => 'Dummy Branch',
                 'ref_no' => $refNo,
+                'name' => 'Dummy Branch',
+                'phone' => '081234567890',
+                'email' => 'branch1@dummy.com',
+                'wa' => '081234567890',
+                'address' => 'Dummy Address',
             ]);
         }
     }
