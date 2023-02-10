@@ -30,8 +30,9 @@ class CongregationController extends Controller
         $data = Person::with([
             'category' => fn ($query) => $query->select('id', 'label'),
             'branch' => fn ($query) => $query->select('id', 'name'),
+            'agent' => fn ($query) => $query->select(['id', 'company_id', 'branch_id', 'category_id', 'ref_no', 'name', 'phone', 'wa', 'email']),
         ])
-            ->select(['id', 'branch_id', 'category_id', 'ref_no', 'name', 'wa', 'email'])
+            ->select(['id', 'company_id', 'branch_id', 'category_id', 'agent_id', 'ref_no', 'name', 'phone', 'wa', 'email'])
             ->where('company_id', $user->person->company_id)
             ->whereHas('category', function ($query) {
                 $query->where('name', 'congregation')
@@ -255,6 +256,7 @@ class CongregationController extends Controller
         $data = Person::with([
             'congregationDetail',
             'congregationInvoices.invoiceDetails.service.packetType',
+            'agent' => fn ($q) => $q->select(['id', 'company_id', 'branch_id', 'category_id', 'ref_no', 'name', 'phone', 'wa', 'email']),
         ])->where('id', $id)->where('company_id', $user->company_id);
 
         if ($userCategory == 'director') $data = $data;
